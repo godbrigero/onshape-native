@@ -1,0 +1,2424 @@
+{
+  "schema_version": "1.221.89963-13d10d36cb23",
+  "operation_count": 302,
+  "routable_count": 301,
+  "live_parity_verified": false,
+  "operations": [
+    {
+      "operation": "abortTransaction",
+      "method": "DELETE",
+      "path": "/api/v17/appelements/d/{did}/w/{wid}/e/{eid}/transactions/{tid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "addAttachment",
+      "method": "POST",
+      "path": "/api/v17/comments/{cid}/attachment",
+      "route": "available",
+      "body_transport": "multipart",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "addFeature",
+      "method": "POST",
+      "path": "/api/v17/assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/features",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "addGlobalPermissionsForIdentity",
+      "method": "POST",
+      "path": "/api/v17/companies/{cid}/globalpermission/{type}/{id}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "addItemToPublication",
+      "method": "POST",
+      "path": "/api/v17/publications/{pid}/item",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "addItemsToPublication",
+      "method": "POST",
+      "path": "/api/v17/publications/{pid}/items",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "addPartStudioFeature",
+      "method": "POST",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/features",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "addUserToCompany",
+      "method": "POST",
+      "path": "/api/v17/companies/{cid}/users",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "bulkCreateElement",
+      "method": "POST",
+      "path": "/api/v17/appelements/d/{did}/w/{wid}/bulkcreate",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "cancelPurchaseNew",
+      "method": "DELETE",
+      "path": "/api/v17/accounts/{aid}/purchases/{pid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "clearGlobalPermissions",
+      "method": "DELETE",
+      "path": "/api/v17/companies/{cid}/globalpermission/{type}/{id}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "commitTransactions",
+      "method": "POST",
+      "path": "/api/v17/appelements/d/{did}/w/{wid}/transactions",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "compareAppElementJson",
+      "method": "GET",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/compare",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "comparePartStudios",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/compare",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "consumePurchase",
+      "method": "POST",
+      "path": "/api/v17/accounts/purchases/{pid}/consume",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "copyAssociativeData",
+      "method": "POST",
+      "path": "/api/v17/appelements/d/{did}/w/{wid}/e/{eid}/copyassociativedata",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "copyElementFromSourceDocument",
+      "method": "POST",
+      "path": "/api/v17/elements/copyelement/{did}/workspace/{wid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "copyWorkspace",
+      "method": "POST",
+      "path": "/api/v17/documents/{did}/workspaces/{wid}/copy",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createAlias",
+      "method": "POST",
+      "path": "/api/v17/aliases",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createAssembly",
+      "method": "POST",
+      "path": "/api/v17/assemblies/d/{did}/w/{wid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createAssemblyExportGltf",
+      "method": "POST",
+      "path": "/api/v17/assemblies/d/{did}/{wv}/{wvid}/e/{eid}/export/gltf",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createAssemblyExportObj",
+      "method": "POST",
+      "path": "/api/v17/assemblies/d/{did}/{wv}/{wvid}/e/{eid}/export/obj",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createAssemblyExportStep",
+      "method": "POST",
+      "path": "/api/v17/assemblies/d/{did}/{wv}/{wvid}/e/{eid}/export/step",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createBlobTranslation",
+      "method": "POST",
+      "path": "/api/v17/blobelements/d/{did}/{wv}/{wvid}/e/{eid}/translations",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createComment",
+      "method": "POST",
+      "path": "/api/v17/comments",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createDocument",
+      "method": "POST",
+      "path": "/api/v17/documents",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createDrawingAppElement",
+      "method": "POST",
+      "path": "/api/v17/drawings/d/{did}/w/{wid}/create",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createDrawingTranslation",
+      "method": "POST",
+      "path": "/api/v17/drawings/d/{did}/{wv}/{wvid}/e/{eid}/translations",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createElement",
+      "method": "POST",
+      "path": "/api/v17/appelements/d/{did}/w/{wid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createFeatureStudio",
+      "method": "POST",
+      "path": "/api/v17/featurestudios/d/{did}/w/{wid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createInstance",
+      "method": "POST",
+      "path": "/api/v17/assemblies/d/{did}/w/{wid}/e/{eid}/instances",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createItem",
+      "method": "POST",
+      "path": "/api/v17/items",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createObsoletionPackage",
+      "method": "POST",
+      "path": "/api/v17/releasepackages/obsoletion/{wfid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createPartStudio",
+      "method": "POST",
+      "path": "/api/v17/partstudios/d/{did}/w/{wid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createPartStudioExportGltf",
+      "method": "POST",
+      "path": "/api/v17/partstudios/d/{did}/{wv}/{wvid}/e/{eid}/export/gltf",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createPartStudioExportObj",
+      "method": "POST",
+      "path": "/api/v17/partstudios/d/{did}/{wv}/{wvid}/e/{eid}/export/obj",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createPartStudioExportStep",
+      "method": "POST",
+      "path": "/api/v17/partstudios/d/{did}/{wv}/{wvid}/e/{eid}/export/step",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createPartStudioTranslation",
+      "method": "POST",
+      "path": "/api/v17/partstudios/d/{did}/{wv}/{wvid}/e/{eid}/translations",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createPublication",
+      "method": "POST",
+      "path": "/api/v17/publications",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createReference",
+      "method": "POST",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createReleasePackage",
+      "method": "POST",
+      "path": "/api/v17/releasepackages/release/{wfid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createTableTemplate",
+      "method": "POST",
+      "path": "/api/v17/tabletemplates",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createTask",
+      "method": "POST",
+      "path": "/api/v17/tasks",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createTranslation",
+      "method": "POST",
+      "path": "/api/v17/translations/d/{did}/w/{wid}",
+      "route": "available",
+      "body_transport": "multipart",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createVariableStudio",
+      "method": "POST",
+      "path": "/api/v17/variables/d/{did}/w/{wid}/variablestudio",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createVersion",
+      "method": "POST",
+      "path": "/api/v17/documents/d/{did}/versions",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createWebhook",
+      "method": "POST",
+      "path": "/api/v17/webhooks",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "createWorkspace",
+      "method": "POST",
+      "path": "/api/v17/documents/d/{did}/workspaces",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "decodeConfiguration",
+      "method": "GET",
+      "path": "/api/v17/elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configurationencodings/{cid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteAlias",
+      "method": "DELETE",
+      "path": "/api/v17/aliases/{aid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteAppElementContent",
+      "method": "DELETE",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/subelements/{sid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteAppElementContentBatch",
+      "method": "DELETE",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/subelements",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteAppSettings",
+      "method": "DELETE",
+      "path": "/api/v17/applications/clients/{cid}/settings/users/{uid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteApplicationThumbnails",
+      "method": "DELETE",
+      "path": "/api/v17/thumbnails/d/{did}/{wv}/{wvid}/e/{eid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteAssociativeData",
+      "method": "DELETE",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteAttachments",
+      "method": "DELETE",
+      "path": "/api/v17/comments/{cid}/attachment",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteBlobSubelement",
+      "method": "DELETE",
+      "path": "/api/v17/appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteComment",
+      "method": "DELETE",
+      "path": "/api/v17/comments/{cid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteCompanyAppSettings",
+      "method": "DELETE",
+      "path": "/api/v17/applications/clients/{cid}/settings/companies/{cpid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteDocument",
+      "method": "DELETE",
+      "path": "/api/v17/documents/{did}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteElement",
+      "method": "DELETE",
+      "path": "/api/v17/elements/d/{did}/w/{wid}/e/{eid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteFeature",
+      "method": "DELETE",
+      "path": "/api/v17/assemblies/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteInstance",
+      "method": "DELETE",
+      "path": "/api/v17/assemblies/d/{did}/w/{wid}/e/{eid}/instance/nodeid/{nid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteItem",
+      "method": "DELETE",
+      "path": "/api/v17/items/{iid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deletePartStudioFeature",
+      "method": "DELETE",
+      "path": "/api/v17/partstudios/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deletePublication",
+      "method": "DELETE",
+      "path": "/api/v17/publications/{pid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deletePublicationItem",
+      "method": "DELETE",
+      "path": "/api/v17/publications/{pid}/item/{iid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteReference",
+      "method": "DELETE",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteRevisionHistory",
+      "method": "DELETE",
+      "path": "/api/v17/revisions/companies/{cid}/partnumber/{pnum}/elementType/{et}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteTableTemplate",
+      "method": "DELETE",
+      "path": "/api/v17/tabletemplates/{tid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteTranslation",
+      "method": "DELETE",
+      "path": "/api/v17/translations/{tid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "deleteWorkspace",
+      "method": "DELETE",
+      "path": "/api/v17/documents/d/{did}/workspaces/{wid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "downloadBlobSubelement",
+      "method": "GET",
+      "path": "/api/v17/appelements/d/{did}/{vm}/{vmid}/e/{eid}/blob/{bid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "downloadBlobSubelementWorkspace",
+      "method": "GET",
+      "path": "/api/v17/appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "downloadExternalData",
+      "method": "GET",
+      "path": "/api/v17/documents/d/{did}/externaldata/{fid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "downloadFileWorkspace",
+      "method": "GET",
+      "path": "/api/v17/blobelements/d/{did}/w/{wid}/e/{eid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "encodeConfigurationMap",
+      "method": "POST",
+      "path": "/api/v17/elements/d/{did}/e/{eid}/configurationencodings",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "enumerateObjectWorkflows",
+      "method": "GET",
+      "path": "/api/v17/workflow/companies/{cid}/objects",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "enumerateRevisions",
+      "method": "GET",
+      "path": "/api/v17/revisions/companies/{cid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "evalFeatureScript",
+      "method": "POST",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurescript",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "export2Json",
+      "method": "POST",
+      "path": "/api/v17/documents/d/{did}/{wv}/{wvid}/e/{eid}/export",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "exportPS",
+      "method": "GET",
+      "path": "/api/v17/parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/parasolid",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "exportParasolid",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/parasolid",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "exportPartGltf",
+      "method": "GET",
+      "path": "/api/v17/parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/gltf",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "exportPartStudioGltf",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/gltf",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "exportPartStudioStl",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/stl",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "exportStl",
+      "method": "GET",
+      "path": "/api/v17/parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/stl",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "find",
+      "method": "GET",
+      "path": "/api/v17/teams",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "findCompany",
+      "method": "GET",
+      "path": "/api/v17/companies",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getActionItems",
+      "method": "GET",
+      "path": "/api/v17/tasks",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getActiveWorkflow",
+      "method": "GET",
+      "path": "/api/v17/workflow/active",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getAlias",
+      "method": "GET",
+      "path": "/api/v17/aliases/{aid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getAliasMembers",
+      "method": "GET",
+      "path": "/api/v17/aliases/{aid}/members",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getAliasesInCompany",
+      "method": "GET",
+      "path": "/api/v17/aliases",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getAllInDocument",
+      "method": "GET",
+      "path": "/api/v17/revisions/d/{did}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getAllInDocumentVersion",
+      "method": "GET",
+      "path": "/api/v17/revisions/d/{did}/v/{vid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getAllTranslatorFormats",
+      "method": "GET",
+      "path": "/api/v17/translations/translationformats",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getAllVersions",
+      "method": "GET",
+      "path": "/api/v17/versions",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getAllowedApprovers",
+      "method": "GET",
+      "path": "/api/v17/workflow/c/{companyId}/approvers",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getAppElementHistory",
+      "method": "GET",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/history",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getApplicableExtensionsForClient",
+      "method": "GET",
+      "path": "/api/v17/applications/extensions/user/{uid}/client/{cid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getAssemblyBoundingBoxes",
+      "method": "GET",
+      "path": "/api/v17/assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/boundingboxes",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getAssemblyDefinition",
+      "method": "GET",
+      "path": "/api/v17/assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getAssemblyMassProperties",
+      "method": "GET",
+      "path": "/api/v17/assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/massproperties",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getAssemblyShadedViews",
+      "method": "GET",
+      "path": "/api/v17/assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/shadedviews",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getAssociativeData",
+      "method": "GET",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getAttachment",
+      "method": "GET",
+      "path": "/api/v17/comments/{cid}/attachment/{fdid}.{ext}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getAuditLog",
+      "method": "GET",
+      "path": "/api/v17/workflow/obj/{objectId}/auditlog",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getBendTable",
+      "method": "GET",
+      "path": "/api/v17/parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/sheetmetal/bendtable",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getBillOfMaterials",
+      "method": "GET",
+      "path": "/api/v17/assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/bom",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getBlobSubelementIds",
+      "method": "GET",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/blob",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getBodyDetails",
+      "method": "GET",
+      "path": "/api/v17/parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/bodydetails",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getBoundingBoxes",
+      "method": "GET",
+      "path": "/api/v17/parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/boundingboxes",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getByCompanyId",
+      "method": "GET",
+      "path": "/api/v17/tabletemplates/companies/{cid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getByDocumentId",
+      "method": "GET",
+      "path": "/api/v17/tabletemplates/d/{did}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getCategoryProperties",
+      "method": "GET",
+      "path": "/api/v17/metadatacategory/categoryproperties",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getClientPlans",
+      "method": "GET",
+      "path": "/api/v17/billing/plans/client/{cid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getComment",
+      "method": "GET",
+      "path": "/api/v17/comments/{cid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getComments",
+      "method": "GET",
+      "path": "/api/v17/comments",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getCompany",
+      "method": "GET",
+      "path": "/api/v17/companies/{cid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getCompanyAppSettings",
+      "method": "GET",
+      "path": "/api/v17/applications/clients/{cid}/settings/companies/{cpid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getCompanyUsers",
+      "method": "GET",
+      "path": "/api/v17/companies/{cid}/users",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getConfiguration",
+      "method": "GET",
+      "path": "/api/v17/elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configuration",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getCurrentMicroversion",
+      "method": "GET",
+      "path": "/api/v17/documents/d/{did}/{wv}/{wvid}/currentmicroversion",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getDisplayStates",
+      "method": "GET",
+      "path": "/api/v17/assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/displaystates",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getDocument",
+      "method": "GET",
+      "path": "/api/v17/documents/{did}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getDocumentAcl",
+      "method": "GET",
+      "path": "/api/v17/documents/{did}/acl",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getDocumentContents",
+      "method": "GET",
+      "path": "/api/v17/documents/d/{did}/{wvm}/{wvmid}/contents",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getDocumentHistory",
+      "method": "GET",
+      "path": "/api/v17/documents/d/{did}/{wm}/{wmid}/documenthistory",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getDocumentPermissionSet",
+      "method": "GET",
+      "path": "/api/v17/documents/{did}/permissionset",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getDocumentThumbnail",
+      "method": "GET",
+      "path": "/api/v17/thumbnails/d/{did}/w/{wid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getDocumentThumbnailWithSize",
+      "method": "GET",
+      "path": "/api/v17/thumbnails/d/{did}/w/{wid}/s/{sz}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getDocumentTranslations",
+      "method": "GET",
+      "path": "/api/v17/translations/d/{did}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getDocumentVersions",
+      "method": "GET",
+      "path": "/api/v17/documents/d/{did}/versions",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getDocumentWorkspaces",
+      "method": "GET",
+      "path": "/api/v17/documents/d/{did}/workspaces",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getDocuments",
+      "method": "GET",
+      "path": "/api/v17/documents",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getDocumentsByName",
+      "method": "GET",
+      "path": "/api/v17/companies/{cid}/documentsbyname",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getDrawingTranslatorFormats",
+      "method": "GET",
+      "path": "/api/v17/drawings/d/{did}/w/{wid}/e/{eid}/translationformats",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getDrawingViewJsonGeometry_1",
+      "method": "GET",
+      "path": "/api/v17/drawings/d/{did}/{wvm}/{wvmid}/e/{eid}/views/{viewid}/jsongeometry",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getDrawingViews_1",
+      "method": "GET",
+      "path": "/api/v17/drawings/d/{did}/{wvm}/{wvmid}/e/{eid}/views",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getEdges",
+      "method": "GET",
+      "path": "/api/v17/parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/tessellatededges",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getElementThumbnail",
+      "method": "GET",
+      "path": "/api/v17/thumbnails/d/{did}/{wv}/{wvid}/e/{eid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getElementThumbnailWithApiConfiguration",
+      "method": "GET",
+      "path": "/api/v17/thumbnails/d/{did}/w/{wid}/e/{eid}/ac/{cid}/s/{sz}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getElementThumbnailWithSize",
+      "method": "GET",
+      "path": "/api/v17/thumbnails/d/{did}/{wv}/{wvid}/e/{eid}/s/{sz}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getElementTransactions",
+      "method": "GET",
+      "path": "/api/v17/appelements/d/{did}/w/{wid}/e/{eid}/transactions",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getElementTranslatorFormatsByVersionOrWorkspace",
+      "method": "GET",
+      "path": "/api/v17/elements/translatorFormats/{did}/{wv}/{wvid}/{eid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getElementsInDocument",
+      "method": "GET",
+      "path": "/api/v17/documents/d/{did}/{wvm}/{wvmid}/elements",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getExplodedViews",
+      "method": "GET",
+      "path": "/api/v17/assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/explodedviews",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getFaces_1",
+      "method": "GET",
+      "path": "/api/v17/parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/tessellatedfaces",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getFeatureScriptRepresentation",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurescriptrepresentation",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getFeatureScriptTable",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/fstable",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getFeatureSpecs",
+      "method": "GET",
+      "path": "/api/v17/assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getFeatureStudioContents",
+      "method": "GET",
+      "path": "/api/v17/featurestudios/d/{did}/{wvm}/{wvmid}/e/{eid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getFeatureStudioSpecs",
+      "method": "GET",
+      "path": "/api/v17/featurestudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getFeatures",
+      "method": "GET",
+      "path": "/api/v17/assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/features",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getFolderAcl",
+      "method": "GET",
+      "path": "/api/v17/folders/{fid}/acl",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getFullAssemblyMetadata",
+      "method": "GET",
+      "path": "/api/v17/metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/assembly-debug",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getInsertables",
+      "method": "GET",
+      "path": "/api/v17/documents/d/{did}/{wv}/{wvid}/insertables",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getItem",
+      "method": "GET",
+      "path": "/api/v17/items/{iid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getItems",
+      "method": "GET",
+      "path": "/api/v17/items",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getJson",
+      "method": "GET",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/json",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getJsonPaths",
+      "method": "POST",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/jsonpaths",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getLatestInDocument",
+      "method": "GET",
+      "path": "/api/v17/insertables/d/{did}/latest",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getLatestInDocumentOrCompany",
+      "method": "GET",
+      "path": "/api/v17/revisions/{cd}/{cdid}/p/{pnum}/latest",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getLibrary",
+      "method": "GET",
+      "path": "/api/v17/materials/libraries/d/{did}/{wvm}/{wvmid}/e/{eid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getMassProperties",
+      "method": "GET",
+      "path": "/api/v17/parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/massproperties",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getMateValues",
+      "method": "GET",
+      "path": "/api/v17/assemblies/d/{did}/{wv}/{wvid}/e/{eid}/matevalues",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getMembers",
+      "method": "GET",
+      "path": "/api/v17/teams/{tid}/members",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getModificationStatus",
+      "method": "GET",
+      "path": "/api/v17/drawings/modify/status/{mrid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getNamedPositions",
+      "method": "GET",
+      "path": "/api/v17/assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/namedpositions",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getNamedViews",
+      "method": "GET",
+      "path": "/api/v17/assemblies/d/{did}/e/{eid}/namedViews",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getOpenApi",
+      "method": "GET",
+      "path": "/api/v17/openapi",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getOrCreateBillOfMaterialsElement",
+      "method": "POST",
+      "path": "/api/v17/assemblies/d/{did}/w/{wid}/e/{eid}/bomelement",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getParameterValuesForId",
+      "method": "GET",
+      "path": "/api/v17/standardcontent/d/{did}/parametervalues",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getPartShadedViews",
+      "method": "GET",
+      "path": "/api/v17/parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/shadedviews",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getPartStudioBodyDetails",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/bodydetails",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getPartStudioBoundingBoxes",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/boundingboxes",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getPartStudioEdges",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/tessellatededges",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getPartStudioFaces",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/tessellatedfaces",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getPartStudioFeatureSpecs",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getPartStudioFeatures",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/features",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getPartStudioMassProperties",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/massproperties",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getPartStudioNamedViews",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/e/{eid}/namedViews",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getPartStudioShadedViews",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/shadedviews",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getPartsWMV",
+      "method": "GET",
+      "path": "/api/v17/parts/d/{did}/{wvm}/{wvmid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getPartsWMVE",
+      "method": "GET",
+      "path": "/api/v17/parts/d/{did}/{wvm}/{wvmid}/e/{eid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getPlanPurchases",
+      "method": "GET",
+      "path": "/api/v17/accounts/plans/{planId}/purchases",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getPublicationItems",
+      "method": "GET",
+      "path": "/api/v17/publications/{pid}/items",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getPurchases",
+      "method": "GET",
+      "path": "/api/v17/accounts/purchases",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getReleasePackage",
+      "method": "GET",
+      "path": "/api/v17/releasepackages/{rpid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getRevisionByPartNumber",
+      "method": "GET",
+      "path": "/api/v17/revisions/c/{cid}/partnumber/{pnum}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getRevisionHistoryInCompanyByElementId",
+      "method": "GET",
+      "path": "/api/v17/revisions/companies/{cid}/d/{did}/{wv}/{wvid}/e/{eid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getRevisionHistoryInCompanyByPartId",
+      "method": "GET",
+      "path": "/api/v17/revisions/companies/{cid}/d/{did}/{wv}/{wvid}/e/{eid}/p/{pid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getRevisionHistoryInCompanyByPartNumber",
+      "method": "GET",
+      "path": "/api/v17/revisions/companies/{cid}/partnumber/{pnum}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getSketchBoundingBoxes",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches/{sid}/boundingboxes",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getSketchInfo",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getStandardContentList",
+      "method": "GET",
+      "path": "/api/v17/standardcontent/list",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getSubElementContent",
+      "method": "GET",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getSubElementContentBatch",
+      "method": "GET",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/subelements",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getSubelementIds",
+      "method": "GET",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/ids",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getTableTemplate",
+      "method": "GET",
+      "path": "/api/v17/tabletemplates/{tid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getTags",
+      "method": "GET",
+      "path": "/api/v17/openapi/tags",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getTask",
+      "method": "GET",
+      "path": "/api/v17/tasks/{tid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getTeam",
+      "method": "GET",
+      "path": "/api/v17/teams/{tid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getTessellatedEntities",
+      "method": "GET",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches/{sid}/tessellatedentities",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getThumbnailForDocument",
+      "method": "GET",
+      "path": "/api/v17/thumbnails/d/{did}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getThumbnailForDocumentAndVersion",
+      "method": "GET",
+      "path": "/api/v17/thumbnails/d/{did}/v/{vid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getThumbnailForDocumentAndVersionOld",
+      "method": "GET",
+      "path": "/api/v17/thumbnails/document/{did}/version/{vid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getThumbnailForDocumentOld",
+      "method": "GET",
+      "path": "/api/v17/thumbnails/document/{did}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getTranslation",
+      "method": "GET",
+      "path": "/api/v17/translations/{tid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getUnitInfo",
+      "method": "GET",
+      "path": "/api/v17/documents/d/{did}/{wvm}/{wvmid}/unitinfo",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getUserAppSettings",
+      "method": "GET",
+      "path": "/api/v17/applications/clients/{cid}/settings/users/{uid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getUserSettings",
+      "method": "GET",
+      "path": "/api/v17/users/{uid}/settings",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getUserSettingsCurrentLoggedInUser",
+      "method": "GET",
+      "path": "/api/v17/users/settings",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getVEOPStandardContentMetadata",
+      "method": "GET",
+      "path": "/api/v17/metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/p/{pid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getValidRuleOptions",
+      "method": "GET",
+      "path": "/api/v17/exportrules/options/{cu}/{cuid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getVariableStudioReferences",
+      "method": "GET",
+      "path": "/api/v17/variables/d/{did}/{wv}/{wvid}/e/{eid}/variablestudioreferences",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getVariableStudioScope",
+      "method": "GET",
+      "path": "/api/v17/variables/d/{did}/{wv}/{wvid}/e/{eid}/variablestudioscope",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getVariables",
+      "method": "GET",
+      "path": "/api/v17/variables/d/{did}/{wv}/{wvid}/e/{eid}/variables",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getVersion",
+      "method": "GET",
+      "path": "/api/v17/documents/d/{did}/versions/{vid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getWMVEMetadata",
+      "method": "GET",
+      "path": "/api/v17/metadata/d/{did}/{wvm}/{wvmid}/e/{eid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getWMVEPMetadata",
+      "method": "GET",
+      "path": "/api/v17/metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/{iden}/{pid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getWMVEPsMetadata",
+      "method": "GET",
+      "path": "/api/v17/metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/p",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getWMVEsMetadata",
+      "method": "GET",
+      "path": "/api/v17/metadata/d/{did}/{wvm}/{wvmid}/e",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getWVMetadata",
+      "method": "GET",
+      "path": "/api/v17/metadata/d/{did}/{wv}/{wvid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getWebhook",
+      "method": "GET",
+      "path": "/api/v17/webhooks/{webhookid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getWebhooks",
+      "method": "GET",
+      "path": "/api/v17/webhooks",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getWhereUsed",
+      "method": "GET",
+      "path": "/api/v17/productstructure/whereused",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "getWorkflowById",
+      "method": "GET",
+      "path": "/api/v17/workflow/obj/{objectId}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "insertTransformedInstances",
+      "method": "POST",
+      "path": "/api/v17/assemblies/d/{did}/w/{wid}/e/{eid}/transformedinstances",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "mergeIntoWorkspace",
+      "method": "POST",
+      "path": "/api/v17/documents/{did}/workspaces/{wid}/merge",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "mergePreview",
+      "method": "GET",
+      "path": "/api/v17/documents/{did}/w/{wid}/mergePreview",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "modify",
+      "method": "POST",
+      "path": "/api/v17/assemblies/d/{did}/w/{wid}/e/{eid}/modify",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "modifyDrawing",
+      "method": "POST",
+      "path": "/api/v17/drawings/d/{did}/w/{wid}/e/{eid}/modify",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "moveElementsToDocument",
+      "method": "POST",
+      "path": "/api/v17/documents/d/{did}/w/{wid}/moveelement",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "nextNumbers",
+      "method": "POST",
+      "path": "/api/v17/numberingscheme/nextnumbers",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "pingWebhook",
+      "method": "POST",
+      "path": "/api/v17/webhooks/{webhookid}/ping",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "postAssociativeData",
+      "method": "POST",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "removeUserFromCompany",
+      "method": "DELETE",
+      "path": "/api/v17/companies/{cid}/users/{uid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "reopen",
+      "method": "POST",
+      "path": "/api/v17/comments/{cid}/reopen",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "resolve",
+      "method": "POST",
+      "path": "/api/v17/comments/{cid}/resolve",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "resolveAllElementReferences",
+      "method": "GET",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/resolvereferences",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "resolveReference",
+      "method": "GET",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "resolveReferences",
+      "method": "GET",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/resolvereferences",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "restoreFromHistory",
+      "method": "POST",
+      "path": "/api/v17/documents/{did}/w/{wid}/restore/{vm}/{vmid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "revertUnchangedToRevisions",
+      "method": "POST",
+      "path": "/api/v17/documents/d/{did}/w/{wid}/revertunchangedtorevisions",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "search",
+      "method": "POST",
+      "path": "/api/v17/documents/search",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "session",
+      "method": "POST",
+      "path": "/api/v17/users/session",
+      "route": "browser-owned authentication",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "sessionInfo",
+      "method": "GET",
+      "path": "/api/v17/users/sessioninfo",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "setApplicationElementThumbnail",
+      "method": "POST",
+      "path": "/api/v17/thumbnails/d/{did}/{wv}/{wvid}/e/{eid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "setCustomParameters",
+      "method": "POST",
+      "path": "/api/v17/standardcontent/d/{did}/customparameters",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "setVariableStudioReferences",
+      "method": "POST",
+      "path": "/api/v17/variables/d/{did}/w/{wid}/e/{eid}/variablestudioreferences",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "setVariableStudioScope",
+      "method": "POST",
+      "path": "/api/v17/variables/d/{did}/w/{wid}/e/{eid}/variablestudioscope",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "setVariables",
+      "method": "POST",
+      "path": "/api/v17/variables/d/{did}/w/{wid}/e/{eid}/variables",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "share",
+      "method": "POST",
+      "path": "/api/v17/folders/{fid}/share",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "shareDocument",
+      "method": "POST",
+      "path": "/api/v17/documents/{did}/share",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "shareWithSupport",
+      "method": "POST",
+      "path": "/api/v17/documents/{did}/shareWithSupport",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "startTransaction",
+      "method": "POST",
+      "path": "/api/v17/appelements/d/{did}/w/{wid}/e/{eid}/transactions",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "syncAppElements",
+      "method": "POST",
+      "path": "/api/v17/documents/d/{did}/w/{wid}/syncAppElements",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "transformOccurrences",
+      "method": "POST",
+      "path": "/api/v17/assemblies/d/{did}/w/{wid}/e/{eid}/occurrencetransforms",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "transitionTask",
+      "method": "POST",
+      "path": "/api/v17/tasks/{tid}/{transition}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "translateFormat",
+      "method": "POST",
+      "path": "/api/v17/assemblies/d/{did}/{wv}/{wvid}/e/{eid}/translations",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "translateIds",
+      "method": "POST",
+      "path": "/api/v17/partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/idtranslations",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "unShare",
+      "method": "DELETE",
+      "path": "/api/v17/folders/{fid}/share/{eid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "unShareDocument",
+      "method": "DELETE",
+      "path": "/api/v17/documents/{did}/share/{entityId}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "unregisterWebhook",
+      "method": "DELETE",
+      "path": "/api/v17/webhooks/{webhookid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "unshareFromSupport",
+      "method": "DELETE",
+      "path": "/api/v17/documents/{did}/shareWithSupport",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateAlias",
+      "method": "POST",
+      "path": "/api/v17/aliases/{aid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateAnonymousAccess",
+      "method": "POST",
+      "path": "/api/v17/documents/{did}/acl/anonymousAccess",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateAppCompanySettings",
+      "method": "POST",
+      "path": "/api/v17/applications/clients/{cid}/settings/companies/{cpid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateAppElement",
+      "method": "POST",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateAppSettings",
+      "method": "POST",
+      "path": "/api/v17/applications/clients/{cid}/settings/users/{uid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateComment",
+      "method": "POST",
+      "path": "/api/v17/comments/{cid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateCompanyUser",
+      "method": "POST",
+      "path": "/api/v17/companies/{cid}/users/{uid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateConfiguration",
+      "method": "POST",
+      "path": "/api/v17/elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configuration",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateDocumentAttributes",
+      "method": "POST",
+      "path": "/api/v17/documents/{did}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateDocumentNotes",
+      "method": "POST",
+      "path": "/api/v17/documents/{did}/notes",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateExternalReferencesToLatestDocuments",
+      "method": "POST",
+      "path": "/api/v17/documents/d/{did}/w/{wid}/e/{eid}/latestdocumentreferences",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateFeature",
+      "method": "POST",
+      "path": "/api/v17/assemblies/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateFeatureStudioContents",
+      "method": "POST",
+      "path": "/api/v17/featurestudios/d/{did}/{wvm}/{wvmid}/e/{eid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateFeatures",
+      "method": "POST",
+      "path": "/api/v17/partstudios/d/{did}/w/{wid}/e/{eid}/features/updates",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateItem",
+      "method": "POST",
+      "path": "/api/v17/items/{iid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateLibrary",
+      "method": "POST",
+      "path": "/api/v17/materials/libraries/d/{did}/w/{wid}/e/{eid}/csv",
+      "route": "available",
+      "body_transport": "multipart",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateMateValues",
+      "method": "POST",
+      "path": "/api/v17/assemblies/d/{did}/w/{wid}/e/{eid}/matevalues",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateNextNumbers",
+      "method": "POST",
+      "path": "/api/v17/partnumber/nextnumbers",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updatePartStudioFeature",
+      "method": "POST",
+      "path": "/api/v17/partstudios/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updatePublicAccess",
+      "method": "POST",
+      "path": "/api/v17/documents/{did}/acl/public",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updatePublicationAttributes",
+      "method": "POST",
+      "path": "/api/v17/publications/{pid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateReference",
+      "method": "POST",
+      "path": "/api/v17/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateReferences",
+      "method": "POST",
+      "path": "/api/v17/elements/d/{did}/w/{wid}/e/{eid}/updatereferences",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateReleasePackage",
+      "method": "POST",
+      "path": "/api/v17/releasepackages/{rpid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateRollback",
+      "method": "POST",
+      "path": "/api/v17/partstudios/d/{did}/w/{wid}/e/{eid}/features/rollback",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateTask",
+      "method": "POST",
+      "path": "/api/v17/tasks/{tid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateUnits",
+      "method": "POST",
+      "path": "/api/v17/blobelements/d/{did}/w/{wid}/e/{eid}/units",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateVEOPStandardContentPartMetadata",
+      "method": "POST",
+      "path": "/api/v17/metadata/standardcontent/d/{did}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateWVEMetadata",
+      "method": "POST",
+      "path": "/api/v17/metadata/d/{did}/{wvm}/{wvmid}/e/{eid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateWVEPMetadata",
+      "method": "POST",
+      "path": "/api/v17/metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/{iden}/{pid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateWVMetadata",
+      "method": "POST",
+      "path": "/api/v17/metadata/d/{did}/{wv}/{wvid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "updateWebhook",
+      "method": "POST",
+      "path": "/api/v17/webhooks/{webhookid}",
+      "route": "available",
+      "body_transport": "json-or-none",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "uploadBlobSubelement",
+      "method": "POST",
+      "path": "/api/v17/appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid}",
+      "route": "available",
+      "body_transport": "multipart",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "uploadFileCreateElement",
+      "method": "POST",
+      "path": "/api/v17/blobelements/d/{did}/w/{wid}",
+      "route": "available",
+      "body_transport": "multipart",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    },
+    {
+      "operation": "uploadFileUpdateElement",
+      "method": "POST",
+      "path": "/api/v17/blobelements/d/{did}/w/{wid}/e/{eid}",
+      "route": "available",
+      "body_transport": "multipart",
+      "verification": "schema resolution and route validation only; see live-validation.json for executed workflows"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Onshape Native Local Bridge",
+  "version": "0.2.1",
+  "description": "Connect a local command server to Onshape's own editor messages. No API keys or cookie export.",
+  "minimum_chrome_version": "120",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": ["storage", "scripting", "alarms", "webRequest"],
+  "host_permissions": ["https://cad.onshape.com/*", "http://127.0.0.1:8766/*"],
+  "background": {"service_worker": "worker.js", "type": "module"},
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Onshape Native Bridge",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "24": "icons/icon-24.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "64": "icons/icon-64.png"
+    }
+  },
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'none'; connect-src ws://127.0.0.1:8766 https://cad.onshape.com"}
+}

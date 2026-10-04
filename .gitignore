@@ -1,0 +1,8 @@
+.venv/
+.runtime/
+__pycache__/
+.pytest_cache/
+extension/local-config.js
+.env
+*.har
+*.egg-info/

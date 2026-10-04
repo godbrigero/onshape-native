@@ -1,0 +1,3763 @@
+{
+  "observed_date": "2026-10-03",
+  "build": "1.221.89963.13d10d36cb23",
+  "source": "Comet DevTools sanitized HAR; outgoing binary frames decoded offline with the serializer from that same export",
+  "records": [
+    {
+      "time": 1791072085.6207192,
+      "sequence": 0,
+      "command": {
+        "$type": "GBTClientFunctionality",
+        "clientType": 1,
+        "canBeFollowModeLeader": true,
+        "compatibilityLevel": 2,
+        "canUseWebRTC": false,
+        "canReportTessellationSettings": true,
+        "canOpenDocumentsWithTables": true,
+        "canAcceptAssemblyOutputData": false,
+        "canAcceptAssemblyPattern": false,
+        "canAcceptMeshes": false,
+        "canAcceptAssemblyUpdateOnDrag": true,
+        "canAcceptInContext": false,
+        "canReceiveLocalizedSelectionName": true,
+        "canBranchPartStudioDisplayData": true,
+        "canDecompressDisplayData": true,
+        "needsExtraneousDisplayData": false,
+        "canFetchMissingPartDisplayData": true,
+        "initialBodyDisplayDataMemoryLimitMB": 1024,
+        "disableUserTessellationOverrides": false,
+        "supportsFolders": false,
+        "acceptsAssemblyTree": true,
+        "worksWithoutBTAssembly": true,
+        "supportParametricReplicate": false,
+        "canPerformOutOfDateContextCheck": true,
+        "worksWithoutSeparateComputedData": true,
+        "allowsDecimalComma": true,
+        "canReportReferencedSketchFeaturesByAssemblies": true,
+        "canReceiveAssemblyTreeInstanceListProperties": true,
+        "supportsIconUriFormatV2": true,
+        "derivedAndPatternInstancesRemoved": false,
+        "debugFlags": "",
+        "canProcessInsertableDisplayData": false,
+        "computedDataFromComputedAssembly": true,
+        "supportsReferenceCSysFrames": true,
+        "disableGraphics": false
+      }
+    },
+    {
+      "time": 1791072085.6207342,
+      "sequence": 1,
+      "command": {
+        "$type": "ui.document.GBTUiDocumentReconnected",
+        "previousConnectionId": "",
+        "isManual": false,
+        "durationSinceDisconnectMillis": 0,
+        "numberOfReconnectAttempts": 0
+      }
+    },
+    {
+      "time": 1791072085.621668,
+      "sequence": 3,
+      "command": {
+        "$type": "ui.document.GBTUiSetViewingOnlyMode",
+        "viewingOnly": false
+      }
+    },
+    {
+      "time": 1791072085.6271622,
+      "sequence": 4,
+      "command": {
+        "$type": "ui.document.GBTUiAssemblyFeatureSpecsCall"
+      }
+    },
+    {
+      "time": 1791072085.6367443,
+      "sequence": 5,
+      "command": {
+        "$type": "ui.document.GBTUiGetNetworkMonitorSettings"
+      }
+    },
+    {
+      "time": 1791072085.6639392,
+      "sequence": 6,
+      "command": {
+        "$type": "ui.document.GBTUiElementChangeRegistration",
+        "elementIds": [
+          "63d552593a6632f2141ade43"
+        ],
+        "clientCache": {
+          "$type": "ui.document.GBTUiDocumentClientCacheState",
+          "elementStates": {},
+          "elementStateLists": {},
+          "tessellationSettings": {},
+          "elementWithConfigurationStateLists": {},
+          "tessellationWithConfigurationSettings": {},
+          "listFullElementIdToReferencedSketchFeatureIds": []
+        },
+        "mode": 0,
+        "editContext": {
+          "$type": "ui.document.GBTElementEditContext",
+          "elementId": "",
+          "documentId": "",
+          "contextWorkspaceId": "",
+          "contextConfiguration": {},
+          "editedConfiguration": {}
+        },
+        "configuration": "",
+        "sentFromClientTimestamp": "2026-10-04T00:01:25.663Z"
+      }
+    },
+    {
+      "time": 1791072085.679187,
+      "sequence": 7,
+      "command": {
+        "$type": "ui.GBTUiGetAnnotationSymbolSchemeCall"
+      }
+    },
+    {
+      "time": 1791072085.798072,
+      "sequence": 9,
+      "command": {
+        "$type": "ui.display.GBTUiGetGLDisplayDataCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "documentId": "",
+        "workspaceId": ""
+      }
+    },
+    {
+      "time": 1791072118.5719202,
+      "sequence": 19,
+      "command": {
+        "$type": "ui.GBTUiGetFeatureSettingsCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "featureKey": "::newSketch"
+      }
+    },
+    {
+      "time": 1791072118.6589391,
+      "sequence": 20,
+      "command": {
+        "$type": "ui.GBTUiUpdateEditRollbackState",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editRollbackState": 1
+      }
+    },
+    {
+      "time": 1791072118.6699452,
+      "sequence": 21,
+      "command": {
+        "$type": "ui.GBTUiAddFeatureCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "742tuNJMHVCrjycC1owUzUsq",
+        "editDescription": "Insert feature : ",
+        "newFeature": {
+          "$type": "diff.GBTTreeEditList",
+          "edits": [
+            {
+              "$type": "diff.GBTTreeEditInsertion",
+              "location": {
+                "$type": "tree.GBTInsertionLocation",
+                "nodeId": "MvUiCuMN5bA0C8ooo",
+                "before": true,
+                "childFieldIndex": -1
+              },
+              "newNode": {
+                "$type": "bsedit.GBTMSketch",
+                "nodeId": "ME0R7JJs7bU2wbpwu",
+                "sourceParseTreeNodes": {},
+                "hasUserCode": false,
+                "featureType": "newSketch",
+                "featureId": "FfwUCXpFKSHST0N_0",
+                "name": "Sketch",
+                "parameters": [
+                  {
+                    "$type": "bsedit.GBTMParameterQueryList",
+                    "nodeId": "blpiQ+VXwy85sgFo",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "sketchPlane",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "queries": [],
+                    "filter": null
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "x3EZXVm0AlthDNi7",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "disableImprinting",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  }
+                ],
+                "suppressed": false,
+                "namespace": "",
+                "suppressedParseNode": {
+                  "$type": "tree.GBTNodeReference",
+                  "nodeId": ""
+                },
+                "nameParseNode": {
+                  "$type": "tree.GBTNodeReference",
+                  "nodeId": ""
+                },
+                "subFeatures": [],
+                "returnAfterSubfeatures": false,
+                "suppressionState": null,
+                "parameterLibraries": [],
+                "entities": [],
+                "constraints": []
+              }
+            },
+            {
+              "$type": "diff.GBTTreeEditChange",
+              "oldNode": {
+                "$type": "tree.GBTNodeReference",
+                "nodeId": "blpiQ+VXwy85sgFo"
+              },
+              "newNode": {
+                "$type": "bsedit.GBTMParameterQueryList",
+                "nodeId": "blpiQ+VXwy85sgFo",
+                "sourceParseTreeNodes": {},
+                "hasUserCode": false,
+                "parameterId": "sketchPlane",
+                "libraryRelationType": 0,
+                "parameterName": "",
+                "queries": [
+                  {
+                    "$type": "bsedit.GBTMIndividualQuery",
+                    "nodeId": "F8FU979KfvBzcQb",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "deterministicIds": [
+                      "JDC"
+                    ],
+                    "queryString": ""
+                  }
+                ],
+                "filter": null
+              }
+            }
+          ]
+        },
+        "rollbackState": 1,
+        "useInitialName": false,
+        "inContextEntitiesToAdd": {
+          "$type": "ui.GBTUiExportInContextEntity",
+          "elementId": "",
+          "messageId": "",
+          "editDescription": "",
+          "inContextEntities": [],
+          "editingFeatureId": "",
+          "keepQueryOrder": false
+        }
+      }
+    },
+    {
+      "time": 1791072119.4062963,
+      "sequence": 22,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchGetConstraintGraphCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "supportsConsolidatedConstraints": true
+      }
+    },
+    {
+      "time": 1791072382.474919,
+      "sequence": 76,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchStartInferencing",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "draggedEntityId": "",
+        "externalDeterministicIds": [
+          "JDC",
+          "IB"
+        ],
+        "initialMode": 1,
+        "options": [],
+        "externalEntityOptions": {
+          "IB": [
+            0
+          ]
+        },
+        "localEntityIds": [],
+        "sequenceId": 1,
+        "inferenceSetId": "NDS8aWjnPqam",
+        "referencePoints": [],
+        "inferenceableBodyDeterministicIds": [],
+        "inferenceableFeatureIds": []
+      }
+    },
+    {
+      "time": 1791072382.7624562,
+      "sequence": 77,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchFinishInferencing",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "inferenceSetId": "NDS8aWjnPqam"
+      }
+    },
+    {
+      "time": 1791072382.9069302,
+      "sequence": 78,
+      "command": {
+        "$type": "ui.GBTUiCommit",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "Insert feature : Sketch 1",
+        "featureNodeId": "ME0R7JJs7bU2wbpwu",
+        "propertyNodeId": ""
+      }
+    },
+    {
+      "time": 1791072382.9072483,
+      "sequence": 79,
+      "command": {
+        "$type": "ui.GBTUiSetFeatureSettingsCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "featureKey": "::newSketch",
+        "featureSettings": {
+          "$type": "ui.GBTUiGetFeatureSettingsResponse",
+          "unitToParameterListMap": {
+            "none": [
+              {
+                "$type": "bsedit.GBTStoredParameterBoolean",
+                "parameterId": "disableImprinting",
+                "value": false
+              }
+            ]
+          }
+        },
+        "featureIdForParsedQueries": "FfwUCXpFKSHST0N_0"
+      }
+    },
+    {
+      "time": 1791072410.6945322,
+      "sequence": 86,
+      "command": {
+        "$type": "ui.GBTUiUpdateEditRollbackState",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editRollbackState": 1
+      }
+    },
+    {
+      "time": 1791072410.7216473,
+      "sequence": 87,
+      "command": {
+        "$type": "ui.GBTUiBeginEdit",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "nodeId": "ME0R7JJs7bU2wbpwu",
+        "rollbackState": 1
+      }
+    },
+    {
+      "time": 1791072410.901755,
+      "sequence": 88,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchGetConstraintGraphCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "supportsConsolidatedConstraints": true
+      }
+    },
+    {
+      "time": 1791072459.0146081,
+      "sequence": 98,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchStartInferencing",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "draggedEntityId": "",
+        "externalDeterministicIds": [
+          "JDC",
+          "IB"
+        ],
+        "initialMode": 1,
+        "options": [],
+        "externalEntityOptions": {
+          "IB": [
+            0
+          ]
+        },
+        "localEntityIds": [],
+        "sequenceId": 1,
+        "inferenceSetId": "0fqsxsXRU0mv",
+        "referencePoints": [],
+        "inferenceableBodyDeterministicIds": [],
+        "inferenceableFeatureIds": []
+      }
+    },
+    {
+      "time": 1791072469.0266721,
+      "sequence": 101,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchAddRectangleCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "Sketch : Insert rectangle",
+        "firstX": -0.0023922414984554052,
+        "firstY": 0.003556034527719021,
+        "oppositeX": 0.03148707002401352,
+        "oppositeY": 0.029418105259537697,
+        "isConstruction": false,
+        "inferenceSetId": "0fqsxsXRU0mv",
+        "firstInferenceId": "",
+        "oppositeInferenceId": "",
+        "sketchEntityId": "mBa8PQgrp10a",
+        "equalSides": false,
+        "secondInferenceSetId": ""
+      }
+    },
+    {
+      "time": 1791072469.0326192,
+      "sequence": 102,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchFinishInferencing",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "inferenceSetId": "0fqsxsXRU0mv"
+      }
+    },
+    {
+      "time": 1791072469.033569,
+      "sequence": 103,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchStartInferencing",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "draggedEntityId": "",
+        "externalDeterministicIds": [
+          "JDC",
+          "IB"
+        ],
+        "initialMode": 1,
+        "options": [],
+        "externalEntityOptions": {
+          "IB": [
+            0
+          ]
+        },
+        "localEntityIds": [],
+        "sequenceId": 1,
+        "inferenceSetId": "bauEb05sDFzl",
+        "referencePoints": [],
+        "inferenceableBodyDeterministicIds": [],
+        "inferenceableFeatureIds": []
+      }
+    },
+    {
+      "time": 1791072469.210216,
+      "sequence": 104,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchGetConstraintGraphCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "supportsConsolidatedConstraints": true
+      }
+    },
+    {
+      "time": 1791072475.5268772,
+      "sequence": 106,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchFinishInferencing",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "inferenceSetId": "bauEb05sDFzl"
+      }
+    },
+    {
+      "time": 1791072485.710112,
+      "sequence": 110,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchStartInferencing",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "draggedEntityId": "",
+        "externalDeterministicIds": [
+          "JDC",
+          "IB"
+        ],
+        "initialMode": 1,
+        "options": [],
+        "externalEntityOptions": {
+          "IB": [
+            0
+          ]
+        },
+        "localEntityIds": [],
+        "sequenceId": 1,
+        "inferenceSetId": "ibPITPVKwHcR",
+        "referencePoints": [],
+        "inferenceableBodyDeterministicIds": [],
+        "inferenceableFeatureIds": [
+          "FfwUCXpFKSHST0N_0"
+        ]
+      }
+    },
+    {
+      "time": 1791072490.9972732,
+      "sequence": 112,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchChangeInferencingMode",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "inferenceSetId": "ibPITPVKwHcR",
+        "mode": 4,
+        "referencePoints": [
+          0.03872844949364662,
+          -0.018426725640892982
+        ],
+        "sequenceId": 1
+      }
+    },
+    {
+      "time": 1791072497.2502742,
+      "sequence": 114,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchAddCircleCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "Sketch : Insert circle",
+        "centerX": 0.03872844949364662,
+        "centerY": -0.018426725640892982,
+        "perimeterX": 0.04907327890396118,
+        "perimeterY": -0.018426725640892982,
+        "isConstruction": false,
+        "inferenceSetId": "ibPITPVKwHcR",
+        "centerInferenceId": "",
+        "perimeterInferenceId": "",
+        "sketchEntityId": "NUcjpuQZshtr"
+      }
+    },
+    {
+      "time": 1791072497.252726,
+      "sequence": 115,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchFinishInferencing",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "inferenceSetId": "ibPITPVKwHcR"
+      }
+    },
+    {
+      "time": 1791072497.254486,
+      "sequence": 116,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchStartInferencing",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "draggedEntityId": "",
+        "externalDeterministicIds": [
+          "JDC",
+          "IB"
+        ],
+        "initialMode": 1,
+        "options": [],
+        "externalEntityOptions": {
+          "IB": [
+            0
+          ]
+        },
+        "localEntityIds": [],
+        "sequenceId": 1,
+        "inferenceSetId": "wEfZF31332UO",
+        "referencePoints": [],
+        "inferenceableBodyDeterministicIds": [],
+        "inferenceableFeatureIds": [
+          "FfwUCXpFKSHST0N_0"
+        ]
+      }
+    },
+    {
+      "time": 1791072497.4641192,
+      "sequence": 117,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchGetConstraintGraphCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "supportsConsolidatedConstraints": true
+      }
+    },
+    {
+      "time": 1791072502.9481843,
+      "sequence": 119,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchFinishInferencing",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "inferenceSetId": "wEfZF31332UO"
+      }
+    },
+    {
+      "time": 1791072507.3667321,
+      "sequence": 121,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchGetProjectionCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "objectToProject": "JFF",
+        "wantMidpoint": false,
+        "inContextEntity": null
+      }
+    },
+    {
+      "time": 1791072507.468826,
+      "sequence": 122,
+      "command": {
+        "$type": "ui.GBTUiMeasureCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "entityQueries": [
+          {
+            "$type": "bsedit.GBTMIndividualQuery",
+            "nodeId": "FZHQf2GmT5fAPBU",
+            "sourceParseTreeNodes": {},
+            "hasUserCode": false,
+            "deterministicIds": [
+              "JFF"
+            ],
+            "queryString": ""
+          }
+        ],
+        "mateConnectors": [],
+        "measurementSpaceToAssemblyTransform": {
+          "$type": "math.GBTBSMatrix",
+          "m00": 0,
+          "m01": 0,
+          "m02": 0,
+          "m03": 0,
+          "m10": 0,
+          "m11": 0,
+          "m12": 0,
+          "m13": 0,
+          "m20": 0,
+          "m21": 0,
+          "m22": 0,
+          "m23": 0
+        },
+        "data": {},
+        "subfeatureDefinitions": [],
+        "pointPositions": [],
+        "queryNodeIdToInContextNodeId": {},
+        "viewerId": "view6",
+        "measurementReference": null,
+        "customOriginCoordinateSystem": null,
+        "measurementContextNodeId": ""
+      }
+    },
+    {
+      "time": 1791072512.804207,
+      "sequence": 124,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchAddDimensionCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "Sketch : Add dimension",
+        "constraintType": 11,
+        "entityQueries": [],
+        "newPointSubfeatures": [],
+        "newPointSubfeatureIds": [],
+        "localEntityIds": [
+          "mBa8PQgrp10a.top"
+        ],
+        "subFeatureEntities": [],
+        "inContextEntities": [],
+        "direction": 0,
+        "labelX": 0.01545258704572916,
+        "labelY": 0.039245691150426865,
+        "hasLocation1": true,
+        "location1X": 0.0153232766315341,
+        "location1Y": 0.029547415673732758,
+        "hasLocation2": false,
+        "location2X": 0,
+        "location2Y": 0,
+        "radiusDisplay": 0,
+        "setDrivenDimensionIfOverConstrained": true,
+        "useUserSpecifiedQuadrant": false,
+        "dimensionId": "giqq31QVaBfR"
+      }
+    },
+    {
+      "time": 1791072512.948049,
+      "sequence": 125,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchGetConstraintGraphCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "supportsConsolidatedConstraints": true
+      }
+    },
+    {
+      "time": 1791072524.815972,
+      "sequence": 128,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchModifyDimensionCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "scSRiqCjSo1eh3rAHpICS6AP",
+        "editDescription": "Sketch : Edit dimension",
+        "dimensionId": "giqq31QVaBfR",
+        "modifiedParameter": {
+          "$type": "bsedit.GBTMParameterQuantity",
+          "nodeId": "MLZqBi4JcjdkkcXsU",
+          "sourceParseTreeNodes": {},
+          "hasUserCode": false,
+          "parameterId": "length",
+          "libraryRelationType": 0,
+          "parameterName": "",
+          "units": "centimeter",
+          "value": 4,
+          "expression": "40 mm",
+          "isInteger": false
+        },
+        "sequenceId": 1,
+        "findParameterWithId": "",
+        "setDriving": false,
+        "removedParameterId": ""
+      }
+    },
+    {
+      "time": 1791072524.9596922,
+      "sequence": 129,
+      "command": {
+        "$type": "ui.sketch.GBTUiSketchGetConstraintGraphCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "",
+        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "supportsConsolidatedConstraints": true
+      }
+    },
+    {
+      "time": 1791072532.4345891,
+      "sequence": 132,
+      "command": {
+        "$type": "ui.GBTUiCommit",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "Edit : Sketch 1",
+        "featureNodeId": "ME0R7JJs7bU2wbpwu",
+        "propertyNodeId": ""
+      }
+    },
+    {
+      "time": 1791072532.434822,
+      "sequence": 133,
+      "command": {
+        "$type": "ui.GBTUiSetFeatureSettingsCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "featureKey": "::newSketch",
+        "featureSettings": {
+          "$type": "ui.GBTUiGetFeatureSettingsResponse",
+          "unitToParameterListMap": {
+            "none": [
+              {
+                "$type": "bsedit.GBTStoredParameterBoolean",
+                "parameterId": "disableImprinting",
+                "value": false
+              }
+            ]
+          }
+        },
+        "featureIdForParsedQueries": "FfwUCXpFKSHST0N_0"
+      }
+    },
+    {
+      "time": 1791072542.1855972,
+      "sequence": 136,
+      "command": {
+        "$type": "partstudiofolders.GBTUiCreateFolder",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "Create folder : Research features",
+        "begin": {
+          "$type": "tree.GBTInsertionLocation",
+          "nodeId": "MvUiCuMN5bA0C8ooo",
+          "before": true,
+          "childFieldIndex": -1
+        },
+        "end": null,
+        "folderName": "Research features"
+      }
+    },
+    {
+      "time": 1791072563.676783,
+      "sequence": 141,
+      "command": {
+        "$type": "ui.GBTUiRenameFeature",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "1DVQxu2ULnfuTci0AdOcBcgQ",
+        "editDescription": "Rename : Native samples",
+        "featureChange": {
+          "$type": "diff.GBTTreeEditChangeField",
+          "node": {
+            "$type": "tree.GBTNodeReference",
+            "nodeId": "MRnel1+a9woMucV38"
+          },
+          "fieldIndex": 13139968,
+          "newValue": {
+            "$type": "tree.GBTFieldValueString",
+            "value": "Native samples"
+          }
+        },
+        "featureId": "MRnel1+a9woMucV38",
+        "isDefaultFeature": false,
+        "isAuxiliaryDataFeature": false
+      }
+    },
+    {
+      "time": 1791072581.13749,
+      "sequence": 146,
+      "command": {
+        "$type": "partstudiofolders.GBTUiCreateFolder",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "Create folder : Sketch group",
+        "begin": {
+          "$type": "tree.GBTInsertionLocation",
+          "nodeId": "ME0R7JJs7bU2wbpwu",
+          "before": true,
+          "childFieldIndex": -1
+        },
+        "end": {
+          "$type": "tree.GBTInsertionLocation",
+          "nodeId": "ME0R7JJs7bU2wbpwu",
+          "before": false,
+          "childFieldIndex": -1
+        },
+        "folderName": "Sketch group"
+      }
+    },
+    {
+      "time": 1791074449.2387621,
+      "sequence": 497,
+      "command": {
+        "$type": "ui.GBTUiGetFeatureSettingsCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "featureKey": "::extrude"
+      }
+    },
+    {
+      "time": 1791074449.335334,
+      "sequence": 498,
+      "command": {
+        "$type": "ui.GBTUiUpdateEditRollbackState",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editRollbackState": 1
+      }
+    },
+    {
+      "time": 1791074449.343815,
+      "sequence": 499,
+      "command": {
+        "$type": "ui.GBTUiAddFeatureCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "xip3Z8zXWR4Gpzv5Ab882w8T",
+        "editDescription": "Insert feature : ",
+        "newFeature": {
+          "$type": "diff.GBTTreeEditList",
+          "edits": [
+            {
+              "$type": "diff.GBTTreeEditInsertion",
+              "location": {
+                "$type": "tree.GBTInsertionLocation",
+                "nodeId": "MvUiCuMN5bA0C8ooo",
+                "before": true,
+                "childFieldIndex": -1
+              },
+              "newNode": {
+                "$type": "bsedit.GBTMFeature",
+                "nodeId": "MGrBgXzr5E5kbc4qt",
+                "sourceParseTreeNodes": {},
+                "hasUserCode": false,
+                "featureType": "extrude",
+                "featureId": "FnfSCGLhbFqn380_0",
+                "name": "Extrude",
+                "parameters": [
+                  {
+                    "$type": "bsedit.GBTMParameterEnum",
+                    "nodeId": "uWB+AC2AqSptjfNb",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "domain",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "enumName": "OperationDomain",
+                    "value": "MODEL",
+                    "namespace": ""
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterEnum",
+                    "nodeId": "T1wygFCaFg38xnTo",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "bodyType",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "enumName": "ExtendedToolBodyType",
+                    "value": "SOLID",
+                    "namespace": ""
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterEnum",
+                    "nodeId": "2VEbmq4EaFfFu6as",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "operationType",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "enumName": "NewBodyOperationType",
+                    "value": "NEW",
+                    "namespace": ""
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterEnum",
+                    "nodeId": "3IPWBalAHycQ58fD",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "surfaceOperationType",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "enumName": "NewSurfaceOperationType",
+                    "value": "NEW",
+                    "namespace": ""
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterEnum",
+                    "nodeId": "4ndSACvQ9I7i91AU",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "flatOperationType",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "enumName": "FlatOperationType",
+                    "value": "REMOVE",
+                    "namespace": ""
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQueryList",
+                    "nodeId": "KzzMeUKamLllQlaZ",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "entities",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "queries": [],
+                    "filter": null
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQueryList",
+                    "nodeId": "n0zraoCJUE0kJHyQ",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "surfaceEntities",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "queries": [],
+                    "filter": null
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQueryList",
+                    "nodeId": "T0i132+KmzfMOlqM",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "wallShape",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "queries": [],
+                    "filter": null
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "miiSDfKV9OtNCtII",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "midplane",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQuantity",
+                    "nodeId": "UyFYMLJkL65bQPUh",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "thickness1",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "units": "centimeter",
+                    "value": 0.5,
+                    "expression": "0.5 cm",
+                    "isInteger": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "Ti+LYF87W87uLzHC",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "flipWall",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQuantity",
+                    "nodeId": "AbZ2DAcjCAdTMjOe",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "thickness2",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "units": "centimeter",
+                    "value": 0,
+                    "expression": "0 cm",
+                    "isInteger": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQuantity",
+                    "nodeId": "oz7rPnscR9VEehjq",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "thickness",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "units": "centimeter",
+                    "value": 0.5,
+                    "expression": "0.5 cm",
+                    "isInteger": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterEnum",
+                    "nodeId": "Y8M4euEocowzQypH",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "endBound",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "enumName": "BoundingType",
+                    "value": "BLIND",
+                    "namespace": ""
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "xj4eZ6ZmfAFgGJBb",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "oppositeDirection",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQuantity",
+                    "nodeId": "KPgllSzxDuu+R4AT",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "depth",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "units": "centimeter",
+                    "value": 2.5,
+                    "expression": "2.5 cm",
+                    "isInteger": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQueryList",
+                    "nodeId": "NKPpjTIGsC/ny3Hh",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "endBoundEntityFace",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "queries": [],
+                    "filter": null
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQueryList",
+                    "nodeId": "BtZDE5Lo6xC8VsTq",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "endBoundEntityBody",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "queries": [],
+                    "filter": null
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQueryList",
+                    "nodeId": "aAjbSyhqVarE6AS7",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "endBoundEntityVertex",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "queries": [],
+                    "filter": null
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "Pn7KFiDtSn0WnIif",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "hasOffset",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQuantity",
+                    "nodeId": "Dd3wDdbS9so85ykj",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "offsetDistance",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "units": "centimeter",
+                    "value": 2.5,
+                    "expression": "2.5 cm",
+                    "isInteger": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "xsbKg3ws0f5Vp+2f",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "offsetOppositeDirection",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "7ShhMtux2yPmMFMZ",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "hasExtrudeDirection",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQueryList",
+                    "nodeId": "zcZ9sCD+y8xR5ErY",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "extrudeDirection",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "queries": [],
+                    "filter": null
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "zqqkQs6gzCU6lPU3",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "startOffset",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterEnum",
+                    "nodeId": "TRP94hEeHUe2qhut",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "startOffsetBound",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "enumName": "StartOffsetType",
+                    "value": "BLIND",
+                    "namespace": ""
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQuantity",
+                    "nodeId": "yUYmPfKWAZl2e7F9",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "startOffsetDistance",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "units": "centimeter",
+                    "value": 2.5,
+                    "expression": "2.5 cm",
+                    "isInteger": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "9iSGnZT/Enq77XHm",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "startOffsetOppositeDirection",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQueryList",
+                    "nodeId": "s3dNZvN4wi29O1wT",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "startOffsetEntity",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "queries": [],
+                    "filter": null
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "5/gPLMm5gpZQrDQi",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "symmetric",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "LOUZjAyGhgM1taxP",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "hasDraft",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQuantity",
+                    "nodeId": "L/KiEWXEyfEP/18N",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "draftAngle",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "units": "degree",
+                    "value": 3,
+                    "expression": "3 deg",
+                    "isInteger": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "Ph8GWjXew0vdv6BE",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "draftPullDirection",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "TEwtJCghuEpHvMic",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "hasSecondDirection",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterEnum",
+                    "nodeId": "UZduwEG0LdPNwcbv",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "secondDirectionBound",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "enumName": "BoundingType",
+                    "value": "BLIND",
+                    "namespace": ""
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "qCLQG6tfnYLHiagQ",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "secondDirectionOppositeDirection",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": true
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQuantity",
+                    "nodeId": "JUbQokyDAKngAm+K",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "secondDirectionDepth",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "units": "centimeter",
+                    "value": 2.5,
+                    "expression": "2.5 cm",
+                    "isInteger": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQueryList",
+                    "nodeId": "7Gt2Ip0xViRl9B7H",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "secondDirectionBoundEntityFace",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "queries": [],
+                    "filter": null
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQueryList",
+                    "nodeId": "0sqXwLm6qrxH/nJs",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "secondDirectionBoundEntityBody",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "queries": [],
+                    "filter": null
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQueryList",
+                    "nodeId": "ZiWhk7pcFx5rJym3",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "secondDirectionBoundEntityVertex",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "queries": [],
+                    "filter": null
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "j7jkVlRvrH1A33S/",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "hasSecondDirectionOffset",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQuantity",
+                    "nodeId": "eBTuW/BRZRc/4pLc",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "secondDirectionOffsetDistance",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "units": "centimeter",
+                    "value": 2.5,
+                    "expression": "2.5 cm",
+                    "isInteger": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "cELY641Uxd14oHlt",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "secondDirectionOffsetOppositeDirection",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "9ikZTDX6VDyzJ58f",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "hasSecondDirectionDraft",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQuantity",
+                    "nodeId": "eTecT6NtBNivKZgp",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "secondDirectionDraftAngle",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "units": "degree",
+                    "value": 3,
+                    "expression": "3 deg",
+                    "isInteger": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "6n58eX/WyvcWgQx4",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "secondDirectionDraftPullDirection",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "+ky2UATiULkYMaOm",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "defaultScope",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": false
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQueryList",
+                    "nodeId": "iM8/V7xhgiu/DF/l",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "booleanScope",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "queries": [],
+                    "filter": null
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterBoolean",
+                    "nodeId": "rzgmAcWKHCmKYTrX",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "defaultSurfaceScope",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "value": true
+                  },
+                  {
+                    "$type": "bsedit.GBTMParameterQueryList",
+                    "nodeId": "aYzE3R83qLhF/b2v",
+                    "sourceParseTreeNodes": {},
+                    "hasUserCode": false,
+                    "parameterId": "booleanSurfaceScope",
+                    "libraryRelationType": 0,
+                    "parameterName": "",
+                    "queries": [],
+                    "filter": null
+                  }
+                ],
+                "suppressed": false,
+                "namespace": "",
+                "suppressedParseNode": {
+                  "$type": "tree.GBTNodeReference",
+                  "nodeId": ""
+                },
+                "nameParseNode": {
+                  "$type": "tree.GBTNodeReference",
+                  "nodeId": ""
+                },
+                "subFeatures": [],
+                "returnAfterSubfeatures": false,
+                "suppressionState": null,
+                "parameterLibraries": []
+              }
+            }
+          ]
+        },
+        "rollbackState": 1,
+        "useInitialName": false,
+        "inContextEntitiesToAdd": {
+          "$type": "ui.GBTUiExportInContextEntity",
+          "elementId": "",
+          "messageId": "",
+          "editDescription": "",
+          "inContextEntities": [],
+          "editingFeatureId": "",
+          "keepQueryOrder": false
+        }
+      }
+    },
+    {
+      "time": 1791074458.610618,
+      "sequence": 502,
+      "command": {
+        "$type": "ui.GBTUiSpecifyFeature",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "DarhNtw7WcnRqBpwdZvQV8QN",
+        "editDescription": "Add entity : Faces and sketch regions to extrude",
+        "featureChange": {
+          "$type": "diff.GBTTreeEditInsertion",
+          "location": {
+            "$type": "tree.GBTInsertionLocation",
+            "nodeId": "KzzMeUKamLllQlaZ",
+            "before": false,
+            "childFieldIndex": 606208
+          },
+          "newNode": {
+            "$type": "bsedit.GBTMIndividualQuery",
+            "nodeId": "FEbZWAADHw4fSly",
+            "sourceParseTreeNodes": {},
+            "hasUserCode": false,
+            "deterministicIds": [
+              "JGC"
+            ],
+            "queryString": ""
+          }
+        },
+        "sequenceId": 0,
+        "featureNodeId": "MGrBgXzr5E5kbc4qt",
+        "inContextEntitiesToAdd": null,
+        "selectionMicroversion": {
+          "$type": "document.GBTMicroversionId",
+          "theId": "f54270fb8b5d3b265bc509c1"
+        },
+        "propagateChanges": false,
+        "propagationToSkip": []
+      }
+    },
+    {
+      "time": 1791074459.182495,
+      "sequence": 503,
+      "command": {
+        "$type": "ui.GBTUiSpecifyFeature",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "NCCQDs3El4IRZ2aSNH9YfyFz",
+        "editDescription": "Edit parameter : Depth",
+        "featureChange": {
+          "$type": "diff.GBTTreeEditChange",
+          "oldNode": {
+            "$type": "tree.GBTNodeReference",
+            "nodeId": "KPgllSzxDuu+R4AT"
+          },
+          "newNode": {
+            "$type": "bsedit.GBTMParameterQuantity",
+            "nodeId": "KPgllSzxDuu+R4AT",
+            "sourceParseTreeNodes": {},
+            "hasUserCode": false,
+            "parameterId": "depth",
+            "libraryRelationType": 0,
+            "parameterName": "",
+            "units": "centimeter",
+            "value": 1.2,
+            "expression": "12 mm",
+            "isInteger": false
+          }
+        },
+        "sequenceId": 3,
+        "featureNodeId": "MGrBgXzr5E5kbc4qt",
+        "inContextEntitiesToAdd": null,
+        "selectionMicroversion": {
+          "$type": "document.GBTMicroversionId",
+          "theId": "78b8067e891eb343e9780ff8"
+        },
+        "propagateChanges": false,
+        "propagationToSkip": []
+      }
+    },
+    {
+      "time": 1791074459.2267292,
+      "sequence": 504,
+      "command": {
+        "$type": "ui.GBTUiSpecifyFeature",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "ryQmTNdiVcYnBr4KHVSvzG9e",
+        "editDescription": "Edit parameter : Symmetric",
+        "featureChange": {
+          "$type": "diff.GBTTreeEditChange",
+          "oldNode": {
+            "$type": "tree.GBTNodeReference",
+            "nodeId": "5/gPLMm5gpZQrDQi"
+          },
+          "newNode": {
+            "$type": "bsedit.GBTMParameterBoolean",
+            "nodeId": "5/gPLMm5gpZQrDQi",
+            "sourceParseTreeNodes": {},
+            "hasUserCode": false,
+            "parameterId": "symmetric",
+            "libraryRelationType": 0,
+            "parameterName": "",
+            "value": true
+          }
+        },
+        "sequenceId": 3,
+        "featureNodeId": "MGrBgXzr5E5kbc4qt",
+        "inContextEntitiesToAdd": null,
+        "selectionMicroversion": {
+          "$type": "document.GBTMicroversionId",
+          "theId": "78b8067e891eb343e9780ff8"
+        },
+        "propagateChanges": false,
+        "propagationToSkip": []
+      }
+    },
+    {
+      "time": 1791074471.5983522,
+      "sequence": 508,
+      "command": {
+        "$type": "ui.GBTUiCommit",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "YBPwq6sqxDfNsv3u3MihUYmD",
+        "editDescription": "Insert feature : Extrude 1",
+        "featureNodeId": "MGrBgXzr5E5kbc4qt",
+        "propertyNodeId": ""
+      }
+    },
+    {
+      "time": 1791074471.6007142,
+      "sequence": 509,
+      "command": {
+        "$type": "ui.GBTUiSetFeatureSettingsCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "featureKey": "::extrude",
+        "featureSettings": {
+          "$type": "ui.GBTUiGetFeatureSettingsResponse",
+          "unitToParameterListMap": {
+            "none": [
+              {
+                "$type": "bsedit.GBTStoredParameterEnum",
+                "parameterId": "bodyType",
+                "value": "SOLID"
+              }
+            ]
+          }
+        },
+        "featureIdForParsedQueries": "FnfSCGLhbFqn380_0"
+      }
+    },
+    {
+      "time": 1791074526.6258821,
+      "sequence": 521,
+      "command": {
+        "$type": "ui.GBTUiBatchPartPropertyChange",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "editDescription": "Assign material : Part 1",
+        "usage": 0,
+        "partPropertyCalls": [
+          {
+            "$type": "ui.GBTUiPartProperty",
+            "elementId": "63d552593a6632f2141ade43",
+            "messageId": "",
+            "editDescription": "",
+            "usage": 0,
+            "partQuery": {
+              "$type": "belscript.value.GBTBSTransientQuery",
+              "nodeId": "zqT46gxGP1ZaIR7a",
+              "transientId": [
+                "JHD"
+              ]
+            },
+            "name": "",
+            "isHidden": false,
+            "appearance": {
+              "$type": "graphics.GBTGraphicsAppearance",
+              "color": {},
+              "opacity": 255,
+              "type": 0
+            },
+            "customProperties": {
+              "$type": "graphics.GBTPartCustomProperties",
+              "properties": {}
+            },
+            "material": {
+              "$type": "graphics.GBTPartMaterial",
+              "id": "Aluminum - 6061",
+              "libraryName": "Onshape Material Library",
+              "properties": {
+                "COMPRESSIVE_YIELD_STRENGTH": {
+                  "$type": "graphics.GBTPartMaterialProperty",
+                  "name": "COMPRESSIVE_YIELD_STRENGTH",
+                  "value": "0",
+                  "units": "Pa",
+                  "displayName": "Compressive Yield Strength",
+                  "description": "Compressive Yield Strength",
+                  "category": "Physical",
+                  "type": "REAL"
+                },
+                "DENS": {
+                  "$type": "graphics.GBTPartMaterialProperty",
+                  "name": "DENS",
+                  "value": "2720",
+                  "units": "kg/m^3",
+                  "displayName": "Density",
+                  "description": "Density",
+                  "category": "Physical",
+                  "type": "REAL"
+                },
+                "POISSONS_RATIO": {
+                  "$type": "graphics.GBTPartMaterialProperty",
+                  "name": "POISSONS_RATIO",
+                  "value": "0.35",
+                  "units": "",
+                  "displayName": "Poisson's Ratio",
+                  "description": "Poisson's Ratio",
+                  "category": "Physical",
+                  "type": "REAL"
+                },
+                "TENSILE_YIELD_STRENGTH": {
+                  "$type": "graphics.GBTPartMaterialProperty",
+                  "name": "TENSILE_YIELD_STRENGTH",
+                  "value": "241000000",
+                  "units": "Pa",
+                  "displayName": "Tensile Yield Strength",
+                  "description": "Tensile Yield Strength",
+                  "category": "Physical",
+                  "type": "REAL"
+                },
+                "ULTIMATE_COMPRESSIVE_STRENGTH": {
+                  "$type": "graphics.GBTPartMaterialProperty",
+                  "name": "ULTIMATE_COMPRESSIVE_STRENGTH",
+                  "value": "0",
+                  "units": "Pa",
+                  "displayName": "Ultimate Compressive Strength",
+                  "description": "Ultimate Compressive Strength",
+                  "category": "Physical",
+                  "type": "REAL"
+                },
+                "ULTIMATE_TENSILE_STRENGTH": {
+                  "$type": "graphics.GBTPartMaterialProperty",
+                  "name": "ULTIMATE_TENSILE_STRENGTH",
+                  "value": "290000000",
+                  "units": "Pa",
+                  "displayName": "Ultimate Tensile Strength",
+                  "description": "Ultimate Tensile Strength",
+                  "category": "Physical",
+                  "type": "REAL"
+                },
+                "YOUNGS_MODULUS": {
+                  "$type": "graphics.GBTPartMaterialProperty",
+                  "name": "YOUNGS_MODULUS",
+                  "value": "68900000000",
+                  "units": "Pa",
+                  "displayName": "Young's Modulus",
+                  "description": "Young's Modulus",
+                  "category": "Physical",
+                  "type": "REAL"
+                }
+              },
+              "name": "Aluminum - 6061",
+              "libraryReference": {
+                "$type": "document.GBTExternalReference",
+                "nodeId": "VvUMX30hcyWCRjP2",
+                "fullElementId": {
+                  "$type": "document.GBTFullElementIdWithDocument",
+                  "elementId": "6bbab304a1f64e7d640a2d7d",
+                  "microversionId": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "b722224aa714b6346c7e8278"
+                  },
+                  "microversionIdAndConfiguration": {
+                    "$type": "document.GBTMicroversionIdAndConfiguration",
+                    "microversion": {
+                      "$type": "document.GBTMicroversionId",
+                      "theId": "b722224aa714b6346c7e8278"
+                    },
+                    "configurationParameterIdToValue": {}
+                  },
+                  "documentId": "2718281828459eacfeeda11f"
+                },
+                "documentVersionId": "7e0317fdf97739c9457998f0"
+              },
+              "version": 1
+            },
+            "visibility": 2,
+            "partIdentity": {
+              "$type": "partstudio.GBTPSOIdentity",
+              "theId": ""
+            },
+            "faultVisibility": 0
+          }
+        ]
+      }
+    },
+    {
+      "time": 1791074545.7718573,
+      "sequence": 526,
+      "command": {
+        "$type": "ui.GBTUiGetQueryDataCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "",
+        "queries": [
+          {
+            "$type": "bsedit.GBTMIndividualQuery",
+            "nodeId": "FlpCLgzd5v6Y6sD",
+            "sourceParseTreeNodes": {},
+            "hasUserCode": false,
+            "deterministicIds": [
+              "JHD"
+            ],
+            "queryString": ""
+          }
+        ],
+        "qFunction": "",
+        "additionalArguments": [],
+        "queryNodeIdToInContextNodeId": {}
+      }
+    },
+    {
+      "time": 1791074545.7766593,
+      "sequence": 527,
+      "command": {
+        "$type": "ui.GBTUiMassPropCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "bwwDVUP6ZhubPI0raSd9VMSy",
+        "entityIds": [
+          "JHD"
+        ],
+        "densities": [],
+        "useDensities": true,
+        "userMassProperties": [
+          -1
+        ],
+        "userCentersOfMass": [
+          null
+        ],
+        "userInertia": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "computeCoplanarInputCSys": false,
+        "geometryData": []
+      }
+    },
+    {
+      "time": 1791074601.128781,
+      "sequence": 539,
+      "command": {
+        "$type": "ui.GBTUiMassPropCall",
+        "elementId": "63d552593a6632f2141ade43",
+        "messageId": "c07213bc-f886-4496-94b3-ce3350f12832",
+        "entityIds": [
+          "JHD"
+        ],
+        "densities": [],
+        "useDensities": true,
+        "userMassProperties": [
+          -1
+        ],
+        "userCentersOfMass": [
+          null
+        ],
+        "userInertia": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "computeCoplanarInputCSys": false,
+        "geometryData": []
+      }
+    },
+    {
+      "time": 1791074609.7813141,
+      "sequence": 541,
+      "command": {
+        "$type": "ui.document.GBTUiElementChangeRegistration",
+        "elementIds": [
+          "818974e8193c545bee3ef6d6"
+        ],
+        "clientCache": {
+          "$type": "ui.document.GBTUiDocumentClientCacheState",
+          "elementStates": {},
+          "elementStateLists": {
+            "63d552593a6632f2141ade43": {
+              "FEATURE_DATA": [
+                {
+                  "$type": "document.GBTMicroversionId",
+                  "theId": "8eaae09a8808d833230d9732"
+                }
+              ]
+            }
+          },
+          "tessellationSettings": {},
+          "elementWithConfigurationStateLists": {
+            "63d552593a6632f2141ade43": {
+              "COMPUTED_DATA": [
+                {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "8eaae09a8808d833230d9732"
+                  },
+                  "configurationParameterIdToValue": {}
+                }
+              ],
+              "DISPLAY_DATA": [
+                {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "8eaae09a8808d833230d9732"
+                  },
+                  "configurationParameterIdToValue": {}
+                }
+              ],
+              "MODEL_DEFINITION": [
+                {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": ""
+                  },
+                  "configurationParameterIdToValue": {}
+                },
+                {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "cb979e21c1dc5a4784563250"
+                  },
+                  "configurationParameterIdToValue": {}
+                },
+                {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "3932a729ee342056e2b7722c"
+                  },
+                  "configurationParameterIdToValue": {}
+                },
+                {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "c38218012ced8f0f996d7659"
+                  },
+                  "configurationParameterIdToValue": {}
+                },
+                {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "749e9f758fb250a5b43a2a2c"
+                  },
+                  "configurationParameterIdToValue": {}
+                },
+                {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "ce0c9c78b51e52d70955ba10"
+                  },
+                  "configurationParameterIdToValue": {}
+                },
+                {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "434a52105eaea327d27777f7"
+                  },
+                  "configurationParameterIdToValue": {}
+                },
+                {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "04cf77b827559dd8d84cb000"
+                  },
+                  "configurationParameterIdToValue": {}
+                },
+                {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "bec21234586c23b58ffd3ee0"
+                  },
+                  "configurationParameterIdToValue": {}
+                },
+                {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "1dfe4b83385792c94545cc2d"
+                  },
+                  "configurationParameterIdToValue": {}
+                },
+                {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "59644de8e6e4f39fbf5e537b"
+                  },
+                  "configurationParameterIdToValue": {}
+                },
+                {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "1c4692d2b1f856373175452b"
+                  },
+                  "configurationParameterIdToValue": {}
+                },
+                {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "a2e99ffa50212cd5572169a0"
+                  },
+                  "configurationParameterIdToValue": {}
+                },
+                {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "8800366842a69c7d09269f63"
+                  },
+                  "configurationParameterIdToValue": {}
+                }
+              ]
+            }
+          },
+          "tessellationWithConfigurationSettings": {
+            "63d552593a6632f2141ade43": [
+              {
+                "$type": "ui.document.GBTMicroversionIdAndConfigurationTessellationSetting",
+                "microversionIdAndConfiguration": {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "8eaae09a8808d833230d9732"
+                  },
+                  "configurationParameterIdToValue": {}
+                },
+                "tessellationSettings": {
+                  "JBD": [],
+                  "JCD": [],
+                  "JDD": [],
+                  "JED": [],
+                  "JFD": [],
+                  "JFH": [],
+                  "JFL": [],
+                  "JFP": [],
+                  "JFT": [],
+                  "JFX": [],
+                  "JGD": [],
+                  "JGH": [],
+                  "JHD": [
+                    2
+                  ]
+                },
+                "partTriangleCounts": {},
+                "userTessellationSetting": {},
+                "isClosedCompositeConstituent": {}
+              }
+            ]
+          },
+          "listFullElementIdToReferencedSketchFeatureIds": [
+            {
+              "$type": "ui.document.GBTFullElementIdToReferencedSketchFeatures",
+              "fullElementId": {
+                "$type": "document.GBTFullElementId",
+                "elementId": "63d552593a6632f2141ade43",
+                "microversionId": {
+                  "$type": "document.GBTMicroversionId",
+                  "theId": "8eaae09a8808d833230d9732"
+                },
+                "microversionIdAndConfiguration": {
+                  "$type": "document.GBTMicroversionIdAndConfiguration",
+                  "microversion": {
+                    "$type": "document.GBTMicroversionId",
+                    "theId": "8eaae09a8808d833230d9732"
+                  },
+                  "configurationParameterIdToValue": {}
+                }
+              },
+              "referencedSketchFeatureIds": [
+                "FfwUCXpFKSHST0N_0"
+              ]
+            }
+          ]
+        },
+        "mode": 0,
+        "editContext": {
+          "$type": "ui.document.GBTElementEditContext",
+          "elementId": "",
+          "documentId": "",
+          "contextWorkspaceId": "",
+          "contextConfiguration": {},
+          "editedConfiguration": {}
+        },
+        "configuration": "",
+        "sentFromClientTimestamp": "2026-10-04T00:43:29.780Z"
+      }
+    },
+    {
+      "time": 1791074609.7882452,
+      "sequence": 542,
+      "command": {
+        "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "",
+        "requestId": "RL3JTGah+/1rw53z",
+        "itemType": 5,
+        "parentOccurrence": null,
+        "nodeId": ""
+      }
+    },
+    {
+      "time": 1791074609.8623261,
+      "sequence": 544,
+      "command": {
+        "$type": "ui.display.GBTUiGetGLDisplayDataCall",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "documentId": "",
+        "workspaceId": ""
+      }
+    },
+    {
+      "time": 1791074609.9062703,
+      "sequence": 546,
+      "command": {
+        "$type": "ui.assembly.GBTUiUpdateSimulationState",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "isModal": false,
+        "isLive": false,
+        "runContactAnalysis": false
+      }
+    },
+    {
+      "time": 1791074617.607031,
+      "sequence": 550,
+      "command": {
+        "$type": "ui.assembly.GBTUiBeginOperation",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "operationName": "Insert Instances",
+        "operationId": "0e6Ck+Dey6zV5ycf",
+        "operationType": 0
+      }
+    },
+    {
+      "time": 1791074617.744414,
+      "sequence": 551,
+      "command": {
+        "$type": "ui.document.GBTUiQueryInsertables",
+        "targetElementId": "818974e8193c545bee3ef6d6",
+        "filter": {
+          "$type": "bsedit.GBTInsertablesFilter",
+          "includeParts": true,
+          "includeSurfaces": true,
+          "includeSketches": true,
+          "includeReferenceFeatures": false,
+          "includeAssemblies": false,
+          "includeFeatureStudios": false,
+          "includeBlobs": false,
+          "allowedBlobMimeTypes": [],
+          "excludeNewerFSVersions": false,
+          "maxFeatureScriptVersion": 0,
+          "includePartStudios": true,
+          "includeFeatures": false,
+          "includeMeshes": true,
+          "includeWires": false,
+          "includeFlattenedBodies": true,
+          "includeApplications": false,
+          "allowedApplicationMimeTypes": [],
+          "includeCompositeParts": true,
+          "includeFSTables": false,
+          "includeFSComputedPartPropertyFunctions": false,
+          "includeVariables": false,
+          "includeVariableStudios": false,
+          "allowedBlobExtensions": [],
+          "includeSketchesOnFlat": true,
+          "isObsoletion": false,
+          "onlyCustomStandardContent": false
+        },
+        "sourceElementId": "",
+        "documentMicroversionId": null
+      }
+    },
+    {
+      "time": 1791074617.7445302,
+      "sequence": 552,
+      "command": {
+        "$type": "ui.document.GBTUiQueryInsertables",
+        "targetElementId": "818974e8193c545bee3ef6d6",
+        "filter": {
+          "$type": "bsedit.GBTInsertablesFilter",
+          "includeParts": false,
+          "includeSurfaces": false,
+          "includeSketches": false,
+          "includeReferenceFeatures": false,
+          "includeAssemblies": true,
+          "includeFeatureStudios": false,
+          "includeBlobs": false,
+          "allowedBlobMimeTypes": [],
+          "excludeNewerFSVersions": false,
+          "maxFeatureScriptVersion": 0,
+          "includePartStudios": false,
+          "includeFeatures": false,
+          "includeMeshes": false,
+          "includeWires": false,
+          "includeFlattenedBodies": false,
+          "includeApplications": false,
+          "allowedApplicationMimeTypes": [],
+          "includeCompositeParts": false,
+          "includeFSTables": false,
+          "includeFSComputedPartPropertyFunctions": false,
+          "includeVariables": false,
+          "includeVariableStudios": false,
+          "allowedBlobExtensions": [],
+          "includeSketchesOnFlat": false,
+          "isObsoletion": false,
+          "onlyCustomStandardContent": false
+        },
+        "sourceElementId": "",
+        "documentMicroversionId": null
+      }
+    },
+    {
+      "time": 1791074625.793414,
+      "sequence": 555,
+      "command": {
+        "$type": "ui.assembly.GBTUiAssemblyInsertOccurrence",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "Insert : Part 1",
+        "insertables": [
+          {
+            "$type": "ui.document.GBTUiInsertablePart",
+            "documentId": "8d348afffdb8032e15ba2ac8",
+            "element": {
+              "$type": "document.GBTDocumentElement",
+              "nodeId": "pp09WdnIIQsoUfeX",
+              "elementId": "63d552593a6632f2141ade43",
+              "microversion": {
+                "$type": "document.GBTMicroversionId",
+                "theId": "8eaae09a8808d833230d9732"
+              },
+              "type": 0,
+              "name": "Part Studio 1",
+              "dataType": "onshape/partstudio"
+            },
+            "thumbnailUri": "/api/thumbnails/b2d11bdb54b4bdfb7ccf9a634e69232b80156648",
+            "children": [],
+            "versionName": "",
+            "documentVersionId": "",
+            "disableReason": 0,
+            "partNumber": "",
+            "revision": "",
+            "revisionId": "",
+            "configurationParameterValues": [],
+            "configurationId": "",
+            "insertableQuery": "query=qCompressed(1.0,\"&1bb$eJx9UE1zgjAQ/TPbYx2CYPEIISijgiZ0Wk9MYqJkqgQhjvXfF2Sml870uPt239dL5MPuptrHxmfIBak7fhH6dONWmzrmlodo4/5FikejGJpCTtNFmoXrMiZbksUkw3s2B9Pqk675uQs97PTEHFRttX0MXxEH8jswD0i8IExApTtr2nEZAKYkLNI86wHTqPYpmcrIhVSGiCE0mUFyvL/jzyZZsSUrnKx07rpVedOrX4c4TyIJbEUKvCxJVqTFninovpQ9VKOBVLJDT3SJeLDdndoGOVwYa81l8Ew96tMZfaMB5VTQA5XsFbmTKVjT/IN7cFZH+8+BD303laUenvXhozzej0dYjMHmkNRHhhfrSiTXeho4pWMa8m3bm1RU9E2yD7ItyuHxB6cKjmI=\",id);",
+            "partName": "Part 1",
+            "partQuery": "query=qCompressed(1.0,\"&1bb$eJx9UE1zgjAQ/TPbYx2CYPEIISijgiZ0Wk9MYqJkqgQhjvXfF2Sml870uPt239dL5MPuptrHxmfIBak7fhH6dONWmzrmlodo4/5FikejGJpCTtNFmoXrMiZbksUkw3s2B9Pqk675uQs97PTEHFRttX0MXxEH8jswD0i8IExApTtr2nEZAKYkLNI86wHTqPYpmcrIhVSGiCE0mUFyvL/jzyZZsSUrnKx07rpVedOrX4c4TyIJbEUKvCxJVqTFninovpQ9VKOBVLJDT3SJeLDdndoGOVwYa81l8Ew96tMZfaMB5VTQA5XsFbmTKVjT/IN7cFZH+8+BD303laUenvXhozzej0dYjMHmkNRHhhfrSiTXeho4pWMa8m3bm1RU9E2yD7ItyuHxB6cKjmI=\",id);",
+            "deterministicId": "JHD",
+            "bodyType": 0,
+            "isMesh": false,
+            "isFlattenedBody": false,
+            "hasFaults": false,
+            "unflattenedPartDeterministicId": "",
+            "partIdentity": {
+              "$type": "partstudio.GBTPSOIdentity",
+              "theId": ""
+            },
+            "meshState": 0,
+            "lowBoxCorner": {
+              "$type": "math.GBTVector3d",
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "highBoxCorner": {
+              "$type": "math.GBTVector3d",
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "areFaultsIgnored": false,
+            "partPurpose": 0
+          }
+        ],
+        "startDrag": true,
+        "filterState": [
+          0
+        ],
+        "applyFilters": true,
+        "configuration": [],
+        "standardContentParametersId": "",
+        "isHidden": false,
+        "isSuppressed": false,
+        "initialTransform": null,
+        "elementLibraryReferenceData": {
+          "$type": "bsedit.GBTElementLibraryReferenceData",
+          "elementLibraryId": "",
+          "elementLibraryVersion": "",
+          "elementLibrarySelectionPath": []
+        }
+      }
+    },
+    {
+      "time": 1791074636.552426,
+      "sequence": 558,
+      "command": {
+        "$type": "ui.GBTUiCommit",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "Insert : Part 1 <1>",
+        "featureNodeId": "0e6Ck+Dey6zV5ycf",
+        "propertyNodeId": ""
+      }
+    },
+    {
+      "time": 1791074647.4650521,
+      "sequence": 561,
+      "command": {
+        "$type": "ui.assembly.GBTUiChangeOccurrenceFixedStatus",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "Fix : Part 1 <1>",
+        "occurrences": [
+          {
+            "$type": "assembly.GBTOccurrence",
+            "path": [
+              "M9V9XPkmgQAT7G+0y"
+            ]
+          }
+        ],
+        "fixed": true
+      }
+    },
+    {
+      "time": 1791074659.9046721,
+      "sequence": 564,
+      "command": {
+        "$type": "ui.assembly.GBTUiBeginOperation",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "operationName": "Insert Instances",
+        "operationId": "gCXWDaCETRJ4FhZs",
+        "operationType": 0
+      }
+    },
+    {
+      "time": 1791074660.2152102,
+      "sequence": 565,
+      "command": {
+        "$type": "ui.document.GBTUiQueryInsertables",
+        "targetElementId": "818974e8193c545bee3ef6d6",
+        "filter": {
+          "$type": "bsedit.GBTInsertablesFilter",
+          "includeParts": true,
+          "includeSurfaces": true,
+          "includeSketches": true,
+          "includeReferenceFeatures": false,
+          "includeAssemblies": false,
+          "includeFeatureStudios": false,
+          "includeBlobs": false,
+          "allowedBlobMimeTypes": [],
+          "excludeNewerFSVersions": false,
+          "maxFeatureScriptVersion": 0,
+          "includePartStudios": true,
+          "includeFeatures": false,
+          "includeMeshes": true,
+          "includeWires": false,
+          "includeFlattenedBodies": true,
+          "includeApplications": false,
+          "allowedApplicationMimeTypes": [],
+          "includeCompositeParts": true,
+          "includeFSTables": false,
+          "includeFSComputedPartPropertyFunctions": false,
+          "includeVariables": false,
+          "includeVariableStudios": false,
+          "allowedBlobExtensions": [],
+          "includeSketchesOnFlat": true,
+          "isObsoletion": false,
+          "onlyCustomStandardContent": false
+        },
+        "sourceElementId": "",
+        "documentMicroversionId": null
+      }
+    },
+    {
+      "time": 1791074660.2152681,
+      "sequence": 566,
+      "command": {
+        "$type": "ui.document.GBTUiQueryInsertables",
+        "targetElementId": "818974e8193c545bee3ef6d6",
+        "filter": {
+          "$type": "bsedit.GBTInsertablesFilter",
+          "includeParts": false,
+          "includeSurfaces": false,
+          "includeSketches": false,
+          "includeReferenceFeatures": false,
+          "includeAssemblies": true,
+          "includeFeatureStudios": false,
+          "includeBlobs": false,
+          "allowedBlobMimeTypes": [],
+          "excludeNewerFSVersions": false,
+          "maxFeatureScriptVersion": 0,
+          "includePartStudios": false,
+          "includeFeatures": false,
+          "includeMeshes": false,
+          "includeWires": false,
+          "includeFlattenedBodies": false,
+          "includeApplications": false,
+          "allowedApplicationMimeTypes": [],
+          "includeCompositeParts": false,
+          "includeFSTables": false,
+          "includeFSComputedPartPropertyFunctions": false,
+          "includeVariables": false,
+          "includeVariableStudios": false,
+          "allowedBlobExtensions": [],
+          "includeSketchesOnFlat": false,
+          "isObsoletion": false,
+          "onlyCustomStandardContent": false
+        },
+        "sourceElementId": "",
+        "documentMicroversionId": null
+      }
+    },
+    {
+      "time": 1791074666.1779132,
+      "sequence": 569,
+      "command": {
+        "$type": "ui.assembly.GBTUiAssemblyInsertOccurrence",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "Insert : Part 1",
+        "insertables": [
+          {
+            "$type": "ui.document.GBTUiInsertablePart",
+            "documentId": "8d348afffdb8032e15ba2ac8",
+            "element": {
+              "$type": "document.GBTDocumentElement",
+              "nodeId": "pp09WdnIIQsoUfeX",
+              "elementId": "63d552593a6632f2141ade43",
+              "microversion": {
+                "$type": "document.GBTMicroversionId",
+                "theId": "8eaae09a8808d833230d9732"
+              },
+              "type": 0,
+              "name": "Part Studio 1",
+              "dataType": "onshape/partstudio"
+            },
+            "thumbnailUri": "/api/thumbnails/b2d11bdb54b4bdfb7ccf9a634e69232b80156648",
+            "children": [],
+            "versionName": "",
+            "documentVersionId": "",
+            "disableReason": 0,
+            "partNumber": "",
+            "revision": "",
+            "revisionId": "",
+            "configurationParameterValues": [],
+            "configurationId": "",
+            "insertableQuery": "query=qCompressed(1.0,\"&1bb$eJx9UE1zgjAQ/TPbYx2CYPEIISijgiZ0Wk9MYqJkqgQhjvXfF2Sml870uPt239dL5MPuptrHxmfIBak7fhH6dONWmzrmlodo4/5FikejGJpCTtNFmoXrMiZbksUkw3s2B9Pqk675uQs97PTEHFRttX0MXxEH8jswD0i8IExApTtr2nEZAKYkLNI86wHTqPYpmcrIhVSGiCE0mUFyvL/jzyZZsSUrnKx07rpVedOrX4c4TyIJbEUKvCxJVqTFninovpQ9VKOBVLJDT3SJeLDdndoGOVwYa81l8Ew96tMZfaMB5VTQA5XsFbmTKVjT/IN7cFZH+8+BD303laUenvXhozzej0dYjMHmkNRHhhfrSiTXeho4pWMa8m3bm1RU9E2yD7ItyuHxB6cKjmI=\",id);",
+            "partName": "Part 1",
+            "partQuery": "query=qCompressed(1.0,\"&1bb$eJx9UE1zgjAQ/TPbYx2CYPEIISijgiZ0Wk9MYqJkqgQhjvXfF2Sml870uPt239dL5MPuptrHxmfIBak7fhH6dONWmzrmlodo4/5FikejGJpCTtNFmoXrMiZbksUkw3s2B9Pqk675uQs97PTEHFRttX0MXxEH8jswD0i8IExApTtr2nEZAKYkLNI86wHTqPYpmcrIhVSGiCE0mUFyvL/jzyZZsSUrnKx07rpVedOrX4c4TyIJbEUKvCxJVqTFninovpQ9VKOBVLJDT3SJeLDdndoGOVwYa81l8Ew96tMZfaMB5VTQA5XsFbmTKVjT/IN7cFZH+8+BD303laUenvXhozzej0dYjMHmkNRHhhfrSiTXeho4pWMa8m3bm1RU9E2yD7ItyuHxB6cKjmI=\",id);",
+            "deterministicId": "JHD",
+            "bodyType": 0,
+            "isMesh": false,
+            "isFlattenedBody": false,
+            "hasFaults": false,
+            "unflattenedPartDeterministicId": "",
+            "partIdentity": {
+              "$type": "partstudio.GBTPSOIdentity",
+              "theId": ""
+            },
+            "meshState": 0,
+            "lowBoxCorner": {
+              "$type": "math.GBTVector3d",
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "highBoxCorner": {
+              "$type": "math.GBTVector3d",
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "areFaultsIgnored": false,
+            "partPurpose": 0
+          }
+        ],
+        "startDrag": true,
+        "filterState": [
+          0
+        ],
+        "applyFilters": true,
+        "configuration": [],
+        "standardContentParametersId": "",
+        "isHidden": false,
+        "isSuppressed": false,
+        "initialTransform": null,
+        "elementLibraryReferenceData": {
+          "$type": "bsedit.GBTElementLibraryReferenceData",
+          "elementLibraryId": "",
+          "elementLibraryVersion": "",
+          "elementLibrarySelectionPath": []
+        }
+      }
+    },
+    {
+      "time": 1791074679.409553,
+      "sequence": 572,
+      "command": {
+        "$type": "ui.GBTUiCommit",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "Insert : Part 1 <2>",
+        "featureNodeId": "gCXWDaCETRJ4FhZs",
+        "propertyNodeId": ""
+      }
+    },
+    {
+      "time": 1791074694.1446912,
+      "sequence": 576,
+      "command": {
+        "$type": "ui.assembly.GBTUiCreateMateConnectorAtInstanceOrigin",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "Create mate connector at part/subassembly origin",
+        "occurrence": {
+          "$type": "assembly.GBTOccurrence",
+          "path": [
+            "M23bvYh7qrmgVdc+x"
+          ]
+        },
+        "isAssemblyOrigin": false
+      }
+    },
+    {
+      "time": 1791074694.2926052,
+      "sequence": 577,
+      "command": {
+        "$type": "ui.assembly.GBTUiAssemblyAddNode",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "Insert mate : Mate connector",
+        "node": {
+          "$type": "assembly.GBTMMateConnector",
+          "nodeId": "M7EPk79qhfvOrTyQq",
+          "sourceParseTreeNodes": {},
+          "hasUserCode": false,
+          "featureType": "mateConnector",
+          "featureId": "M7EPk79qhfvOrTyQq",
+          "name": "Mate connector",
+          "parameters": [
+            {
+              "$type": "bsedit.GBTMParameterEnum",
+              "nodeId": "zC/AXYgvSeqgNTqhT3xDduqz",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "originType",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "enumName": "Origin type",
+              "value": "ON_ENTITY",
+              "namespace": ""
+            },
+            {
+              "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
+              "nodeId": "ui/tkkeTbd1unsEg0i0xPZnd",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "originQuery",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "queries": [
+                {
+                  "$type": "assembly.GBTMInferenceQueryWithOccurrence",
+                  "nodeId": "MCuMserPZoHBX9v7I",
+                  "sourceParseTreeNodes": {},
+                  "hasUserCode": false,
+                  "path": [
+                    "M23bvYh7qrmgVdc+x"
+                  ],
+                  "deterministicIds": [],
+                  "entityQuery": "",
+                  "secondDeterministicId": "",
+                  "secondEntityQuery": "",
+                  "inferenceType": 0
+                }
+              ]
+            },
+            {
+              "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
+              "nodeId": "+Irf2uDct+A6jkrc1evcwT20",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "originAdditionalQuery",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "queries": []
+            },
+            {
+              "$type": "bsedit.GBTMParameterBoolean",
+              "nodeId": "PJlQBwyjPXlVpvarvdrQbtfL",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "realign",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "value": false
+            },
+            {
+              "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
+              "nodeId": "9frePMuRgDithz1qxsXPI4R4",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "primaryAxisQuery",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "queries": []
+            },
+            {
+              "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
+              "nodeId": "jC6Ufa0H4hLwmkPrzHUl1mlT",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "secondaryAxisQuery",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "queries": []
+            },
+            {
+              "$type": "bsedit.GBTMParameterBoolean",
+              "nodeId": "uFXLtm1ZLjKE60mTnQgHGcQ8",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "transform",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "value": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterQuantity",
+              "nodeId": "nskY/wAlYtbMZPDlerKjOm/e",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "translationX",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "centimeter",
+              "value": 0,
+              "expression": "",
+              "isInteger": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterQuantity",
+              "nodeId": "J2iAlGAGA1xM4R97Gc/2TrKC",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "translationY",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "centimeter",
+              "value": 0,
+              "expression": "",
+              "isInteger": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterQuantity",
+              "nodeId": "ZbFfx8LdTBGL6/tkTY5qjPRK",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "translationZ",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "centimeter",
+              "value": 0,
+              "expression": "",
+              "isInteger": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterEnum",
+              "nodeId": "i0164kbtkr2/cHJZ+L9rtRGm",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "rotationType",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "enumName": "Rotation axis",
+              "value": "ABOUT_Z",
+              "namespace": ""
+            },
+            {
+              "$type": "bsedit.GBTMParameterQuantity",
+              "nodeId": "36n9S7NVLhpfA6JrvjyXzM0V",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "rotation",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "degree",
+              "value": 0,
+              "expression": "",
+              "isInteger": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterBoolean",
+              "nodeId": "gVr5MGKbpeZQZY9VlcEYUNZe",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "flipPrimary",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "value": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterEnum",
+              "nodeId": "JRk7gcjfN7w9Td41JC9wYtFt",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "secondaryAxisType",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "enumName": "Reorient secondary axis",
+              "value": "PLUS_X",
+              "namespace": ""
+            }
+          ],
+          "suppressed": false,
+          "namespace": "",
+          "suppressedParseNode": {
+            "$type": "tree.GBTNodeReference",
+            "nodeId": ""
+          },
+          "nameParseNode": {
+            "$type": "tree.GBTNodeReference",
+            "nodeId": ""
+          },
+          "subFeatures": [],
+          "returnAfterSubfeatures": false,
+          "suppressionState": null,
+          "parameterLibraries": [],
+          "version": 9,
+          "isHidden": true,
+          "implicit": false,
+          "isAuxiliaryTreeMateConnector": false
+        }
+      }
+    },
+    {
+      "time": 1791074694.29836,
+      "sequence": 578,
+      "command": {
+        "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "",
+        "requestId": "44x+CQncZ/5l1XsT",
+        "itemType": 0,
+        "parentOccurrence": {
+          "$type": "assembly.GBTOccurrence",
+          "path": []
+        },
+        "nodeId": "M7EPk79qhfvOrTyQq"
+      }
+    },
+    {
+      "time": 1791074694.304058,
+      "sequence": 579,
+      "command": {
+        "$type": "ui.GBTUiUpdateEditRollbackState",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editRollbackState": 1
+      }
+    },
+    {
+      "time": 1791074700.3170602,
+      "sequence": 581,
+      "command": {
+        "$type": "ui.GBTUiCommit",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "Insert feature : Mate connector 1",
+        "featureNodeId": "M7EPk79qhfvOrTyQq",
+        "propertyNodeId": ""
+      }
+    },
+    {
+      "time": 1791074700.317464,
+      "sequence": 582,
+      "command": {
+        "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "",
+        "requestId": "44x+CQncZ/5l1XsT",
+        "itemType": 0,
+        "parentOccurrence": {
+          "$type": "assembly.GBTOccurrence",
+          "path": []
+        },
+        "nodeId": ""
+      }
+    },
+    {
+      "time": 1791074712.7541742,
+      "sequence": 586,
+      "command": {
+        "$type": "ui.assembly.GBTUiCreateMateConnectorAtInstanceOrigin",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "Create mate connector at part/subassembly origin",
+        "occurrence": {
+          "$type": "assembly.GBTOccurrence",
+          "path": [
+            "M9V9XPkmgQAT7G+0y"
+          ]
+        },
+        "isAssemblyOrigin": false
+      }
+    },
+    {
+      "time": 1791074712.924863,
+      "sequence": 587,
+      "command": {
+        "$type": "ui.assembly.GBTUiAssemblyAddNode",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "Insert mate : Mate connector",
+        "node": {
+          "$type": "assembly.GBTMMateConnector",
+          "nodeId": "MrZwqhQle7ZgRhxIJ",
+          "sourceParseTreeNodes": {},
+          "hasUserCode": false,
+          "featureType": "mateConnector",
+          "featureId": "MrZwqhQle7ZgRhxIJ",
+          "name": "Mate connector",
+          "parameters": [
+            {
+              "$type": "bsedit.GBTMParameterEnum",
+              "nodeId": "/8OAOq/bCLsFwrVkPDbyMbFD",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "originType",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "enumName": "Origin type",
+              "value": "ON_ENTITY",
+              "namespace": ""
+            },
+            {
+              "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
+              "nodeId": "wKh+9EDH3voAtvQLrLGkNO/v",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "originQuery",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "queries": [
+                {
+                  "$type": "assembly.GBTMInferenceQueryWithOccurrence",
+                  "nodeId": "M99809spNBOfREXls",
+                  "sourceParseTreeNodes": {},
+                  "hasUserCode": false,
+                  "path": [
+                    "M9V9XPkmgQAT7G+0y"
+                  ],
+                  "deterministicIds": [],
+                  "entityQuery": "",
+                  "secondDeterministicId": "",
+                  "secondEntityQuery": "",
+                  "inferenceType": 0
+                }
+              ]
+            },
+            {
+              "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
+              "nodeId": "GQGgR76BLZkyIppHiIdds4mJ",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "originAdditionalQuery",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "queries": []
+            },
+            {
+              "$type": "bsedit.GBTMParameterBoolean",
+              "nodeId": "OUeusEuJ7/WgKCjTnQBCHAqR",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "realign",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "value": false
+            },
+            {
+              "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
+              "nodeId": "ezrA4RCuz8jtYR4PXoKEKIi6",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "primaryAxisQuery",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "queries": []
+            },
+            {
+              "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
+              "nodeId": "3Vs8C0jvXCVbLqvbjwLHU6da",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "secondaryAxisQuery",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "queries": []
+            },
+            {
+              "$type": "bsedit.GBTMParameterBoolean",
+              "nodeId": "0nyPcTNycYQcGgMvSU1kf5U3",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "transform",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "value": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterQuantity",
+              "nodeId": "U53RxCJj3slcX7vn6END0yER",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "translationX",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "centimeter",
+              "value": 0,
+              "expression": "",
+              "isInteger": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterQuantity",
+              "nodeId": "5yBhM6o4APs3t4M+hEgXcm2V",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "translationY",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "centimeter",
+              "value": 0,
+              "expression": "",
+              "isInteger": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterQuantity",
+              "nodeId": "q+9i1b+Po03S5Lb2NgidXq1j",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "translationZ",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "centimeter",
+              "value": 0,
+              "expression": "",
+              "isInteger": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterEnum",
+              "nodeId": "THYEPV9OMUlYo1W8Yy+l22CY",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "rotationType",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "enumName": "Rotation axis",
+              "value": "ABOUT_Z",
+              "namespace": ""
+            },
+            {
+              "$type": "bsedit.GBTMParameterQuantity",
+              "nodeId": "tYhPxepNbTJXM9DvTACN35e5",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "rotation",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "degree",
+              "value": 0,
+              "expression": "",
+              "isInteger": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterBoolean",
+              "nodeId": "H8T4bceLh2+GiCLbwNjdjnOw",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "flipPrimary",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "value": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterEnum",
+              "nodeId": "A79tbB1YBC5ub8A+Wi49w0TI",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "secondaryAxisType",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "enumName": "Reorient secondary axis",
+              "value": "PLUS_X",
+              "namespace": ""
+            }
+          ],
+          "suppressed": false,
+          "namespace": "",
+          "suppressedParseNode": {
+            "$type": "tree.GBTNodeReference",
+            "nodeId": ""
+          },
+          "nameParseNode": {
+            "$type": "tree.GBTNodeReference",
+            "nodeId": ""
+          },
+          "subFeatures": [],
+          "returnAfterSubfeatures": false,
+          "suppressionState": null,
+          "parameterLibraries": [],
+          "version": 9,
+          "isHidden": true,
+          "implicit": false,
+          "isAuxiliaryTreeMateConnector": false
+        }
+      }
+    },
+    {
+      "time": 1791074712.930289,
+      "sequence": 588,
+      "command": {
+        "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "",
+        "requestId": "5Y+RdHMna8AAnGZj",
+        "itemType": 0,
+        "parentOccurrence": {
+          "$type": "assembly.GBTOccurrence",
+          "path": []
+        },
+        "nodeId": "MrZwqhQle7ZgRhxIJ"
+      }
+    },
+    {
+      "time": 1791074712.933746,
+      "sequence": 589,
+      "command": {
+        "$type": "ui.GBTUiUpdateEditRollbackState",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editRollbackState": 1
+      }
+    },
+    {
+      "time": 1791074721.378153,
+      "sequence": 592,
+      "command": {
+        "$type": "ui.GBTUiCommit",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "Insert feature : Mate connector 2",
+        "featureNodeId": "MrZwqhQle7ZgRhxIJ",
+        "propertyNodeId": ""
+      }
+    },
+    {
+      "time": 1791074721.3784611,
+      "sequence": 593,
+      "command": {
+        "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "",
+        "requestId": "5Y+RdHMna8AAnGZj",
+        "itemType": 0,
+        "parentOccurrence": {
+          "$type": "assembly.GBTOccurrence",
+          "path": []
+        },
+        "nodeId": ""
+      }
+    },
+    {
+      "time": 1791074728.0169792,
+      "sequence": 595,
+      "command": {
+        "$type": "ui.assembly.GBTUiAssemblyAddNode",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "Insert mate : Fastened",
+        "node": {
+          "$type": "assembly.GBTMMate",
+          "nodeId": "Mad3qf4k9f+N7xnau",
+          "sourceParseTreeNodes": {},
+          "hasUserCode": false,
+          "featureType": "mate",
+          "featureId": "Mad3qf4k9f+N7xnau",
+          "name": "Fastened",
+          "parameters": [
+            {
+              "$type": "bsedit.GBTMParameterEnum",
+              "nodeId": "Cz9smq88NsW+GUm/",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "mateType",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "enumName": "Mate type",
+              "value": "FASTENED",
+              "namespace": ""
+            },
+            {
+              "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
+              "nodeId": "C2kYmdpljscM94zn",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "mateConnectorsQuery",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "queries": []
+            },
+            {
+              "$type": "bsedit.GBTMParameterBoolean",
+              "nodeId": "zUlbkBj42LEOXtZR",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "mateOffsetEnabled",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "value": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterQuantity",
+              "nodeId": "66oOU20NYBEaau0K",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "mateOffsetDistanceX",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "centimeter",
+              "value": 0,
+              "expression": "0 cm",
+              "isInteger": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterQuantity",
+              "nodeId": "sQN4eefwcPnbSTEq",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "mateOffsetDistanceY",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "centimeter",
+              "value": 0,
+              "expression": "0 cm",
+              "isInteger": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterQuantity",
+              "nodeId": "hReq68P2T50sxuSJ",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "mateOffsetDistanceZ",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "centimeter",
+              "value": 0,
+              "expression": "0 cm",
+              "isInteger": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterEnum",
+              "nodeId": "+XtfvMnH/IwbLUI9",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "rotationType",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "enumName": "Rotation axis",
+              "value": "ABOUT_X",
+              "namespace": ""
+            },
+            {
+              "$type": "bsedit.GBTMParameterQuantity",
+              "nodeId": "XTnDIdBM/9BPMjJb",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "rotation",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "degree",
+              "value": 0,
+              "expression": "0 deg",
+              "isInteger": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterBoolean",
+              "nodeId": "oTamn6MLxkR+7ugH",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "limitsEnabled",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "value": false
+            },
+            {
+              "$type": "bsedit.GBTMParameterNullableQuantity",
+              "nodeId": "RcE07+3EUFqnVfzb",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "limitXMin",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "centimeter",
+              "value": 0,
+              "expression": "0 cm",
+              "isInteger": false,
+              "isNull": true,
+              "nullValue": "No minimum"
+            },
+            {
+              "$type": "bsedit.GBTMParameterNullableQuantity",
+              "nodeId": "fnUIzcGMq/CxJyoR",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "limitXMax",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "centimeter",
+              "value": 0,
+              "expression": "0 cm",
+              "isInteger": false,
+              "isNull": true,
+              "nullValue": "No maximum"
+            },
+            {
+              "$type": "bsedit.GBTMParameterNullableQuantity",
+              "nodeId": "vpeJLJhb0t14Jsa+",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "limitYMin",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "centimeter",
+              "value": 0,
+              "expression": "0 cm",
+              "isInteger": false,
+              "isNull": true,
+              "nullValue": "No minimum"
+            },
+            {
+              "$type": "bsedit.GBTMParameterNullableQuantity",
+              "nodeId": "OfeyR47jnkEDD8Qr",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "limitYMax",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "centimeter",
+              "value": 0,
+              "expression": "0 cm",
+              "isInteger": false,
+              "isNull": true,
+              "nullValue": "No maximum"
+            },
+            {
+              "$type": "bsedit.GBTMParameterNullableQuantity",
+              "nodeId": "a+Jbk1zP775fVRKZ",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "limitZMin",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "centimeter",
+              "value": 0,
+              "expression": "0 cm",
+              "isInteger": false,
+              "isNull": true,
+              "nullValue": "No minimum"
+            },
+            {
+              "$type": "bsedit.GBTMParameterNullableQuantity",
+              "nodeId": "FuNx9jfELfMICYe4",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "limitZMax",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "centimeter",
+              "value": 0,
+              "expression": "0 cm",
+              "isInteger": false,
+              "isNull": true,
+              "nullValue": "No maximum"
+            },
+            {
+              "$type": "bsedit.GBTMParameterNullableQuantity",
+              "nodeId": "PQEjpPaaAKOkhkG3",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "limitAxialXMin",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "degree",
+              "value": 0,
+              "expression": "0 deg",
+              "isInteger": false,
+              "isNull": true,
+              "nullValue": "No minimum"
+            },
+            {
+              "$type": "bsedit.GBTMParameterNullableQuantity",
+              "nodeId": "OKxc2Dtgr744HwOb",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "limitAxialXMax",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "degree",
+              "value": 0,
+              "expression": "0 deg",
+              "isInteger": false,
+              "isNull": true,
+              "nullValue": "No maximum"
+            },
+            {
+              "$type": "bsedit.GBTMParameterNullableQuantity",
+              "nodeId": "iEte4WZsPEKQy/kI",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "limitAxialYMin",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "degree",
+              "value": 0,
+              "expression": "0 deg",
+              "isInteger": false,
+              "isNull": true,
+              "nullValue": "No minimum"
+            },
+            {
+              "$type": "bsedit.GBTMParameterNullableQuantity",
+              "nodeId": "oeDNBbUqbCSs2Opv",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "limitAxialYMax",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "degree",
+              "value": 0,
+              "expression": "0 deg",
+              "isInteger": false,
+              "isNull": true,
+              "nullValue": "No maximum"
+            },
+            {
+              "$type": "bsedit.GBTMParameterNullableQuantity",
+              "nodeId": "tfpA8M1MlHSEPXDT",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "limitAxialZMin",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "degree",
+              "value": 0,
+              "expression": "0 deg",
+              "isInteger": false,
+              "isNull": true,
+              "nullValue": "No minimum"
+            },
+            {
+              "$type": "bsedit.GBTMParameterNullableQuantity",
+              "nodeId": "gGJnUKEZdv03Tg1Q",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "limitAxialZMax",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "degree",
+              "value": 0,
+              "expression": "0 deg",
+              "isInteger": false,
+              "isNull": true,
+              "nullValue": "No maximum"
+            },
+            {
+              "$type": "bsedit.GBTMParameterNullableQuantity",
+              "nodeId": "VImCNDJgQKE/b9BA",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "limitEulerConeAngleMax",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "units": "degree",
+              "value": 0,
+              "expression": "0 deg",
+              "isInteger": false,
+              "isNull": true,
+              "nullValue": "No maximum"
+            },
+            {
+              "$type": "bsedit.GBTMParameterBoolean",
+              "nodeId": "c7I/JADsMO33hMUT",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "functionalconnection",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "value": false
+            },
+            {
+              "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
+              "nodeId": "KCmTSwy9fUdaDd5D",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "facestoconnect",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "queries": []
+            },
+            {
+              "$type": "bsedit.GBTMParameterBoolean",
+              "nodeId": "vHmZCwNP5TRdC4Ps",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "primaryAxisAlignment",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "value": true
+            },
+            {
+              "$type": "bsedit.GBTMParameterEnum",
+              "nodeId": "L3+BzmSJvu7A2/MG",
+              "sourceParseTreeNodes": {},
+              "hasUserCode": false,
+              "parameterId": "secondaryAxisAlignment",
+              "libraryRelationType": 0,
+              "parameterName": "",
+              "enumName": "Reorient secondary axis",
+              "value": "PLUS_X",
+              "namespace": ""
+            }
+          ],
+          "suppressed": false,
+          "namespace": "",
+          "suppressedParseNode": {
+            "$type": "tree.GBTNodeReference",
+            "nodeId": ""
+          },
+          "nameParseNode": {
+            "$type": "tree.GBTNodeReference",
+            "nodeId": ""
+          },
+          "subFeatures": [],
+          "returnAfterSubfeatures": false,
+          "suppressionState": null,
+          "parameterLibraries": [],
+          "version": 0,
+          "mateConnectors": []
+        }
+      }
+    },
+    {
+      "time": 1791074728.0213451,
+      "sequence": 596,
+      "command": {
+        "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "",
+        "requestId": "0AcY3n85BShJzGYS",
+        "itemType": 0,
+        "parentOccurrence": {
+          "$type": "assembly.GBTOccurrence",
+          "path": []
+        },
+        "nodeId": "Mad3qf4k9f+N7xnau"
+      }
+    },
+    {
+      "time": 1791074728.0321012,
+      "sequence": 597,
+      "command": {
+        "$type": "ui.GBTUiUpdateEditRollbackState",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editRollbackState": 1
+      }
+    },
+    {
+      "time": 1791074728.033945,
+      "sequence": 598,
+      "command": {
+        "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "",
+        "requestId": "AHjlKCvhSiYMW+Kz",
+        "itemType": 0,
+        "parentOccurrence": {
+          "$type": "assembly.GBTOccurrence",
+          "path": []
+        },
+        "nodeId": "Mad3qf4k9f+N7xnau"
+      }
+    },
+    {
+      "time": 1791074733.7713041,
+      "sequence": 600,
+      "command": {
+        "$type": "ui.assembly.GBTUiAssemblyTreeItemDefinitionRequest",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "",
+        "parentOccurrence": {
+          "$type": "assembly.GBTOccurrence",
+          "path": []
+        },
+        "nodeId": "M7EPk79qhfvOrTyQq"
+      }
+    },
+    {
+      "time": 1791074733.881302,
+      "sequence": 601,
+      "command": {
+        "$type": "ui.assembly.GBTUiAssemblyTreeItemDefinitionRequest",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "",
+        "parentOccurrence": {
+          "$type": "assembly.GBTOccurrence",
+          "path": []
+        },
+        "nodeId": "MrZwqhQle7ZgRhxIJ"
+      }
+    },
+    {
+      "time": 1791074734.001243,
+      "sequence": 602,
+      "command": {
+        "$type": "ui.GBTUiSpecifyFeature",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "Edit parameter : Offset",
+        "featureChange": {
+          "$type": "diff.GBTTreeEditChange",
+          "oldNode": {
+            "$type": "tree.GBTNodeReference",
+            "nodeId": "zUlbkBj42LEOXtZR"
+          },
+          "newNode": {
+            "$type": "bsedit.GBTMParameterBoolean",
+            "nodeId": "zUlbkBj42LEOXtZR",
+            "sourceParseTreeNodes": {},
+            "hasUserCode": false,
+            "parameterId": "mateOffsetEnabled",
+            "libraryRelationType": 0,
+            "parameterName": "",
+            "value": true
+          }
+        },
+        "sequenceId": 6,
+        "featureNodeId": "Mad3qf4k9f+N7xnau",
+        "inContextEntitiesToAdd": null,
+        "selectionMicroversion": null,
+        "propagateChanges": false,
+        "propagationToSkip": []
+      }
+    },
+    {
+      "time": 1791074734.162573,
+      "sequence": 603,
+      "command": {
+        "$type": "ui.GBTUiSpecifyFeature",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "Add entity : Mate connectors",
+        "featureChange": {
+          "$type": "diff.GBTTreeEditInsertion",
+          "location": {
+            "$type": "tree.GBTInsertionLocation",
+            "nodeId": "C2kYmdpljscM94zn",
+            "before": false,
+            "childFieldIndex": 274432
+          },
+          "newNode": {
+            "$type": "assembly.GBTMFeatureQueryWithOccurrence",
+            "nodeId": "FQEQLsMVPAEbyyn",
+            "sourceParseTreeNodes": {},
+            "hasUserCode": false,
+            "path": [],
+            "featureId": "M7EPk79qhfvOrTyQq",
+            "queryData": ""
+          }
+        },
+        "sequenceId": 0,
+        "featureNodeId": "Mad3qf4k9f+N7xnau",
+        "inContextEntitiesToAdd": null,
+        "selectionMicroversion": null,
+        "propagateChanges": false,
+        "propagationToSkip": []
+      }
+    },
+    {
+      "time": 1791074734.2898092,
+      "sequence": 604,
+      "command": {
+        "$type": "ui.GBTUiSpecifyFeature",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "Add entity : Mate connectors",
+        "featureChange": {
+          "$type": "diff.GBTTreeEditInsertion",
+          "location": {
+            "$type": "tree.GBTInsertionLocation",
+            "nodeId": "C2kYmdpljscM94zn",
+            "before": false,
+            "childFieldIndex": 274432
+          },
+          "newNode": {
+            "$type": "assembly.GBTMFeatureQueryWithOccurrence",
+            "nodeId": "FbfmWXTIdSVJz18",
+            "sourceParseTreeNodes": {},
+            "hasUserCode": false,
+            "path": [],
+            "featureId": "MrZwqhQle7ZgRhxIJ",
+            "queryData": ""
+          }
+        },
+        "sequenceId": 0,
+        "featureNodeId": "Mad3qf4k9f+N7xnau",
+        "inContextEntitiesToAdd": null,
+        "selectionMicroversion": null,
+        "propagateChanges": false,
+        "propagationToSkip": []
+      }
+    },
+    {
+      "time": 1791074741.0974913,
+      "sequence": 607,
+      "command": {
+        "$type": "ui.GBTUiSpecifyFeature",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "Edit parameter : Offset Z distance",
+        "featureChange": {
+          "$type": "diff.GBTTreeEditChange",
+          "oldNode": {
+            "$type": "tree.GBTNodeReference",
+            "nodeId": "hReq68P2T50sxuSJ"
+          },
+          "newNode": {
+            "$type": "bsedit.GBTMParameterQuantity",
+            "nodeId": "hReq68P2T50sxuSJ",
+            "sourceParseTreeNodes": {},
+            "hasUserCode": false,
+            "parameterId": "mateOffsetDistanceZ",
+            "libraryRelationType": 0,
+            "parameterName": "",
+            "units": "centimeter",
+            "value": 2,
+            "expression": "20 mm",
+            "isInteger": false
+          }
+        },
+        "sequenceId": 6,
+        "featureNodeId": "Mad3qf4k9f+N7xnau",
+        "inContextEntitiesToAdd": null,
+        "selectionMicroversion": null,
+        "propagateChanges": false,
+        "propagationToSkip": []
+      }
+    },
+    {
+      "time": 1791074741.1438482,
+      "sequence": 608,
+      "command": {
+        "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "",
+        "requestId": "AHjlKCvhSiYMW+Kz",
+        "itemType": 0,
+        "parentOccurrence": {
+          "$type": "assembly.GBTOccurrence",
+          "path": []
+        },
+        "nodeId": ""
+      }
+    },
+    {
+      "time": 1791074741.144426,
+      "sequence": 609,
+      "command": {
+        "$type": "ui.GBTUiCommit",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "Insert feature : Fastened 1",
+        "featureNodeId": "Mad3qf4k9f+N7xnau",
+        "propertyNodeId": ""
+      }
+    },
+    {
+      "time": 1791074741.1471221,
+      "sequence": 610,
+      "command": {
+        "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
+        "elementId": "818974e8193c545bee3ef6d6",
+        "messageId": "",
+        "editDescription": "",
+        "requestId": "0AcY3n85BShJzGYS",
+        "itemType": 0,
+        "parentOccurrence": {
+          "$type": "assembly.GBTOccurrence",
+          "path": []
+        },
+        "nodeId": ""
+      }
+    }
+  ]
+}

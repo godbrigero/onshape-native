@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <title>Onshape Native</title>
+  <desc>A mint isometric cube and horizontal ring on a graphite tile.</desc>
+  <rect x="3" y="3" width="122" height="122" rx="28" fill="#102D30"/>
+  <rect x="3.75" y="3.75" width="120.5" height="120.5" rx="27.25" fill="none" stroke="#315356" stroke-width="1.5"/>
+  <!-- Three solid faces remain distinct at toolbar scale. -->
+  <path d="M28 61 64 41 100 61 64 82Z" fill="#A0F4C9"/>
+  <path d="M28 61 64 82V111L28 90Z" fill="#52D7AA"/>
+  <path d="m64 82 36-21v29l-36 21Z" fill="#239B7A"/>
+  <!-- The front rim gives the ring depth without gradients or fine strokes. -->
+  <path d="M37 39a27 14 0 0 0 54 0v7a27 14 0 0 1-54 0Z" fill="#43BD94"/>
+  <ellipse cx="64" cy="39" rx="14" ry="6.5" fill="#24534D"/>
+  <path fill="#DDFFE8" fill-rule="evenodd" d="M37 39a27 14 0 1 0 54 0 27 14 0 1 0-54 0Zm13 0a14 6.5 0 1 0 28 0 14 6.5 0 1 0-28 0Z"/>
+</svg>

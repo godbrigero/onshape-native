@@ -1,0 +1,202 @@
+{
+  "date": "2026-10-03",
+  "research_document": "https://cad.onshape.com/documents/8d348afffdb8032e15ba2ac8/w/4cc851c68d331cdfaf236eeb/e/63d552593a6632f2141ade43",
+  "privacy": "public; explicitly authorized sample data",
+  "frontend_build": "1.221.89963.13d10d36cb23",
+  "full_parity_verified": false,
+  "native_extrusion": {
+    "depth_before_mm": 12,
+    "depth_after_mm": 16,
+    "committed": true
+  },
+  "api_features": {
+    "fillet_radius_mm": 1,
+    "shell_thickness_mm": 0.5,
+    "pattern_count": 3,
+    "pattern_spacing_mm": 35,
+    "regeneration_errors": [],
+    "solids": [
+      {
+        "edges": 100,
+        "faces": 54,
+        "id": "JHD",
+        "max_mm": [
+          32.95883850344636,
+          34.674421981605946,
+          8
+        ],
+        "min_mm": [
+          -7.041161496553647,
+          4.140069812534474,
+          -8
+        ],
+        "size_mm": [
+          40.00000000000001,
+          30.53435216907147,
+          16
+        ],
+        "volume_mm3": 1667.0534098605212,
+        "name": "Part 1"
+      },
+      {
+        "edges": 100,
+        "faces": 54,
+        "id": "JKD",
+        "max_mm": [
+          32.95883850344636,
+          34.674421981605946,
+          43
+        ],
+        "min_mm": [
+          -7.041161496553647,
+          4.140069812534474,
+          27.000000000000004
+        ],
+        "size_mm": [
+          40.00000000000001,
+          30.53435216907147,
+          16
+        ],
+        "volume_mm3": 1667.0534098605203,
+        "name": "Part 2"
+      },
+      {
+        "edges": 100,
+        "faces": 54,
+        "id": "JKH",
+        "max_mm": [
+          32.95883850344636,
+          34.674421981605946,
+          78.00000000000001
+        ],
+        "min_mm": [
+          -7.041161496553647,
+          4.140069812534474,
+          62.00000000000001
+        ],
+        "size_mm": [
+          40.00000000000001,
+          30.53435216907147,
+          16.000000000000007
+        ],
+        "volume_mm3": 1667.0534098605197,
+        "name": "Part 3"
+      }
+    ]
+  },
+  "material": {
+    "density_kg_m3": 1200,
+    "mass_before_shell_kg": 0.023362851478644243,
+    "volume_before_shell_m3": 1.9469042898870203e-05
+  },
+  "assembly": {
+    "instances": 3,
+    "mate_type": "FASTENED",
+    "native_offset_before_mm": 20,
+    "native_offset_after_mm": 25,
+    "occurrence_transforms": [
+      {
+        "transform": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0.025,
+          0,
+          0,
+          0,
+          1
+        ],
+        "fixed": false,
+        "path": [
+          "M23bvYh7qrmgVdc+x"
+        ]
+      },
+      {
+        "transform": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "fixed": true,
+        "path": [
+          "M9V9XPkmgQAT7G+0y"
+        ]
+      },
+      {
+        "transform": [
+          1,
+          0,
+          0,
+          0.06,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "fixed": false,
+        "path": [
+          "MOGxWy5ZQOQ/eBNbO"
+        ]
+      }
+    ],
+    "mass_kg": 0.0060013922754979035,
+    "native_insertion_without_drag": true,
+    "third_instance_translation_x_m": 0.06
+  },
+  "import": {
+    "source": "generated 5 mm cube, binary STL, 12 triangles",
+    "transport": "multipart uploadFileCreateElement",
+    "translation_state": "DONE",
+    "result_element_id": "89128228ff076c9d6b957f4f"
+  },
+  "mcp": {
+    "stdio_handshake": true,
+    "tools": 22,
+    "tool_schema_bytes": 19649,
+    "read_only_inspection": {
+      "features": 5,
+      "solids": 3,
+      "geometry_complete": true
+    }
+  },
+  "checks": {
+    "native_python_passed": 33,
+    "extension_js_passed": 7,
+    "official_python_passed": 37
+  },
+  "unresolved": [
+    "Export permissioned reload/live validation pending",
+    "Native insertables query replay failed; REST fallback available",
+    "Native folder command acknowledged but folder absent from inspected tree",
+    "Remaining full-plan feature workflows not individually exercised"
+  ]
+}

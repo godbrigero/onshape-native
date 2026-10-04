@@ -1,0 +1,14 @@
+[project]
+name = "codex-onshape-native"
+version = "0.2.1"
+description = "Onshape browser-session REST and native editor commands over a local HTTP bridge"
+requires-python = ">=3.11"
+dependencies = ["mcp>=1.12,<2", "httpx>=0.28,<1", "pillow>=11,<13", "uvicorn>=0.35,<1", "websockets>=15,<17"]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.25,<2", "pyyaml>=6,<7"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]

@@ -1,0 +1,24 @@
+{
+  "plugin": "onshape-native@personal",
+  "version": "0.2.0",
+  "annotated_tools": 30,
+  "url_resolution": "passed",
+  "extension_connected": true,
+  "current_tab_status": "needs_selection",
+  "current_tab_reason": "Current-window metadata is unavailable. Reload the updated extension or supply a URL.",
+  "command_search": "passed",
+  "document_tree": {
+    "complete": true,
+    "total": 15
+  },
+  "model_inspection": {
+    "geometry_complete": true,
+    "features": 5,
+    "solids": 3,
+    "feature_errors": []
+  },
+  "python_tests": 72,
+  "extension_tests": 10,
+  "skill_validation": "passed",
+  "local_http_resolve_target": "passed"
+}

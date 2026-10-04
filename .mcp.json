@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "onshape_native": {
+      "command": "/Users/godbrigero/Documents/onshape-stuff/onshape-native/.venv/bin/python",
+      "args": [
+        "/Users/godbrigero/Documents/onshape-stuff/onshape-native/scripts/serve.py"
+      ],
+      "env": {
+        "ONSHAPE_NATIVE_RUNTIME": "/Users/godbrigero/Documents/onshape-stuff/onshape-native/.runtime"
+      }
+    }
+  }
+}

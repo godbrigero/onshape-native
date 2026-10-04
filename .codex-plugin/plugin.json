@@ -1,0 +1,20 @@
+{
+  "name": "onshape-native",
+  "version": "0.2.1",
+  "description": "Onshape browser-session REST and native editor commands through an authenticated local bridge.",
+  "author": {"name": "Local developer"},
+  "mcpServers": "./.mcp.json",
+  "skills": "./skills/",
+  "interface": {
+    "brandColor": "#239B7A",
+    "composerIcon": "./assets/composer-icon.png",
+    "logo": "./assets/logo.png",
+    "displayName": "Onshape Native",
+    "shortDescription": "Native CAD commands and REST through your signed-in browser.",
+    "longDescription": "Discover current REST operations, query exact geometry, edit native features and assemblies, and use bounded UI fallback only when a backend command is unavailable. Requires the local extension and a signed-in Onshape session.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": ["Use Onshape Native to inspect and edit the model at this Onshape link or in my current Onshape tab."]
+  }
+}
