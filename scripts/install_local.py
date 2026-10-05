@@ -8,28 +8,16 @@ from datetime import datetime, timezone
 import json
 import os
 from pathlib import Path
-import re
-import secrets
 import shutil
 import subprocess
 import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from onshape_native.installation import stage_package, mcp_configuration, require_pairing, write_json
 NAME = "onshape-native"
 MARKER = ".onshape-native-install.json"
-PUBLIC = (".codex-plugin", "onshape_native", "scripts", "skills", "docs", "data", "assets",
-          "extension", "pyproject.toml", "uv.lock", "README.md")
-
-
-def stage_package(source: Path, destination: Path):
-    """Allowlist distributable roots and omit generated pairing and bytecode."""
-    ignore = shutil.ignore_patterns("__pycache__", "*.pyc", "local-config.js", ".env", "*.har")
-    destination.mkdir(parents=True, exist_ok=True)
-    for name in PUBLIC:
-        src, dst = source / name, destination / name
-        if src.is_dir(): shutil.copytree(src, dst, ignore=ignore)
-        else: shutil.copy2(src, dst)
 
 
 def merge_marketplace(existing: dict, relative_source: str):
@@ -48,15 +36,7 @@ def merge_marketplace(existing: dict, relative_source: str):
 
 
 def launcher(destination: Path, runtime: Path):
-    return {"mcpServers": {"onshape_native": {
-        "command": str(runtime / "plugin-venv/bin/python"),
-        "args": [str(destination / "scripts/serve.py")],
-        "env": {"ONSHAPE_NATIVE_RUNTIME": str(runtime)},
-    }}}
-
-
-def write_json(path: Path, data: dict):
-    path.write_text(json.dumps(data, indent=2) + "\n")
+    return mcp_configuration(destination, runtime)
 
 
 def main():
@@ -67,21 +47,16 @@ def main():
     destination = home / "plugins" / NAME
     market = home / ".agents/plugins/marketplace.json"
     sys.path.insert(0, str(ROOT))
-    from onshape_native.config import load_config, runtime_dir
+    from onshape_native.config import runtime_dir
     runtime = (args.runtime_dir or runtime_dir()).expanduser().resolve()
     if runtime == destination or destination in runtime.parents:
         raise SystemExit("Runtime must be outside the distributed plugin directory.")
     if ROOT == destination or destination in ROOT.parents:
         raise SystemExit("Run the installer from the source checkout, not its installed copy.")
-    os.environ["ONSHAPE_NATIVE_RUNTIME"] = str(runtime)
-    # Validate before any replacement. Preserve the extension's existing token.
-    config = load_config()
-    pairing = ROOT / "extension/local-config.js"
-    if not pairing.exists():
-        raise SystemExit("Run scripts/configure.py with this runtime and load the extension before installing.")
-    match = re.search(r'^export const BRIDGE_TOKEN = ("[^"\n]+");$', pairing.read_text(), re.MULTILINE)
-    if not match or not secrets.compare_digest(json.loads(match[1]), config["token"]):
-        raise SystemExit("This runtime does not match the configured extension. Select its existing runtime or rerun configure.py with the intended runtime.")
+    try:
+        require_pairing(ROOT, runtime)
+    except ValueError as error:
+        raise SystemExit(str(error)) from None
     uv, codex = shutil.which("uv"), shutil.which("codex")
     if not uv or not codex:
         raise SystemExit("Install uv and the Codex CLI, then run this installer again.")

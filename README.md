@@ -9,8 +9,9 @@ and HTTP API, using your signed-in browser session to execute Onshape REST calls
 and native editor commands. It preserves familiar REST methods, paths and payload
 formats while exposing editor workflows such as document and feature folders.
 
-**[Get started with Codex](docs/codex-plugin.md)** ·
-**[Local setup](#setup)** · **[Agent guide](docs/agent-guide.md)**
+**[Install on a device](docs/installation.md)** ·
+**[Claude Code](docs/claude-code.md)** · **[Codex](docs/codex-plugin.md)** ·
+**[Agent guide](docs/agent-guide.md)**
 
 An agent can:
 
@@ -25,7 +26,7 @@ An agent can:
 
 Use backend commands for modeling and UI actions only when an operation requires
 them. The browser stays open and signed in, while commands can run in background
-tabs. In Codex, the MCP launcher automatically starts or reuses the local bridge.
+tabs. In Claude Code and Codex, the MCP launcher automatically starts or reuses the local bridge.
 The extension popup stays minimal: connection status and one Connect/Disconnect
 button.
 
@@ -37,7 +38,8 @@ Example request:
 
 This workflow has been completed headlessly with editable native features.
 See the [modeling skill](skills/onshape-native-modeling/SKILL.md),
-[agent guide](docs/agent-guide.md) and [Codex installation](docs/codex-plugin.md).
+[agent guide](docs/agent-guide.md), [Claude Code installation](docs/claude-code.md)
+and [Codex installation](docs/codex-plugin.md).
 Coverage is documented per operation and workflow in
 [coverage and limits](docs/coverage.md); this is not a claim that every Onshape
 operation or native command has been live-tested. Normal account permissions
@@ -46,25 +48,36 @@ and plan capabilities apply.
 ## Setup
 
 Requirements: Python 3.11+, `uv`, Comet or another Chromium browser (Chrome 120+),
-and an Onshape account signed in at `https://cad.onshape.com`.
+and an Onshape account signed in at `https://cad.onshape.com`. Install the client
+and browser extension on the same computer. Follow the
+[device installation guide](docs/installation.md) for macOS/Linux/Windows steps,
+prerequisites, transfer ZIPs and troubleshooting.
 
 From this directory:
 
 ```sh
 uv sync --frozen
-.venv/bin/python scripts/configure.py
-.venv/bin/python scripts/install_local.py
+uv run --frozen python scripts/configure.py
 ```
+
+Then install for your client:
+
+| Client | Command |
+|---|---|
+| Claude Code | `uv run --frozen python scripts/install_claude.py` |
+| Codex | `uv run --frozen python scripts/install_local.py` |
 
 1. In Comet, open `chrome://extensions`, enable Developer mode and use **Load
    unpacked** to select this directory's `extension` folder. Review its Onshape
    and loopback access. `webRequest` is used only to obtain the Location header of
    export redirects initiated by the extension; cookies are never exported.
-2. The installer registers `onshape-native@personal` in Codex with the
-   `onshape_native` MCP server and `onshape-native-modeling` skill. Start a new
-   Codex task to load them. For another MCP client, use the generated `.mcp.json`.
+2. The installer registers `onshape-native@onshape-native-local` in Claude Code,
+   or `onshape-native@personal` in Codex, with the `onshape_native` MCP server and
+   modeling skill. Restart the client to load them. In Claude Code, start in
+   your normal project directory, outside this source folder. For another MCP
+   client, use the generated `.mcp.json`.
    The launcher starts the local HTTP server automatically, or reuses one with
-   the same token. See [Codex installation](docs/codex-plugin.md) for details.
+   the same token. No separate server terminal is needed for ordinary MCP use.
 3. In the extension popup, press **Connect**. Open the exact workspace element
    before using native editor commands; `open_document` can do this without clicks.
 4. Run `bridge_status`, then `resolve_target(url="ONSHAPE_LINK")` or
@@ -75,7 +88,7 @@ uv sync --frozen
 For HTTP without MCP, run this in a terminal:
 
 ```sh
-.venv/bin/python scripts/bridge.py
+uv run --frozen python scripts/bridge.py
 ```
 
 The API listens on `http://127.0.0.1:8766`. It is unavailable when the companion

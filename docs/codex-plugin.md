@@ -4,6 +4,10 @@ This package is a standalone personal Codex plugin containing the
 `onshape_native` MCP server and the `onshape-native-modeling` skill. The official
 API plugin can remain installed beside it. No API keys are required.
 
+For a fresh computer, first follow [device installation](installation.md).
+Claude Code users can install the same MCP and skill with the
+[Claude Code guide](claude-code.md).
+
 ## Install or update locally
 
 Prerequisites: Codex CLI available as `codex`, `uv`, and the browser extension
@@ -13,8 +17,8 @@ From the source `onshape-native` directory:
 
 ```sh
 uv sync --frozen
-.venv/bin/python scripts/configure.py
-.venv/bin/python scripts/install_local.py
+uv run --frozen python scripts/configure.py
+uv run --frozen python scripts/install_local.py
 ```
 
 If already paired, keep the existing runtime; configuration reuses its token.
@@ -29,7 +33,8 @@ Rerun from the source checkout to update; keep the source and runtime available.
 
 The installed package contains its own Python code, catalogs, docs, extension
 source and skill. Its generated `.mcp.json` launches the installed server using a
-dedicated environment at `RUNTIME/plugin-venv`; secrets and artifacts stay in
+dedicated environment at `RUNTIME/plugin-venv` (using the platform's Python path);
+secrets and artifacts stay in
 `RUNTIME`. It does not import `onshape-api` or depend on another plugin's scripts.
 Codex's cached plugin copy has no pairing token, `.venv`, `.env`, or browser
 captures. No server process is started by installation itself.

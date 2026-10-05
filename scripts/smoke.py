@@ -10,8 +10,13 @@ from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 
 ROOT=Path(__file__).resolve().parents[1]
-async def main(url):
-    params=StdioServerParameters(command=sys.executable,args=[str(ROOT/'scripts/serve.py')],cwd=str(ROOT),env=os.environ.copy())
+async def main(url, config=None):
+    if config:
+        definition=json.loads(Path(config).read_text())['mcpServers']['onshape_native']
+        params=StdioServerParameters(command=definition['command'],args=definition.get('args',[]),
+                                    env={**os.environ,**definition.get('env',{})},cwd=definition.get('cwd'))
+    else:
+        params=StdioServerParameters(command=sys.executable,args=[str(ROOT/'scripts/serve.py')],cwd=str(ROOT),env=os.environ.copy())
     async with stdio_client(params) as (read,write):
         async with ClientSession(read,write) as session:
             await session.initialize()
@@ -39,5 +44,7 @@ async def main(url):
                 print(json.dumps({'microversion':data['microversion'],'features':data['feature_count'],'solids':len(data.get('solids',[]))}))
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--url');args=parser.parse_args()
-    asyncio.run(main(args.url))
+    parser=argparse.ArgumentParser();parser.add_argument('--url')
+    parser.add_argument('--mcp-config',type=Path,help='Test the exact launcher generated for this device/client.')
+    args=parser.parse_args()
+    asyncio.run(main(args.url,args.mcp_config))

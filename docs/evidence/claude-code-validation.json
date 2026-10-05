@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-05",
+  "plugin": "onshape-native@onshape-native-local",
+  "version": "0.3.0",
+  "platform": "macOS",
+  "claude_code": "2.1.285",
+  "plugin_validation": "strict: passed, no warnings",
+  "registration": "installed and enabled in user scope",
+  "update_install": "idempotent, up_to_date",
+  "claude_mcp_get": "plugin:onshape-native:onshape_native: Connected",
+  "protocol": {
+    "tools": 30,
+    "annotations": true,
+    "discovery": "passed",
+    "url_resolution": "passed",
+    "extension_connected": true
+  },
+  "tests": {
+    "python": 78,
+    "extension": 10,
+    "skill_validation": "passed"
+  },
+  "other_platforms": "Windows executable paths unit-tested; full Windows/Linux installations not live-tested.",
+  "cad_mutations": false
+}

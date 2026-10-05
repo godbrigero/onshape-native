@@ -104,8 +104,15 @@ any incomplete behavior. Render views only when a visual question remains.
 
 ## Connection and reference details
 
-If tools are missing, the plugin must be installed/enabled and the Codex task
-must load its MCP tools. Follow [installation](../../docs/codex-plugin.md).
+This skill works in Codex and Claude Code. In Claude Code, invoke it as
+`/onshape-native:onshape-native-modeling`; in Codex, use
+`$onshape-native-modeling`. The host may prefix the `onshape_native` tool names
+with the plugin/server namespace; use the matching tools exposed by that host.
+
+If tools are missing, the plugin must be installed/enabled and the client session
+must load its MCP tools. Follow [device setup](../../docs/installation.md),
+[Claude Code setup](../../docs/claude-code.md) or
+[Codex setup](../../docs/codex-plugin.md).
 `bridge_status` reports extension connectivity. For current-window selection an
 older loaded worker needs reload; an explicit link still resolves locally. Do
 not rotate pairing material to fix an ordinary disconnected browser.
@@ -119,5 +126,5 @@ large trees. All referenced files ship within this independent plugin.
 
 The equivalent HTTP interface is `http://127.0.0.1:8766` with a local bearer token
 from the configured `ONSHAPE_NATIVE_RUNTIME/bridge.json`. The companion owns the
-HTTP listener; the extension executes browser-session commands. Prefer MCP for
-Codex tasks. Never expose pairing tokens, cookies or private model data in logs.
+HTTP listener; the extension executes browser-session commands. Prefer MCP in
+both clients. Never expose pairing tokens, cookies or private model data in logs.

@@ -1,6 +1,6 @@
 {
   "name": "onshape-native",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Onshape browser-session REST and native editor commands through an authenticated local bridge.",
   "author": {"name": "Local developer"},
   "mcpServers": "./.mcp.json",

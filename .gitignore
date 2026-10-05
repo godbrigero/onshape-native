@@ -6,3 +6,5 @@ extension/local-config.js
 .env
 *.har
 *.egg-info/
+.mcp.json
+dist/
