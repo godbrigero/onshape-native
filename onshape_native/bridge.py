@@ -32,7 +32,7 @@ def validate_job(job):
     if not isinstance(job, dict):
         raise BridgeError("Expected a JSON object.")
     kind = job.get("kind")
-    if not isinstance(kind, str) or kind not in {"rest", "native", "state", "schema", "tabs", "open", "ui_inspect", "ui_action"}:
+    if not isinstance(kind, str) or kind not in {"rest", "native", "state", "schema", "tabs", "open", "ui_inspect", "ui_action", "display"}:
         raise BridgeError("Unknown command kind.")
     if kind == "rest":
         path = job.get("path", "")
@@ -55,10 +55,22 @@ def validate_job(job):
             raise BridgeError("Only If-None-Match and Range request headers are accepted.")
         if not isinstance(job.get("query", {}), dict):
             raise BridgeError("Query must be an object.")
-    if kind in {"native", "state", "schema", "open", "ui_inspect", "ui_action"}:
+    if kind in {"native", "state", "schema", "open", "ui_inspect", "ui_action", "display"}:
         target = job.get("target", {})
         if not isinstance(target, dict) or set(target) != {"did", "wid", "eid"} or any(not isinstance(x, str) or not re.fullmatch(r"[a-f0-9]{24}", x) for x in target.values()):
             raise BridgeError("Native commands require exact did, wid, eid target IDs.")
+    if kind == "display":
+        from .display import validate_display_job
+        try:
+            validate_display_job(job)
+        except ValueError as error:
+            raise BridgeError(str(error)) from None
+        if type(job.get("tab_id")) is not int or job["tab_id"] < 0:
+            raise BridgeError("Display commands require an exact tab_id.")
+        args = job.get("args", {})
+        writes = job["operation"] == "visibility" or (job["operation"] == "camera" and args.get("action") != "read") or (job["operation"] == "motion" and args.get("action") == "prepare")
+        if writes and not re.fullmatch(r"[a-f0-9]{24}", str(job.get("expected_microversion", ""))):
+            raise BridgeError("Display writes require expected_microversion from fresh state.")
     if kind == "ui_action":
         if not isinstance(job.get("backend_unavailable_reason"), str) or len(job["backend_unavailable_reason"].strip()) < 10:
             raise BridgeError("Explain why a backend command cannot perform this action.")
@@ -83,6 +95,7 @@ class Broker:
     def __init__(self, config):
         self.config = config
         self.extension = None
+        self.extension_info = None
         self.pending = {}
         self.send_lock = asyncio.Lock()
         self.command_lock = asyncio.Lock()
@@ -94,6 +107,8 @@ class Broker:
             ws = self.extension
             if ws is None:
                 raise BridgeError("Extension disconnected. Connect Onshape Native in Comet.")
+            if job.get("kind") == "display" and "display_v1" not in (self.extension_info or {}).get("capabilities", []):
+                raise BridgeError("Loaded extension lacks display_v1. Update/reload version 0.4.0; check bridge_status.")
             command_id = secrets.token_hex(16)
             future = asyncio.get_running_loop().create_future()
             self.pending[command_id] = future
@@ -147,6 +162,10 @@ class Broker:
                 await ws.close(code=1008)
                 return
             self.extension = ws
+            version = hello.get("version")
+            capabilities = hello.get("capabilities", [])
+            self.extension_info = {"version": version if isinstance(version, str) and len(version) < 50 else "unknown",
+                                   "capabilities": [c for c in capabilities if isinstance(c, str) and len(c)<80][:30] if isinstance(capabilities, list) else []}
             await ws.send_json({"type": "ready", "protocol": 1})
             while True:
                 raw = await ws.receive_text()
@@ -168,6 +187,7 @@ class Broker:
         finally:
             if self.extension is ws:
                 self.extension = None
+                self.extension_info = None
                 for future in self.pending.values():
                     if not future.done():
                         future.set_exception(BridgeError("Extension disconnected during command; outcome unknown. Inspect before retrying."))
@@ -198,7 +218,7 @@ def create_app(config=None):
         if denied is not None:
             return denied
         return JSONResponse({"protocol": 1, "extension_connected": broker.extension is not None,
-                             "pending": len(broker.pending)})
+                             "extension": broker.extension_info, "pending": len(broker.pending)})
 
     async def command(request):
         denied = await auth(request)
@@ -220,7 +240,8 @@ def create_app(config=None):
         from .client import OnshapeError
         import inspect
         from pydantic import validate_call
-        names = {"resolve_target", "search_commands", "browse_commands", "document_tree", "element_tree", "document_history", "document_edit", "sidebar_edit"}
+        names = {"resolve_target", "search_commands", "browse_commands", "document_tree", "element_tree", "document_history", "document_edit", "sidebar_edit",
+                 "display_state", "set_visibility", "mate_animation", "view_control", "capture_viewport"}
         name = request.path_params["tool"]
         if name not in names:
             return JSONResponse({"error": "Unknown local tool.", "tools": sorted(names)}, 404)
@@ -233,6 +254,9 @@ def create_app(config=None):
             # particular, the string "false" must never enable deletion.
             result = validate_call(function, config={"strict": True})(**body)
             if inspect.isawaitable(result): result = await result
+            if name == "capture_viewport":
+                # MCP includes an ImageContent block; HTTP returns its artifact metadata.
+                return JSONResponse(json.loads(result[0].text))
             return JSONResponse(json.loads(result))
         except (OnshapeError, BridgeError, ValueError, TypeError) as error:
             return JSONResponse({"error": str(error), "next": "Inspect current state before retrying a mutation."}, 400)

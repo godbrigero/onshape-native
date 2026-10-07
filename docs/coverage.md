@@ -50,7 +50,8 @@ it with `scripts/coverage.py`; the script never calls a write endpoint.
 | Part Studio folders/features | Create selected/empty/nested folders, rename, move, unpack/delete (including contents); feature add/delete/rename, suppression and parameter edits verified; geometry preserved by organization |
 | Model history | Microversion pagination and exact element-state/folder comparison verified |
 | Assembly occurrence traversal | Full REST instance paths, mates and transforms verified; repeated nested references covered by tests |
-| Assembly sidebar folders | Map serialization fix and source-derived convenience edits implemented and unit-tested; live validation awaits extension reload permission |
+| Assembly sidebar | Complete 172-row native sidebar read, including 30 inherited connectors, live-verified; folder mutation helpers remain source-derived/unit-tested |
+| Display and motion | 25-row visibility batch/readback/restore; lidar revolute prepare/step/play/stop/restore; camera fit/zoom/restore and current viewport capture live-verified; see [display research](display-research.md) |
 | Command discovery | Local TF-IDF/cosine top ten plus exhaustive manual catalog pagination; MCP and HTTP routes implemented |
 | Native insertables discovery | Observed in UI; replay failed with backend support error; use REST getInsertables |
 | Export redirects | Implemented and mock-tested; live validation awaits approval to reload with webRequest permission |

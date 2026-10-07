@@ -79,6 +79,23 @@ class Structures:
                     raise OnshapeError("Document changed during assembly sidebar snapshot. Refresh element_tree.")
                 sidebar, sidebar_issues = assembly_sidebar_rows(native)
                 data["native"] = native
+                from .display import Display
+                try:
+                    display = Display(self.s)
+                    display_target, display_tab = await display.target(url, native.get("tab_id"))
+                    observed = await display.command(display_target, display_tab, "inspect")
+                    if observed["microversion"] != data["microversion"]:
+                        raise OnshapeError("Document changed during display capture. Refresh element_tree.")
+                    display_snapshot = display.snapshot(url, display_target, display_tab, observed)
+                    by_path = {r["tree_path"]: r for r in observed["rows"]}
+                    for row in sidebar:
+                        item = by_path.get(row["path"])
+                        if item:
+                            row.update({key: item.get(key) for key in ("reference", "effective_visible", "visibility", "parent_hidden", "inherited_connector", "implicit", "mate_type")})
+                    data.update(display_snapshot=display_snapshot, visibility_complete=observed["complete"])
+                    sidebar_issues += observed["issues"]
+                except OnshapeError as error:
+                    data.update(visibility_complete=False, display_issue=str(error))
             else:
                 sidebar, sidebar_issues = [], ["Assembly sidebar folders require an unconfigured workspace URL; REST occurrence hierarchy is reported separately."]
             data.update(tree_kind="assembly", definition=definition, rows=rows+sidebar, issues=issues+sidebar_issues,

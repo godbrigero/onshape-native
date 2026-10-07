@@ -226,8 +226,9 @@ names come from metadata; this tool does not rename source parts implicitly.
 Referenced subassemblies are read-only through their parent sidebar: open their
 reference URL and choose the intended editable workspace deliberately. Add/edit
 instances and mate definitions through discovered assembly REST operations.
-Assembly sidebar convenience writes are source-derived and unit-tested; live
-validation is pending the extension reload described in coverage.md.
+Assembly folder convenience writes remain source-derived and unit-tested.
+Complete sidebar reads and display visibility writes are now live-verified; see
+[display controls](display-controls.md) for those supported workflows.
 
 Check `structure_verified` and, for Part Studios, `regeneration_errors`. Then use
 `inspect_model`/`evaluate` for exact geometry or recheck assembly mate status,
@@ -262,3 +263,11 @@ Raw REST remains `/api/v17/...` with official methods, path/query/body and respo
 status. Native envelopes remain `POST /command`; see README and the cube/torus
 handoff for those schemas. `/local` results are Python convenience results, not
 raw REST envelopes. Normal Onshape permissions and account capabilities apply.
+
+
+## Display, motion, camera and current viewport
+
+Use `display_state`, `set_visibility`, `mate_animation`, `view_control` and
+`capture_viewport` for these workflows. All five have matching `/local/` HTTP
+routes. Read [display controls](display-controls.md) for exact argument formats,
+inherited references, batch verification and mandatory motion restoration.

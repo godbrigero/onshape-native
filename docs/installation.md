@@ -12,7 +12,7 @@ Mobile browsers and cloud-only AI sessions cannot host this local integration.
 
 ## 1. Put the source on the device
 
-Extract the clean `onshape-native-0.3.0.zip` into a permanent, writable location,
+Extract the clean `onshape-native-0.4.0.zip` into a permanent, writable location,
 or copy the source package from this project. Examples:
 
 - macOS/Linux: `~/Tools/onshape-native`
@@ -146,7 +146,11 @@ Codex, verify `onshape_native` is enabled in the MCP settings. Ask either agent:
 > the document's Part Studios and folders. Do not modify the model.
 
 Paste a real Onshape document/element URL. A working connection reports
-`extension_connected: true`. If it reports false, press **Connect** in the
+`extension_connected: true`. For display/motion tools, also require extension
+version 0.4.0 or newer, capability `display_v1`, and
+`display_state.connected: true` for the actual editor connection. An old running
+companion must be restarted after updating its source.
+If extension connectivity reports false, press **Connect** in the
 extension popup; its periodic reconnect may take up to about 30 seconds.
 
 For an independent protocol check from the source directory:

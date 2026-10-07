@@ -1,6 +1,6 @@
 # Onshape Native for Claude Code
 
-This plugin supplies the **same 30 MCP tools and modeling skill** as the Codex
+This plugin supplies the **same 35 MCP tools and modeling skill** as the Codex
 integration. Claude Code launches the stdio MCP server; the server automatically
 starts or reuses the local HTTP bridge connected to the Onshape extension.
 No Codex installation or Onshape API keys are required.

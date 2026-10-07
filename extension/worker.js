@@ -1,6 +1,7 @@
 import {pageCommand} from "./page-adapter.js";
 import {restGet} from "./rest-get.js";
 import {tabContext} from "./tab-context.js";
+import {displayCommand} from "./display-adapter.js";
 import {BRIDGE_TOKEN} from "./local-config.js";
 
 let socket = null;
@@ -16,7 +17,7 @@ async function resolveTab(job) {
     const {did, wid, eid} = job.target;
     const pathname = `/documents/${did}/w/${wid}/e/${eid}`;
     const matches = tabs.filter(t => new URL(t.url).pathname === pathname);
-    if (matches.length === 1) return matches[0];
+    if (job.tab_id === undefined && matches.length === 1) return matches[0];
     const selected = matches.find(t => t.id === job.tab_id);
     if (selected) return selected;
     throw new Error(matches.length ? "Multiple matching tabs; provide tab_id from bridge_status." : "Open the exact target workspace/element in Comet.");
@@ -31,8 +32,9 @@ async function execute(job) {
   if (job.kind === "open") {
     const {did,wid,eid} = job.target;
     const url = `https://cad.onshape.com/documents/${did}/w/${wid}/e/${eid}`;
-    const matches = await chrome.tabs.query({url: url + "*"});
-    const tab = matches.find(t => new URL(t.url).pathname === new URL(url).pathname) || await chrome.tabs.create({url, active:false});
+    const matches = (await chrome.tabs.query({url: url + "*"})).filter(t=>new URL(t.url).pathname === new URL(url).pathname);
+    if(matches.length>1) throw new Error("Multiple matching editor tabs; supply an exact tab_id to the display/native tool.");
+    const tab = matches[0] || await chrome.tabs.create({url, active:false});
     return {tab_id:tab.id, url, status:tab.status, next:"Wait for native_state to succeed; opening a tab does not mean the editor is ready."};
   }
   if (job.kind === "tabs") {
@@ -40,9 +42,9 @@ async function execute(job) {
   }
   const tab = await resolveTab(job);
   const results = await chrome.scripting.executeScript({target: {tabId: tab.id}, world: "MAIN",
-    func: pageCommand, args: [job]});
+    func: job.kind === "display" ? displayCommand : pageCommand, args: [job]});
   if (results.length !== 1 || results[0].result === undefined) throw new Error("Page command failed or tab navigated; inspect state before retrying.");
-  return results[0].result;
+  return {...results[0].result, tab_id:tab.id};
 }
 
 async function connect() {
@@ -50,7 +52,9 @@ async function connect() {
   if (!config.enabled || !BRIDGE_TOKEN || socket?.readyState === WebSocket.OPEN || socket?.readyState === WebSocket.CONNECTING) return;
   const current = new WebSocket(BASE);
   socket = current;
-  current.onopen = () => current.send(JSON.stringify({type: "hello", token: BRIDGE_TOKEN}));
+  current.onopen = () => current.send(JSON.stringify({type: "hello", token: BRIDGE_TOKEN,
+    version:chrome.runtime.getManifest().version,
+    capabilities:["tab_context_v1", "assembly_sidebar_map_v1", "display_v1"]}));
   current.onmessage = async event => {
     let message;
     try { message = JSON.parse(event.data); } catch { return; }

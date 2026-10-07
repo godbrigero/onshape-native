@@ -86,6 +86,7 @@ and mate categories are accepted by the helper; referenced subassemblies require
 editing their own document/element.
 
 Assembly sidebar map handling and command verification have automated tests.
-Live validation of these new assembly sidebar helpers is pending permission to
-reload the extension; the loaded version omits Map entries. Existing physical
-assembly occurrence traversal is live-verified through REST.
+The updated extension now returns the complete Map and inherited connector
+references; 172 sidebar rows were live-verified on 2026-10-07. Folder mutation
+helpers remain source-derived/unit-tested. See [display research](display-research.md)
+for verified visibility, motion and camera operations.

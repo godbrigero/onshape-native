@@ -133,7 +133,7 @@ export async function pageCommand(job) {
     const definition = elementModel?.definition;
     const root = definition?.assembly || cache?.getModelTreeState(target.eid)?.diffableModelTree?.getRoot();
     if (!root) throw new Error("Native model tree unavailable.");
-    return bounded({target, microversion: getMicroversion(),
+    return bounded({target, microversion: getMicroversion(), connected:controller.connection?.isClosed?.() === false,
       editingFeatureId: elementModel?.get("idEditingFeature") || null,
       tree: plain(root),
       ...(definition?.assembly ? {assemblyTree: plain(definition.assemblyTree), computedData: plain(definition.computedData),
@@ -203,6 +203,7 @@ export async function pageCommand(job) {
     throw new Error("Native revision changed or unavailable. Read native_state before editing.");
   }
   if (job.body?.elementId && job.body.elementId !== target.eid) throw new Error("Body elementId differs from target.");
+  if (controller.connection?.isClosed?.() === true) throw new Error("Onshape editor is disconnected. Reconnect the exact tab before sending native commands; nothing was sent.");
   const Type = constructors.get(job.command);
   if (!Type) throw new Error("Native command type unavailable.");
   const typedBody = {...job.body, $type: job.command};

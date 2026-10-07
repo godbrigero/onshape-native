@@ -21,7 +21,7 @@ async def main(url, config=None):
         async with ClientSession(read,write) as session:
             await session.initialize()
             tools=(await session.list_tools()).tools
-            assert len(tools)==30
+            assert len(tools)==35
             assert all(t.annotations is not None for t in tools)
             listing=await session.call_tool('api_catalog',{'search':'getAssemblyMassProperties'})
             assert not listing.isError

@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-07",
+  "version": "0.4.0",
+  "automated_checks": {
+    "python": 95,
+    "javascript": 16
+  },
+  "mcp_tools": 35,
+  "live": {
+    "assembly_sidebar_rows": 172,
+    "inherited_connectors": 30,
+    "top_level_instances": 108,
+    "revolute_mates": 7,
+    "combined_element_tree_rows": 312,
+    "sidebar_complete": true,
+    "visibility_complete": true,
+    "batch_visibility": {
+      "rows": 25,
+      "inversion_verified": true,
+      "restoration_verified": true
+    },
+    "final_visibility": {
+      "original_visibility_matches": true,
+      "visibility_reference_count": 171,
+      "visibility_difference_count": 0
+    },
+    "motion": {
+      "frame_count": 5,
+      "range_degrees": [
+        0,
+        90
+      ],
+      "step_index": 2,
+      "solved_angle_degrees": 45.00000125223908,
+      "step_pose_verified": true,
+      "actions_verified": [
+        "prepare",
+        "step",
+        "start",
+        "status",
+        "stop",
+        "restore"
+      ],
+      "restored_pose_verified": true,
+      "saved_geometry_revision_unchanged": true
+    },
+    "camera": {
+      "actions_verified": [
+        "read",
+        "save",
+        "standard",
+        "fit",
+        "zoom",
+        "orientation",
+        "restore"
+      ],
+      "saved_frame_restore_max_error": 6.940559238444166e-12,
+      "saved_extents_restore_max_error": 9.25415299946053e-12,
+      "original_frame_restore_max_error": 1.1102230246251565e-16,
+      "original_extents_reapplied": true,
+      "extents_adjusted_to_current_viewport_aspect_ratio": true
+    },
+    "protocol": {
+      "occurrence_hide_verified": true,
+      "occurrence_restore_verified": true,
+      "orientation_readback_max_error": 0.0,
+      "fit": true,
+      "mcp_inline_image": true,
+      "capture_background": "rgb(255, 255, 255)",
+      "tool_discovery": true,
+      "http_display_state": true,
+      "http_capture": true
+    }
+  },
+  "limitations": [
+    "Motion wrapper supports revolute mates only.",
+    "Effective sidebar visibility excludes pixel occlusion, isolation and temporary edit highlights.",
+    "Viewport image excludes HTML overlays and CSS background images.",
+    "Native module IDs and methods depend on the shipped Onshape build."
+  ],
+  "sha256": {
+    "extension/display-adapter.js": "c54be3986c52afe36e61a21e4650e8ea883885047d157690bc01015921ac4773",
+    "extension/worker.js": "68e1e7930fc0b107649d3b818ff2005b2b60ada43b4b24584de63881d548ee93",
+    "extension/page-adapter.js": "72b0777a2e642e9e6eac7e17089eaa2b110378543a82f848bc187bb78455a8bb",
+    "onshape_native/display.py": "75495cc3e44b4ea07fd9475c098776e4b95391790a068e78a2ea5542e55b3fd7",
+    "onshape_native/bridge.py": "4564997f90bfadc5ed317b4f21682679341af813b28017c63af398f862f0b58c",
+    "onshape_native/server.py": "7c3f1e1018bbbd1f77a8cbf6ff1790aea27862ada905da416e0df7264031d174",
+    "onshape_native/structure_service.py": "eb6354f09ecbcf48015115d73b8d9e633e015907f43c62a18c31ac676a82f832",
+    "onshape_native/structures.py": "47a570d59ce4d78e6188fc88b7236ce452e9427aad0902ff66682db54a20e80f"
+  }
+}

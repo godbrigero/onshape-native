@@ -22,6 +22,8 @@ An agent can:
   inspect advanced feature parameters, materials, mass and assembly relationships.
 - Traverse, create, duplicate, rename, move and delete document tabs and folders,
   and explore or edit feature/sidebar organization.
+- Batch show/hide mates and inherited connectors, inspect actual visibility, preview
+  revolute motion, control the camera and capture the current viewport.
 - Verify regeneration, dimensions, volume, contact and hierarchy after changes.
 
 Use backend commands for modeling and UI actions only when an operation requires
@@ -157,7 +159,7 @@ token; their signed storage URLs are not exposed to callers.
 
 ## MCP tools
 
-The 30 tools use progressive discovery and private, paginated artifacts rather
+The 35 tools use progressive discovery and private, paginated artifacts rather
 than registering hundreds of large endpoint schemas.
 
 | Purpose | Tools |
@@ -167,6 +169,7 @@ than registering hundreds of large endpoint schemas.
 | Verified structure edits | `document_edit`, `sidebar_edit` |
 | REST discovery and execution | `api_catalog`, `api_read`, `api_write`, `api_request`, `api_upload` |
 | Exact modeling | `inspect_model`, `evaluate`, `feature_template`, `feature`, `render_views` |
+| Display and motion | `display_state`, `set_visibility`, `mate_animation`, `view_control`, `capture_viewport` |
 | Native editor messages | `native_catalog`, `native_schema`, `native_state`, `native_read`, `native_write` |
 | Connection, task target and navigation | `resolve_target`, `bridge_status`, `open_document` |
 | Local artifact paging | `artifact_page` |
@@ -180,6 +183,11 @@ handwritten subset of its parameters. Discover the desired type, resolve geometr
 queries, update its defaults and call `feature(action="add")`. Editing an existing
 feature preserves unspecified parameters. Arbitrary full definitions remain
 available through `api_write` and `api_request`.
+
+Read [display controls](docs/display-controls.md) for exact batch visibility,
+preview/restore, camera and screenshot examples. These tools are also available
+through authenticated `POST /local/TOOL_NAME` routes. The extension reports its
+loaded version and capabilities; editor connectivity is checked separately.
 
 For other API operations, discover their exact operation ID and schema first.
 Use `api_upload` for the six multipart operations (imports, blobs, attachments and
@@ -238,7 +246,7 @@ Read [agent instructions](docs/agent-guide.md), [workflow recipes](docs/workflow
 ```sh
 uv sync --frozen --group dev
 .venv/bin/python -m pytest tests -q
-node --test tests/adapter.test.mjs
+node --test tests/*.test.mjs
 .venv/bin/python scripts/smoke.py
 .venv/bin/python scripts/smoke.py --url 'https://cad.onshape.com/documents/DID/w/WID/e/EID'
 ```

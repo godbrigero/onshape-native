@@ -35,6 +35,11 @@ ALIASES = {
     "height": "extrude depth length", "taller": "extrude depth length", "change": "edit modify",
 }
 HINTS = {
+    "display_state": "assembly complete sidebar actual effective visibility hidden shown inherited Part Studio mate connectors motors joints display markers",
+    "set_visibility": "batch show hide individual mates joints inherited Part Studio connectors assembly occurrences markers",
+    "mate_animation": "animate revolute mate lidar rotor motion preview play stop step angle restore pose",
+    "view_control": "camera front back left right top bottom isometric orientation zoom fit selection occurrences save restore view",
+    "capture_viewport": "screenshot current viewport image markers connectors visibility PNG artifact",
     "resolve_target": "current opened active Onshape browser window tab URL link choose target document workspace",
     "getDocumentContents": "traverse browse document tabs nested folders hierarchy parent children",
     "getDocumentHistory": "document tab edit history microversions changes timeline",

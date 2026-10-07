@@ -202,6 +202,9 @@ def assembly_sidebar_rows(native):
         kind = "assembly_sidebar_root" if not path else "assembly_system_folder" if system else "assembly_folder" if folder else "assembly_instance" if typ.endswith(("GBTAssemblyTreeInstance", "GBTAssemblyTreeParametricInstance")) else "assembly_sidebar_feature"
         common = node.get("commonFlags", 0)
         rows.append({"id": rid(path), "kind": kind, "path": path, "node_id": segments[-1] if segments else "",
+                     "feature_id": node.get("featureId") or (segments[-1] if segments else None),
+                     "inherited_connector": bool(node.get("mateConnectorFlags", 0) & 2),
+                     "implicit": bool(node.get("mateConnectorFlags", 0) & 1),
                      "name": node.get("displayName", ""), "parent_id": rid(parent_path) if path else "root",
                      "ancestors": ["root"] + [rid(p) for p in ancestor_paths], "index": node.get("indexInParent", 0),
                      "category": category, "owner_occurrence_path": owner, "native_type": typ,
@@ -229,7 +232,9 @@ def page_tree(store, data, snapshot, parent_id="", recursive=True, offset=0, lim
     if parent_id and not any(r["id"] == parent_id for r in data["rows"]): raise OnshapeError("Unknown parent ID in this snapshot.")
     rows = [r for r in data["rows"] if not parent_id or r["parent_id"] == parent_id or (recursive and parent_id in r.get("ancestors", []))]
     return {"snapshot": snapshot, "microversion": data["microversion"], "tree_kind": data["tree_kind"],
-            **({"occurrences_complete": data["occurrences_complete"], "sidebar_complete": data["sidebar_complete"]} if data["tree_kind"] == "assembly" else {}),
+            **({"occurrences_complete": data["occurrences_complete"], "sidebar_complete": data["sidebar_complete"],
+                "visibility_complete": data.get("visibility_complete", False), "display_snapshot": data.get("display_snapshot"),
+                "display_issue": data.get("display_issue")} if data["tree_kind"] == "assembly" else {}),
             "complete": data["complete"], "issues": data["issues"], "root_id": "root",
             **store.page(rows, offset=offset, limit=limit),
             "next": "Reuse snapshot to page locally; obtain a fresh snapshot after mutations. IDs, not labels, identify nodes."}
