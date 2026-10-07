@@ -62,10 +62,17 @@ class Store:
                 page = page[:low]
         else:
             page = value
+        # Fit a prefix without dropping rows. Continuation remains an exact offset.
+        if isinstance(value,(list,dict)):
+            while len(page)>1 and len(compact(page))>max_chars:
+                page=page[:-1] if isinstance(page,list) else dict(list(page.items())[:-1])
         if len(compact(page)) > max_chars:
+            from .responses import children
             return {"needs_narrower_pointer": True, "type": type(value).__name__, "total": total,
-                    "keys": list(value)[:40] if isinstance(value, dict) else None,
-                    "hint": "Request a child pointer or smaller limit. Data was not truncated."}
+                    "keys": list(value)[offset:offset+limit] if isinstance(value, dict) else None,
+                    "children":children(value,pointer,offset,limit),
+                    "next_offset": offset + limit if offset + limit < total else None,
+                    "hint": "Use artifact_page with a listed child pointer. Original data remains saved."}
         count = len(page) if isinstance(page, (dict, list, str)) else 1
         return {"data": page, "total": total, "next_offset": offset + count if offset + count < total else None}
 

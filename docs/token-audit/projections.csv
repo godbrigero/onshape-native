@@ -1,0 +1,11 @@
+tool,samples,current_mean,projected_mean,reduction_percent
+search_commands,20,1320,773,41.4
+display_state,18,1869,1021,45.4
+element_tree,38,1341,877,34.6
+document_tree,31,1868,648,65.3
+view_control,3,308,34,89.0
+mate_animation,6,173,92,46.6
+set_visibility,4,452,124,72.7
+capture_viewport,1,437,140,68.0
+feature,6,123,123,0.0
+api_read,44,1095,1030,5.9

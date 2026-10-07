@@ -1,0 +1,9 @@
+tool,calls,share_native_calls_percent,responses_measured,missing_responses,response_tokens,mean_response_tokens,argument_tokens,projected_response_tokens,explicit_errors,pointer_fallbacks,images
+onshape_cad.api_catalog,98,,98,0,35546,362.7,748,35546,0,1,0
+onshape_cad.api_read,72,,72,0,19895,276.3,5980,19895,5,16,0
+onshape_cad.artifact_page,15,,15,0,1065,71,722,1065,1,12,0
+onshape_cad.inspect_model,63,,63,0,19180,304.4,3809,19180,1,0,0
+onshape_cad.evaluate,56,,56,0,36178,646.0,15043,36178,0,10,0
+onshape_cad.api_write,187,,187,0,34405,184.0,144500,34405,2,19,0
+onshape_cad.feature,11,,11,0,1634,148.5,10379,1634,0,0,0
+onshape_cad.render_views,6,,6,0,533,88.8,302,533,1,0,5

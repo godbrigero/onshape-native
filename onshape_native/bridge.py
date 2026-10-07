@@ -240,7 +240,7 @@ def create_app(config=None):
         from .client import OnshapeError
         import inspect
         from pydantic import validate_call
-        names = {"resolve_target", "search_commands", "browse_commands", "document_tree", "element_tree", "document_history", "document_edit", "sidebar_edit",
+        names = {"artifact_page", "resolve_target", "search_commands", "browse_commands", "document_tree", "element_tree", "document_history", "document_edit", "sidebar_edit",
                  "display_state", "set_visibility", "mate_animation", "view_control", "capture_viewport"}
         name = request.path_params["tool"]
         if name not in names:

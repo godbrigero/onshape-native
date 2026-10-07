@@ -1,0 +1,248 @@
+{
+  "tokenizer": "o200k_base",
+  "sources": [
+    {
+      "thread": 1,
+      "sha256": "de1f3afbe904a7f34bbde598c212dd6731b0ae2f31d93ea4474f9509cfeb24e7"
+    },
+    {
+      "thread": 2,
+      "sha256": "390c3a8c9e93e0fd0b7e2ad718d517ae111a5501481f9c90faee4a70dc7c3986"
+    }
+  ],
+  "totals": {
+    "calls": 665,
+    "before": 251618,
+    "after": 212550,
+    "saved": 39068,
+    "percent": 15.53,
+    "replayed_calls": 473,
+    "eligible_detail_responses": 158,
+    "original_argument_tokens": 101723,
+    "missing_responses": 0,
+    "detail_calls": 700,
+    "detail_response_tokens": 1335552,
+    "detail_argument_tokens": 38117
+  },
+  "coverage": {
+    "unchanged tool": 167,
+    "verified cache": 460,
+    "error or non-JSON response": 25,
+    "exported discovery": 13
+  },
+  "tools": [
+    {
+      "tool": "api_write",
+      "calls": 120,
+      "replayed": 117,
+      "before": 64700,
+      "after": 19949,
+      "saved": 44751,
+      "percent": 69.17
+    },
+    {
+      "tool": "api_catalog",
+      "calls": 112,
+      "replayed": 91,
+      "before": 42245,
+      "after": 34883,
+      "saved": 7362,
+      "percent": 17.43
+    },
+    {
+      "tool": "search_commands",
+      "calls": 13,
+      "replayed": 13,
+      "before": 9059,
+      "after": 5359,
+      "saved": 3700,
+      "percent": 40.84
+    },
+    {
+      "tool": "resolve_target",
+      "calls": 18,
+      "replayed": 0,
+      "before": 3649,
+      "after": 3649,
+      "saved": 0,
+      "percent": 0.0
+    },
+    {
+      "tool": "inspect_model",
+      "calls": 42,
+      "replayed": 0,
+      "before": 19509,
+      "after": 19509,
+      "saved": 0,
+      "percent": 0.0
+    },
+    {
+      "tool": "evaluate",
+      "calls": 42,
+      "replayed": 0,
+      "before": 18692,
+      "after": 18692,
+      "saved": 0,
+      "percent": 0.0
+    },
+    {
+      "tool": "render_views",
+      "calls": 4,
+      "replayed": 0,
+      "before": 320,
+      "after": 320,
+      "saved": 0,
+      "percent": 0.0
+    },
+    {
+      "tool": "feature_template",
+      "calls": 14,
+      "replayed": 0,
+      "before": 1864,
+      "after": 1864,
+      "saved": 0,
+      "percent": 0.0
+    },
+    {
+      "tool": "bridge_status",
+      "calls": 2,
+      "replayed": 0,
+      "before": 553,
+      "after": 553,
+      "saved": 0,
+      "percent": 0.0
+    },
+    {
+      "tool": "feature",
+      "calls": 12,
+      "replayed": 0,
+      "before": 1552,
+      "after": 1552,
+      "saved": 0,
+      "percent": 0.0
+    },
+    {
+      "tool": "sidebar_edit",
+      "calls": 1,
+      "replayed": 0,
+      "before": 239,
+      "after": 239,
+      "saved": 0,
+      "percent": 0.0
+    },
+    {
+      "tool": "document_edit",
+      "calls": 1,
+      "replayed": 0,
+      "before": 163,
+      "after": 163,
+      "saved": 0,
+      "percent": 0.0
+    },
+    {
+      "tool": "native_state",
+      "calls": 13,
+      "replayed": 0,
+      "before": 4771,
+      "after": 4771,
+      "saved": 0,
+      "percent": 0.0
+    },
+    {
+      "tool": "native_catalog",
+      "calls": 4,
+      "replayed": 0,
+      "before": 2718,
+      "after": 2718,
+      "saved": 0,
+      "percent": 0.0
+    },
+    {
+      "tool": "native_schema",
+      "calls": 2,
+      "replayed": 0,
+      "before": 432,
+      "after": 432,
+      "saved": 0,
+      "percent": 0.0
+    },
+    {
+      "tool": "open_document",
+      "calls": 4,
+      "replayed": 0,
+      "before": 355,
+      "after": 355,
+      "saved": 0,
+      "percent": 0.0
+    },
+    {
+      "tool": "element_tree",
+      "calls": 26,
+      "replayed": 25,
+      "before": 6090,
+      "after": 6190,
+      "saved": -100,
+      "percent": -1.64
+    },
+    {
+      "tool": "artifact_page",
+      "calls": 41,
+      "replayed": 39,
+      "before": 19472,
+      "after": 23240,
+      "saved": -3768,
+      "percent": -19.35
+    },
+    {
+      "tool": "api_read",
+      "calls": 171,
+      "replayed": 165,
+      "before": 42157,
+      "after": 47725,
+      "saved": -5568,
+      "percent": -13.21
+    },
+    {
+      "tool": "document_tree",
+      "calls": 23,
+      "replayed": 23,
+      "before": 13078,
+      "after": 20387,
+      "saved": -7309,
+      "percent": -55.89
+    }
+  ],
+  "scenarios": [
+    {
+      "expansion_percent": 0,
+      "expected_total_calls": 665.0,
+      "response_tokens": 212550,
+      "response_plus_argument_tokens": 314273
+    },
+    {
+      "expansion_percent": 10,
+      "expected_total_calls": 735.0,
+      "response_tokens": 346105,
+      "response_plus_argument_tokens": 451640
+    },
+    {
+      "expansion_percent": 25,
+      "expected_total_calls": 840.0,
+      "response_tokens": 546438,
+      "response_plus_argument_tokens": 657690
+    },
+    {
+      "expansion_percent": 50,
+      "expected_total_calls": 1015.0,
+      "response_tokens": 880326,
+      "response_plus_argument_tokens": 1001108
+    },
+    {
+      "expansion_percent": 100,
+      "expected_total_calls": 1365.0,
+      "response_tokens": 1548102,
+      "response_plus_argument_tokens": 1687942
+    }
+  ],
+  "method": "Offline replay through production respond/tree_page/Store.page; original frequencies retained. Missing raw payloads, errors and out-of-scope tools carried forward unchanged. Additional detail demand is a uniform hypothetical rate; entire advertised sections retrieved with pagination, not a single-page approximation. Original artifact_page calls retained. Text tokens only; not provider billing or an agent task rerun."
+}

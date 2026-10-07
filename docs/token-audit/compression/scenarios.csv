@@ -1,0 +1,6 @@
+expansion_percent,expected_total_calls,response_tokens,response_plus_argument_tokens
+0,665.0,180980,282703
+10,735.0,316655,422173
+25,840.0,520167,631377
+50,1015.0,859354,980052
+100,1365.0,1537728,1677400

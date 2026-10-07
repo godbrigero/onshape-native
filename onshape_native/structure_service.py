@@ -42,10 +42,16 @@ class Structures:
         return {"kind": "onshape-structure", "tree_kind": "document", "url": url, "target": target,
                 "microversion": micro, "contents": content, "rows": rows, "issues": issues, "complete": not issues}
 
-    async def document_tree(self, url, snapshot="", parent_id="", recursive=True, offset=0, limit=20):
+    async def document_tree(self, url, snapshot="", parent_id="", recursive=True, offset=0, limit=20, detail="full", query="", node_id=""):
         data = self.load(snapshot, "document") if snapshot else await self.capture_document(url)
         if target_from_url(url) != data["target"]: raise OnshapeError("Snapshot and URL differ.")
         snapshot = snapshot or self.s.store.put(data)["artifact"]
+        if detail == "summary":
+            from .responses import tree_page
+            return tree_page(self.s.store,data,snapshot,parent_id,recursive,offset,limit,query,node_id)
+        if query or node_id:
+            from .responses import tree_page
+            return tree_page(self.s.store,data,snapshot,parent_id,recursive,offset,limit,query,node_id,detail="full")
         return page_tree(self.s.store, data, snapshot, parent_id, recursive, offset, limit)
 
     async def ready_state(self, target):
@@ -119,10 +125,16 @@ class Structures:
                         issues=["Use discovered APIs for this element type; no invented feature hierarchy."], complete=False)
         return data
 
-    async def element_tree(self, url, snapshot="", parent_id="", recursive=True, offset=0, limit=20):
+    async def element_tree(self, url, snapshot="", parent_id="", recursive=True, offset=0, limit=20, detail="full", query="", node_id=""):
         data = self.load(snapshot) if snapshot else await self.capture_element(url)
         if data["tree_kind"] == "document" or target_from_url(url) != data["target"]: raise OnshapeError("Snapshot and element URL differ.")
         snapshot = snapshot or self.s.store.put(data)["artifact"]
+        if detail == "summary":
+            from .responses import tree_page
+            return tree_page(self.s.store,data,snapshot,parent_id,recursive,offset,limit,query,node_id)
+        if query or node_id:
+            from .responses import tree_page
+            return tree_page(self.s.store,data,snapshot,parent_id,recursive,offset,limit,query,node_id,detail="full")
         return page_tree(self.s.store, data, snapshot, parent_id, recursive, offset, limit)
 
     async def history(self, url, element_id="", cursor="", limit=20):

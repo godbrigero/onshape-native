@@ -169,7 +169,7 @@ class Service:
                     return {"completed": result, "stopped": True, "next": "Inspect regeneration errors; do not replay the batch."}
         return {"completed": result, "microversion": micro, "next": "inspect_model(url, previous=snapshot) to verify geometry and refresh references"}
 
-    async def write(self, operation, path, query, body):
+    async def write(self, operation, path, query, body, detail="summary"):
         method, _ = self.catalog.resolve(operation, path, query)
         if method == "GET" or operation == "evalFeatureScript":
             raise OnshapeError("Use api_read or evaluate for reads.")
@@ -180,4 +180,5 @@ class Service:
                 raise OnshapeError("Feature writes require sourceMicroversion and rejectMicroversionSkew=true. Prefer feature tool.")
         if operation == "createDocument":
             body = {**(body or {}), "isPublic": (body or {}).get("isPublic", False)}
-        return self.store.response(await self.call(operation, path, query, body))
+        from .responses import respond
+        return respond(self.store, await self.call(operation, path, query, body), detail, "write")

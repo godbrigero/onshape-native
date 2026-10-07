@@ -241,6 +241,27 @@ Read [agent instructions](docs/agent-guide.md), [workflow recipes](docs/workflow
   Native commands are build-dependent; incompatible runtime shapes fail with a
   diagnostic rather than replaying recorded bytes.
 
+## Context and token audit
+
+[Open the interactive audit](docs/token-audit/index.html) for per-tool token
+measurements, seven charts, sortable results, and an editable workflow cost
+calculator. The [full analysis](docs/token-audit/README.md) explains the corpus,
+coverage gaps and proposed optimizations. Counts use named text tokenizers;
+they are not provider billing figures and exclude image tokens.
+
+The [frequency-weighted study](docs/token-audit/usage/index.html) adds actual
+command counts from two modeling threads, per-thread comparisons, operation-level
+usage, and priorities for making advanced detail opt-in while retaining every
+capability. Official API calls and cache artifacts are kept separate from Native
+call frequencies. [Read the recommendations](docs/token-audit/usage/README.md).
+
+Reproduce the read-only audit without changing MCP responses:
+
+```sh
+uv run --project . --with-requirements scripts/audit-requirements.txt \
+  python scripts/token_audit.py
+```
+
 ## Checks
 
 ```sh
@@ -262,3 +283,9 @@ The extension, Codex plugin and skill share an original cube-and-ring icon.
 Its editable source is [assets/onshape-native.svg](assets/onshape-native.svg).
 `scripts/build_icons.py` regenerates the bundled PNG sizes with `rsvg-convert`
 (librsvg); the renderer is not needed to run or install the integration.
+
+## Compact results, complete details on demand
+
+Common API, discovery, hierarchy and display tools return compact summaries by default. The full original response remains saved locally. Use the existing **`artifact_page`** tool with the returned artifact/snapshot to retrieve any omitted details—one universal retrieval tool, no replay of CAD writes. `detail="full"` requests full fields upfront; large responses remain paginated. See the [response format and agent examples](docs/response-compression.md).
+
+Updated measurement: the [implemented-compression report](docs/token-audit/compression/README.md) replays the two supplied traces through production formatting, with per-tool token changes and extra-detail-call sensitivity. [Open the charts](docs/token-audit/compression/index.html).

@@ -33,6 +33,10 @@ async def test_local_discovery_auth_offline_and_allowlisted_dispatch():
         assert (await c.post(path, headers={**AUTH, "Origin":"https://evil.example"}, json={})).status_code == 403
         result = await c.post(path, headers=AUTH, json={"task":"create an assembly"})
         assert result.status_code == 200 and len(result.json()["matches"]) == 10
+        expanded = await c.post("/local/artifact_page", headers=AUTH,
+                                json={"artifact":result.json()["artifact"],"pointer":"/manual_fallback"})
+        assert expanded.status_code == 200 and "data" in expanded.json()
+        assert (await c.post("/local/artifact_page", json={})).status_code == 401
         assert (await c.post("/local/api_write", headers=AUTH, json={})).status_code == 404
         for args in [[], {}, {"task":"create", "unknown":True}, {"task":"create", "limit":"10"}]:
             assert (await c.post(path, headers=AUTH, json=args)).status_code == 400
