@@ -9,7 +9,7 @@ import secrets
 import shutil
 
 PUBLIC = (".codex-plugin", ".claude-plugin", "onshape_native", "scripts", "skills",
-          "docs", "data", "assets", "extension", "pyproject.toml", "uv.lock", "README.md")
+          "docs", "data", "assets", "extension", "pyproject.toml", "uv.lock", "README.md", "install.py")
 
 
 def venv_python(directory, platform=None):

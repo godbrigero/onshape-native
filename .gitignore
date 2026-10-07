@@ -8,3 +8,9 @@ extension/local-config.js
 *.egg-info/
 .mcp.json
 dist/
+
+# Per-device installer records and OS metadata
+.onshape-native-source.json
+.onshape-native-install.json
+.onshape-native-local.json
+.DS_Store

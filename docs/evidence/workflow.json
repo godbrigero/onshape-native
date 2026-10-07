@@ -83,7 +83,7 @@
       "command": {
         "$type": "ui.document.GBTUiElementChangeRegistration",
         "elementIds": [
-          "63d552593a6632f2141ade43"
+          "000000000000000000000001"
         ],
         "clientCache": {
           "$type": "ui.document.GBTUiDocumentClientCacheState",
@@ -119,7 +119,7 @@
       "sequence": 9,
       "command": {
         "$type": "ui.display.GBTUiGetGLDisplayDataCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "documentId": "",
         "workspaceId": ""
@@ -130,7 +130,7 @@
       "sequence": 19,
       "command": {
         "$type": "ui.GBTUiGetFeatureSettingsCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "featureKey": "::newSketch"
       }
@@ -140,7 +140,7 @@
       "sequence": 20,
       "command": {
         "$type": "ui.GBTUiUpdateEditRollbackState",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editRollbackState": 1
       }
@@ -150,8 +150,8 @@
       "sequence": 21,
       "command": {
         "$type": "ui.GBTUiAddFeatureCall",
-        "elementId": "63d552593a6632f2141ade43",
-        "messageId": "742tuNJMHVCrjycC1owUzUsq",
+        "elementId": "000000000000000000000001",
+        "messageId": "example-000000000000000000000002",
         "editDescription": "Insert feature : ",
         "newFeature": {
           "$type": "diff.GBTTreeEditList",
@@ -160,25 +160,25 @@
               "$type": "diff.GBTTreeEditInsertion",
               "location": {
                 "$type": "tree.GBTInsertionLocation",
-                "nodeId": "MvUiCuMN5bA0C8ooo",
+                "nodeId": "example-000000000000000000000003",
                 "before": true,
                 "childFieldIndex": -1
               },
               "newNode": {
                 "$type": "bsedit.GBTMSketch",
-                "nodeId": "ME0R7JJs7bU2wbpwu",
+                "nodeId": "example-000000000000000000000004",
                 "sourceParseTreeNodes": {},
                 "hasUserCode": false,
                 "featureType": "newSketch",
-                "featureId": "FfwUCXpFKSHST0N_0",
+                "featureId": "example-000000000000000000000005",
                 "name": "Sketch",
                 "parameters": [
                   {
                     "$type": "bsedit.GBTMParameterQueryList",
-                    "nodeId": "blpiQ+VXwy85sgFo",
+                    "nodeId": "example-000000000000000000000006",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "sketchPlane",
+                    "parameterId": "example-000000000000000000000007",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "queries": [],
@@ -186,10 +186,10 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "x3EZXVm0AlthDNi7",
+                    "nodeId": "example-000000000000000000000008",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "disableImprinting",
+                    "parameterId": "example-000000000000000000000009",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
@@ -217,20 +217,20 @@
               "$type": "diff.GBTTreeEditChange",
               "oldNode": {
                 "$type": "tree.GBTNodeReference",
-                "nodeId": "blpiQ+VXwy85sgFo"
+                "nodeId": "example-000000000000000000000006"
               },
               "newNode": {
                 "$type": "bsedit.GBTMParameterQueryList",
-                "nodeId": "blpiQ+VXwy85sgFo",
+                "nodeId": "example-000000000000000000000006",
                 "sourceParseTreeNodes": {},
                 "hasUserCode": false,
-                "parameterId": "sketchPlane",
+                "parameterId": "example-000000000000000000000007",
                 "libraryRelationType": 0,
                 "parameterName": "",
                 "queries": [
                   {
                     "$type": "bsedit.GBTMIndividualQuery",
-                    "nodeId": "F8FU979KfvBzcQb",
+                    "nodeId": "example-00000000000000000000000a",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
                     "deterministicIds": [
@@ -262,10 +262,10 @@
       "sequence": 22,
       "command": {
         "$type": "ui.sketch.GBTUiSketchGetConstraintGraphCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "sketchFeatureId": "example-000000000000000000000005",
         "supportsConsolidatedConstraints": true
       }
     },
@@ -274,10 +274,10 @@
       "sequence": 76,
       "command": {
         "$type": "ui.sketch.GBTUiSketchStartInferencing",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "sketchFeatureId": "example-000000000000000000000005",
         "draggedEntityId": "",
         "externalDeterministicIds": [
           "JDC",
@@ -292,7 +292,7 @@
         },
         "localEntityIds": [],
         "sequenceId": 1,
-        "inferenceSetId": "NDS8aWjnPqam",
+        "inferenceSetId": "example-00000000000000000000000b",
         "referencePoints": [],
         "inferenceableBodyDeterministicIds": [],
         "inferenceableFeatureIds": []
@@ -303,11 +303,11 @@
       "sequence": 77,
       "command": {
         "$type": "ui.sketch.GBTUiSketchFinishInferencing",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
-        "inferenceSetId": "NDS8aWjnPqam"
+        "sketchFeatureId": "example-000000000000000000000005",
+        "inferenceSetId": "example-00000000000000000000000b"
       }
     },
     {
@@ -315,10 +315,10 @@
       "sequence": 78,
       "command": {
         "$type": "ui.GBTUiCommit",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "Insert feature : Sketch 1",
-        "featureNodeId": "ME0R7JJs7bU2wbpwu",
+        "featureNodeId": "example-000000000000000000000004",
         "propertyNodeId": ""
       }
     },
@@ -327,7 +327,7 @@
       "sequence": 79,
       "command": {
         "$type": "ui.GBTUiSetFeatureSettingsCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "featureKey": "::newSketch",
         "featureSettings": {
@@ -336,7 +336,7 @@
             "none": [
               {
                 "$type": "bsedit.GBTStoredParameterBoolean",
-                "parameterId": "disableImprinting",
+                "parameterId": "example-000000000000000000000009",
                 "value": false
               }
             ]
@@ -350,7 +350,7 @@
       "sequence": 86,
       "command": {
         "$type": "ui.GBTUiUpdateEditRollbackState",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editRollbackState": 1
       }
@@ -360,9 +360,9 @@
       "sequence": 87,
       "command": {
         "$type": "ui.GBTUiBeginEdit",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
-        "nodeId": "ME0R7JJs7bU2wbpwu",
+        "nodeId": "example-000000000000000000000004",
         "rollbackState": 1
       }
     },
@@ -371,10 +371,10 @@
       "sequence": 88,
       "command": {
         "$type": "ui.sketch.GBTUiSketchGetConstraintGraphCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "sketchFeatureId": "example-000000000000000000000005",
         "supportsConsolidatedConstraints": true
       }
     },
@@ -383,10 +383,10 @@
       "sequence": 98,
       "command": {
         "$type": "ui.sketch.GBTUiSketchStartInferencing",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "sketchFeatureId": "example-000000000000000000000005",
         "draggedEntityId": "",
         "externalDeterministicIds": [
           "JDC",
@@ -401,7 +401,7 @@
         },
         "localEntityIds": [],
         "sequenceId": 1,
-        "inferenceSetId": "0fqsxsXRU0mv",
+        "inferenceSetId": "example-00000000000000000000000c",
         "referencePoints": [],
         "inferenceableBodyDeterministicIds": [],
         "inferenceableFeatureIds": []
@@ -412,7 +412,7 @@
       "sequence": 101,
       "command": {
         "$type": "ui.sketch.GBTUiSketchAddRectangleCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "Sketch : Insert rectangle",
         "firstX": -0.0023922414984554052,
@@ -420,10 +420,10 @@
         "oppositeX": 0.03148707002401352,
         "oppositeY": 0.029418105259537697,
         "isConstruction": false,
-        "inferenceSetId": "0fqsxsXRU0mv",
+        "inferenceSetId": "example-00000000000000000000000c",
         "firstInferenceId": "",
         "oppositeInferenceId": "",
-        "sketchEntityId": "mBa8PQgrp10a",
+        "sketchEntityId": "example-00000000000000000000000d",
         "equalSides": false,
         "secondInferenceSetId": ""
       }
@@ -433,11 +433,11 @@
       "sequence": 102,
       "command": {
         "$type": "ui.sketch.GBTUiSketchFinishInferencing",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
-        "inferenceSetId": "0fqsxsXRU0mv"
+        "sketchFeatureId": "example-000000000000000000000005",
+        "inferenceSetId": "example-00000000000000000000000c"
       }
     },
     {
@@ -445,10 +445,10 @@
       "sequence": 103,
       "command": {
         "$type": "ui.sketch.GBTUiSketchStartInferencing",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "sketchFeatureId": "example-000000000000000000000005",
         "draggedEntityId": "",
         "externalDeterministicIds": [
           "JDC",
@@ -463,7 +463,7 @@
         },
         "localEntityIds": [],
         "sequenceId": 1,
-        "inferenceSetId": "bauEb05sDFzl",
+        "inferenceSetId": "example-00000000000000000000000e",
         "referencePoints": [],
         "inferenceableBodyDeterministicIds": [],
         "inferenceableFeatureIds": []
@@ -474,10 +474,10 @@
       "sequence": 104,
       "command": {
         "$type": "ui.sketch.GBTUiSketchGetConstraintGraphCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "sketchFeatureId": "example-000000000000000000000005",
         "supportsConsolidatedConstraints": true
       }
     },
@@ -486,11 +486,11 @@
       "sequence": 106,
       "command": {
         "$type": "ui.sketch.GBTUiSketchFinishInferencing",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
-        "inferenceSetId": "bauEb05sDFzl"
+        "sketchFeatureId": "example-000000000000000000000005",
+        "inferenceSetId": "example-00000000000000000000000e"
       }
     },
     {
@@ -498,10 +498,10 @@
       "sequence": 110,
       "command": {
         "$type": "ui.sketch.GBTUiSketchStartInferencing",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "sketchFeatureId": "example-000000000000000000000005",
         "draggedEntityId": "",
         "externalDeterministicIds": [
           "JDC",
@@ -516,7 +516,7 @@
         },
         "localEntityIds": [],
         "sequenceId": 1,
-        "inferenceSetId": "ibPITPVKwHcR",
+        "inferenceSetId": "example-00000000000000000000000f",
         "referencePoints": [],
         "inferenceableBodyDeterministicIds": [],
         "inferenceableFeatureIds": [
@@ -529,11 +529,11 @@
       "sequence": 112,
       "command": {
         "$type": "ui.sketch.GBTUiSketchChangeInferencingMode",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
-        "inferenceSetId": "ibPITPVKwHcR",
+        "sketchFeatureId": "example-000000000000000000000005",
+        "inferenceSetId": "example-00000000000000000000000f",
         "mode": 4,
         "referencePoints": [
           0.03872844949364662,
@@ -547,7 +547,7 @@
       "sequence": 114,
       "command": {
         "$type": "ui.sketch.GBTUiSketchAddCircleCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "Sketch : Insert circle",
         "centerX": 0.03872844949364662,
@@ -555,10 +555,10 @@
         "perimeterX": 0.04907327890396118,
         "perimeterY": -0.018426725640892982,
         "isConstruction": false,
-        "inferenceSetId": "ibPITPVKwHcR",
+        "inferenceSetId": "example-00000000000000000000000f",
         "centerInferenceId": "",
         "perimeterInferenceId": "",
-        "sketchEntityId": "NUcjpuQZshtr"
+        "sketchEntityId": "example-000000000000000000000010"
       }
     },
     {
@@ -566,11 +566,11 @@
       "sequence": 115,
       "command": {
         "$type": "ui.sketch.GBTUiSketchFinishInferencing",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
-        "inferenceSetId": "ibPITPVKwHcR"
+        "sketchFeatureId": "example-000000000000000000000005",
+        "inferenceSetId": "example-00000000000000000000000f"
       }
     },
     {
@@ -578,10 +578,10 @@
       "sequence": 116,
       "command": {
         "$type": "ui.sketch.GBTUiSketchStartInferencing",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "sketchFeatureId": "example-000000000000000000000005",
         "draggedEntityId": "",
         "externalDeterministicIds": [
           "JDC",
@@ -596,7 +596,7 @@
         },
         "localEntityIds": [],
         "sequenceId": 1,
-        "inferenceSetId": "wEfZF31332UO",
+        "inferenceSetId": "example-000000000000000000000011",
         "referencePoints": [],
         "inferenceableBodyDeterministicIds": [],
         "inferenceableFeatureIds": [
@@ -609,10 +609,10 @@
       "sequence": 117,
       "command": {
         "$type": "ui.sketch.GBTUiSketchGetConstraintGraphCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "sketchFeatureId": "example-000000000000000000000005",
         "supportsConsolidatedConstraints": true
       }
     },
@@ -621,11 +621,11 @@
       "sequence": 119,
       "command": {
         "$type": "ui.sketch.GBTUiSketchFinishInferencing",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
-        "inferenceSetId": "wEfZF31332UO"
+        "sketchFeatureId": "example-000000000000000000000005",
+        "inferenceSetId": "example-000000000000000000000011"
       }
     },
     {
@@ -633,10 +633,10 @@
       "sequence": 121,
       "command": {
         "$type": "ui.sketch.GBTUiSketchGetProjectionCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "sketchFeatureId": "example-000000000000000000000005",
         "objectToProject": "JFF",
         "wantMidpoint": false,
         "inContextEntity": null
@@ -647,12 +647,12 @@
       "sequence": 122,
       "command": {
         "$type": "ui.GBTUiMeasureCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "entityQueries": [
           {
             "$type": "bsedit.GBTMIndividualQuery",
-            "nodeId": "FZHQf2GmT5fAPBU",
+            "nodeId": "example-000000000000000000000012",
             "sourceParseTreeNodes": {},
             "hasUserCode": false,
             "deterministicIds": [
@@ -681,7 +681,7 @@
         "subfeatureDefinitions": [],
         "pointPositions": [],
         "queryNodeIdToInContextNodeId": {},
-        "viewerId": "view6",
+        "viewerId": "example-000000000000000000000013",
         "measurementReference": null,
         "customOriginCoordinateSystem": null,
         "measurementContextNodeId": ""
@@ -692,7 +692,7 @@
       "sequence": 124,
       "command": {
         "$type": "ui.sketch.GBTUiSketchAddDimensionCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "Sketch : Add dimension",
         "constraintType": 11,
@@ -716,7 +716,7 @@
         "radiusDisplay": 0,
         "setDrivenDimensionIfOverConstrained": true,
         "useUserSpecifiedQuadrant": false,
-        "dimensionId": "giqq31QVaBfR"
+        "dimensionId": "example-000000000000000000000014"
       }
     },
     {
@@ -724,10 +724,10 @@
       "sequence": 125,
       "command": {
         "$type": "ui.sketch.GBTUiSketchGetConstraintGraphCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "sketchFeatureId": "example-000000000000000000000005",
         "supportsConsolidatedConstraints": true
       }
     },
@@ -736,16 +736,16 @@
       "sequence": 128,
       "command": {
         "$type": "ui.sketch.GBTUiSketchModifyDimensionCall",
-        "elementId": "63d552593a6632f2141ade43",
-        "messageId": "scSRiqCjSo1eh3rAHpICS6AP",
+        "elementId": "000000000000000000000001",
+        "messageId": "example-000000000000000000000015",
         "editDescription": "Sketch : Edit dimension",
-        "dimensionId": "giqq31QVaBfR",
+        "dimensionId": "example-000000000000000000000014",
         "modifiedParameter": {
           "$type": "bsedit.GBTMParameterQuantity",
-          "nodeId": "MLZqBi4JcjdkkcXsU",
+          "nodeId": "example-000000000000000000000016",
           "sourceParseTreeNodes": {},
           "hasUserCode": false,
-          "parameterId": "length",
+          "parameterId": "example-000000000000000000000017",
           "libraryRelationType": 0,
           "parameterName": "",
           "units": "centimeter",
@@ -764,10 +764,10 @@
       "sequence": 129,
       "command": {
         "$type": "ui.sketch.GBTUiSketchGetConstraintGraphCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "",
-        "sketchFeatureId": "FfwUCXpFKSHST0N_0",
+        "sketchFeatureId": "example-000000000000000000000005",
         "supportsConsolidatedConstraints": true
       }
     },
@@ -776,10 +776,10 @@
       "sequence": 132,
       "command": {
         "$type": "ui.GBTUiCommit",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "Edit : Sketch 1",
-        "featureNodeId": "ME0R7JJs7bU2wbpwu",
+        "featureNodeId": "example-000000000000000000000004",
         "propertyNodeId": ""
       }
     },
@@ -788,7 +788,7 @@
       "sequence": 133,
       "command": {
         "$type": "ui.GBTUiSetFeatureSettingsCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "featureKey": "::newSketch",
         "featureSettings": {
@@ -797,7 +797,7 @@
             "none": [
               {
                 "$type": "bsedit.GBTStoredParameterBoolean",
-                "parameterId": "disableImprinting",
+                "parameterId": "example-000000000000000000000009",
                 "value": false
               }
             ]
@@ -811,12 +811,12 @@
       "sequence": 136,
       "command": {
         "$type": "partstudiofolders.GBTUiCreateFolder",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "Create folder : Research features",
         "begin": {
           "$type": "tree.GBTInsertionLocation",
-          "nodeId": "MvUiCuMN5bA0C8ooo",
+          "nodeId": "example-000000000000000000000003",
           "before": true,
           "childFieldIndex": -1
         },
@@ -829,14 +829,14 @@
       "sequence": 141,
       "command": {
         "$type": "ui.GBTUiRenameFeature",
-        "elementId": "63d552593a6632f2141ade43",
-        "messageId": "1DVQxu2ULnfuTci0AdOcBcgQ",
+        "elementId": "000000000000000000000001",
+        "messageId": "example-000000000000000000000018",
         "editDescription": "Rename : Native samples",
         "featureChange": {
           "$type": "diff.GBTTreeEditChangeField",
           "node": {
             "$type": "tree.GBTNodeReference",
-            "nodeId": "MRnel1+a9woMucV38"
+            "nodeId": "example-000000000000000000000019"
           },
           "fieldIndex": 13139968,
           "newValue": {
@@ -844,7 +844,7 @@
             "value": "Native samples"
           }
         },
-        "featureId": "MRnel1+a9woMucV38",
+        "featureId": "example-000000000000000000000019",
         "isDefaultFeature": false,
         "isAuxiliaryDataFeature": false
       }
@@ -854,18 +854,18 @@
       "sequence": 146,
       "command": {
         "$type": "partstudiofolders.GBTUiCreateFolder",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "Create folder : Sketch group",
         "begin": {
           "$type": "tree.GBTInsertionLocation",
-          "nodeId": "ME0R7JJs7bU2wbpwu",
+          "nodeId": "example-000000000000000000000004",
           "before": true,
           "childFieldIndex": -1
         },
         "end": {
           "$type": "tree.GBTInsertionLocation",
-          "nodeId": "ME0R7JJs7bU2wbpwu",
+          "nodeId": "example-000000000000000000000004",
           "before": false,
           "childFieldIndex": -1
         },
@@ -877,7 +877,7 @@
       "sequence": 497,
       "command": {
         "$type": "ui.GBTUiGetFeatureSettingsCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "featureKey": "::extrude"
       }
@@ -887,7 +887,7 @@
       "sequence": 498,
       "command": {
         "$type": "ui.GBTUiUpdateEditRollbackState",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editRollbackState": 1
       }
@@ -897,8 +897,8 @@
       "sequence": 499,
       "command": {
         "$type": "ui.GBTUiAddFeatureCall",
-        "elementId": "63d552593a6632f2141ade43",
-        "messageId": "xip3Z8zXWR4Gpzv5Ab882w8T",
+        "elementId": "000000000000000000000001",
+        "messageId": "example-00000000000000000000001a",
         "editDescription": "Insert feature : ",
         "newFeature": {
           "$type": "diff.GBTTreeEditList",
@@ -907,25 +907,25 @@
               "$type": "diff.GBTTreeEditInsertion",
               "location": {
                 "$type": "tree.GBTInsertionLocation",
-                "nodeId": "MvUiCuMN5bA0C8ooo",
+                "nodeId": "example-000000000000000000000003",
                 "before": true,
                 "childFieldIndex": -1
               },
               "newNode": {
                 "$type": "bsedit.GBTMFeature",
-                "nodeId": "MGrBgXzr5E5kbc4qt",
+                "nodeId": "example-00000000000000000000001b",
                 "sourceParseTreeNodes": {},
                 "hasUserCode": false,
                 "featureType": "extrude",
-                "featureId": "FnfSCGLhbFqn380_0",
+                "featureId": "example-00000000000000000000001c",
                 "name": "Extrude",
                 "parameters": [
                   {
                     "$type": "bsedit.GBTMParameterEnum",
-                    "nodeId": "uWB+AC2AqSptjfNb",
+                    "nodeId": "example-00000000000000000000001d",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "domain",
+                    "parameterId": "example-00000000000000000000001e",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "enumName": "OperationDomain",
@@ -934,10 +934,10 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterEnum",
-                    "nodeId": "T1wygFCaFg38xnTo",
+                    "nodeId": "example-00000000000000000000001f",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "bodyType",
+                    "parameterId": "example-000000000000000000000020",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "enumName": "ExtendedToolBodyType",
@@ -946,10 +946,10 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterEnum",
-                    "nodeId": "2VEbmq4EaFfFu6as",
+                    "nodeId": "example-000000000000000000000021",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "operationType",
+                    "parameterId": "example-000000000000000000000022",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "enumName": "NewBodyOperationType",
@@ -958,10 +958,10 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterEnum",
-                    "nodeId": "3IPWBalAHycQ58fD",
+                    "nodeId": "example-000000000000000000000023",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "surfaceOperationType",
+                    "parameterId": "example-000000000000000000000024",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "enumName": "NewSurfaceOperationType",
@@ -970,10 +970,10 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterEnum",
-                    "nodeId": "4ndSACvQ9I7i91AU",
+                    "nodeId": "example-000000000000000000000025",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "flatOperationType",
+                    "parameterId": "example-000000000000000000000026",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "enumName": "FlatOperationType",
@@ -982,10 +982,10 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterQueryList",
-                    "nodeId": "KzzMeUKamLllQlaZ",
+                    "nodeId": "example-000000000000000000000027",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "entities",
+                    "parameterId": "example-000000000000000000000028",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "queries": [],
@@ -993,10 +993,10 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterQueryList",
-                    "nodeId": "n0zraoCJUE0kJHyQ",
+                    "nodeId": "example-000000000000000000000029",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "surfaceEntities",
+                    "parameterId": "example-00000000000000000000002a",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "queries": [],
@@ -1004,10 +1004,10 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterQueryList",
-                    "nodeId": "T0i132+KmzfMOlqM",
+                    "nodeId": "example-00000000000000000000002b",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "wallShape",
+                    "parameterId": "example-00000000000000000000002c",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "queries": [],
@@ -1015,20 +1015,20 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "miiSDfKV9OtNCtII",
+                    "nodeId": "example-00000000000000000000002d",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "midplane",
+                    "parameterId": "example-00000000000000000000002e",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
                   },
                   {
                     "$type": "bsedit.GBTMParameterQuantity",
-                    "nodeId": "UyFYMLJkL65bQPUh",
+                    "nodeId": "example-00000000000000000000002f",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "thickness1",
+                    "parameterId": "example-000000000000000000000030",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "units": "centimeter",
@@ -1038,20 +1038,20 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "Ti+LYF87W87uLzHC",
+                    "nodeId": "example-000000000000000000000031",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "flipWall",
+                    "parameterId": "example-000000000000000000000032",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
                   },
                   {
                     "$type": "bsedit.GBTMParameterQuantity",
-                    "nodeId": "AbZ2DAcjCAdTMjOe",
+                    "nodeId": "example-000000000000000000000033",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "thickness2",
+                    "parameterId": "example-000000000000000000000034",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "units": "centimeter",
@@ -1061,10 +1061,10 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterQuantity",
-                    "nodeId": "oz7rPnscR9VEehjq",
+                    "nodeId": "example-000000000000000000000035",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "thickness",
+                    "parameterId": "example-000000000000000000000036",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "units": "centimeter",
@@ -1074,10 +1074,10 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterEnum",
-                    "nodeId": "Y8M4euEocowzQypH",
+                    "nodeId": "example-000000000000000000000037",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "endBound",
+                    "parameterId": "example-000000000000000000000038",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "enumName": "BoundingType",
@@ -1086,20 +1086,20 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "xj4eZ6ZmfAFgGJBb",
+                    "nodeId": "example-000000000000000000000039",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "oppositeDirection",
+                    "parameterId": "example-00000000000000000000003a",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
                   },
                   {
                     "$type": "bsedit.GBTMParameterQuantity",
-                    "nodeId": "KPgllSzxDuu+R4AT",
+                    "nodeId": "example-00000000000000000000003b",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "depth",
+                    "parameterId": "example-00000000000000000000003c",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "units": "centimeter",
@@ -1109,10 +1109,10 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterQueryList",
-                    "nodeId": "NKPpjTIGsC/ny3Hh",
+                    "nodeId": "example-00000000000000000000003d",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "endBoundEntityFace",
+                    "parameterId": "example-00000000000000000000003e",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "queries": [],
@@ -1120,10 +1120,10 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterQueryList",
-                    "nodeId": "BtZDE5Lo6xC8VsTq",
+                    "nodeId": "example-00000000000000000000003f",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "endBoundEntityBody",
+                    "parameterId": "example-000000000000000000000040",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "queries": [],
@@ -1131,10 +1131,10 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterQueryList",
-                    "nodeId": "aAjbSyhqVarE6AS7",
+                    "nodeId": "example-000000000000000000000041",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "endBoundEntityVertex",
+                    "parameterId": "example-000000000000000000000042",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "queries": [],
@@ -1142,20 +1142,20 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "Pn7KFiDtSn0WnIif",
+                    "nodeId": "example-000000000000000000000043",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "hasOffset",
+                    "parameterId": "example-000000000000000000000044",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
                   },
                   {
                     "$type": "bsedit.GBTMParameterQuantity",
-                    "nodeId": "Dd3wDdbS9so85ykj",
+                    "nodeId": "example-000000000000000000000045",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "offsetDistance",
+                    "parameterId": "example-000000000000000000000046",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "units": "centimeter",
@@ -1165,30 +1165,30 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "xsbKg3ws0f5Vp+2f",
+                    "nodeId": "example-000000000000000000000047",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "offsetOppositeDirection",
+                    "parameterId": "example-000000000000000000000048",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "7ShhMtux2yPmMFMZ",
+                    "nodeId": "example-000000000000000000000049",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "hasExtrudeDirection",
+                    "parameterId": "example-00000000000000000000004a",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
                   },
                   {
                     "$type": "bsedit.GBTMParameterQueryList",
-                    "nodeId": "zcZ9sCD+y8xR5ErY",
+                    "nodeId": "example-00000000000000000000004b",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "extrudeDirection",
+                    "parameterId": "example-00000000000000000000004c",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "queries": [],
@@ -1196,20 +1196,20 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "zqqkQs6gzCU6lPU3",
+                    "nodeId": "example-00000000000000000000004d",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "startOffset",
+                    "parameterId": "example-00000000000000000000004e",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
                   },
                   {
                     "$type": "bsedit.GBTMParameterEnum",
-                    "nodeId": "TRP94hEeHUe2qhut",
+                    "nodeId": "example-00000000000000000000004f",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "startOffsetBound",
+                    "parameterId": "example-000000000000000000000050",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "enumName": "StartOffsetType",
@@ -1218,10 +1218,10 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterQuantity",
-                    "nodeId": "yUYmPfKWAZl2e7F9",
+                    "nodeId": "example-000000000000000000000051",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "startOffsetDistance",
+                    "parameterId": "example-000000000000000000000052",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "units": "centimeter",
@@ -1231,20 +1231,20 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "9iSGnZT/Enq77XHm",
+                    "nodeId": "example-000000000000000000000053",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "startOffsetOppositeDirection",
+                    "parameterId": "example-000000000000000000000054",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
                   },
                   {
                     "$type": "bsedit.GBTMParameterQueryList",
-                    "nodeId": "s3dNZvN4wi29O1wT",
+                    "nodeId": "example-000000000000000000000055",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "startOffsetEntity",
+                    "parameterId": "example-000000000000000000000056",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "queries": [],
@@ -1252,30 +1252,30 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "5/gPLMm5gpZQrDQi",
+                    "nodeId": "example-000000000000000000000057",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "symmetric",
+                    "parameterId": "example-000000000000000000000058",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "LOUZjAyGhgM1taxP",
+                    "nodeId": "example-000000000000000000000059",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "hasDraft",
+                    "parameterId": "example-00000000000000000000005a",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
                   },
                   {
                     "$type": "bsedit.GBTMParameterQuantity",
-                    "nodeId": "L/KiEWXEyfEP/18N",
+                    "nodeId": "example-00000000000000000000005b",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "draftAngle",
+                    "parameterId": "example-00000000000000000000005c",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "units": "degree",
@@ -1285,30 +1285,30 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "Ph8GWjXew0vdv6BE",
+                    "nodeId": "example-00000000000000000000005d",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "draftPullDirection",
+                    "parameterId": "example-00000000000000000000005e",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "TEwtJCghuEpHvMic",
+                    "nodeId": "example-00000000000000000000005f",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "hasSecondDirection",
+                    "parameterId": "example-000000000000000000000060",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
                   },
                   {
                     "$type": "bsedit.GBTMParameterEnum",
-                    "nodeId": "UZduwEG0LdPNwcbv",
+                    "nodeId": "example-000000000000000000000061",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "secondDirectionBound",
+                    "parameterId": "example-000000000000000000000062",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "enumName": "BoundingType",
@@ -1317,20 +1317,20 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "qCLQG6tfnYLHiagQ",
+                    "nodeId": "example-000000000000000000000063",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "secondDirectionOppositeDirection",
+                    "parameterId": "example-000000000000000000000064",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": true
                   },
                   {
                     "$type": "bsedit.GBTMParameterQuantity",
-                    "nodeId": "JUbQokyDAKngAm+K",
+                    "nodeId": "example-000000000000000000000065",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "secondDirectionDepth",
+                    "parameterId": "example-000000000000000000000066",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "units": "centimeter",
@@ -1340,10 +1340,10 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterQueryList",
-                    "nodeId": "7Gt2Ip0xViRl9B7H",
+                    "nodeId": "example-000000000000000000000067",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "secondDirectionBoundEntityFace",
+                    "parameterId": "example-000000000000000000000068",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "queries": [],
@@ -1351,10 +1351,10 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterQueryList",
-                    "nodeId": "0sqXwLm6qrxH/nJs",
+                    "nodeId": "example-000000000000000000000069",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "secondDirectionBoundEntityBody",
+                    "parameterId": "example-00000000000000000000006a",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "queries": [],
@@ -1362,10 +1362,10 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterQueryList",
-                    "nodeId": "ZiWhk7pcFx5rJym3",
+                    "nodeId": "example-00000000000000000000006b",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "secondDirectionBoundEntityVertex",
+                    "parameterId": "example-00000000000000000000006c",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "queries": [],
@@ -1373,20 +1373,20 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "j7jkVlRvrH1A33S/",
+                    "nodeId": "example-00000000000000000000006d",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "hasSecondDirectionOffset",
+                    "parameterId": "example-00000000000000000000006e",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
                   },
                   {
                     "$type": "bsedit.GBTMParameterQuantity",
-                    "nodeId": "eBTuW/BRZRc/4pLc",
+                    "nodeId": "example-00000000000000000000006f",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "secondDirectionOffsetDistance",
+                    "parameterId": "example-000000000000000000000070",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "units": "centimeter",
@@ -1396,30 +1396,30 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "cELY641Uxd14oHlt",
+                    "nodeId": "example-000000000000000000000071",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "secondDirectionOffsetOppositeDirection",
+                    "parameterId": "example-000000000000000000000072",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "9ikZTDX6VDyzJ58f",
+                    "nodeId": "example-000000000000000000000073",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "hasSecondDirectionDraft",
+                    "parameterId": "example-000000000000000000000074",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
                   },
                   {
                     "$type": "bsedit.GBTMParameterQuantity",
-                    "nodeId": "eTecT6NtBNivKZgp",
+                    "nodeId": "example-000000000000000000000075",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "secondDirectionDraftAngle",
+                    "parameterId": "example-000000000000000000000076",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "units": "degree",
@@ -1429,30 +1429,30 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "6n58eX/WyvcWgQx4",
+                    "nodeId": "example-000000000000000000000077",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "secondDirectionDraftPullDirection",
+                    "parameterId": "example-000000000000000000000078",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "+ky2UATiULkYMaOm",
+                    "nodeId": "example-000000000000000000000079",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "defaultScope",
+                    "parameterId": "example-00000000000000000000007a",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": false
                   },
                   {
                     "$type": "bsedit.GBTMParameterQueryList",
-                    "nodeId": "iM8/V7xhgiu/DF/l",
+                    "nodeId": "example-00000000000000000000007b",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "booleanScope",
+                    "parameterId": "example-00000000000000000000007c",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "queries": [],
@@ -1460,20 +1460,20 @@
                   },
                   {
                     "$type": "bsedit.GBTMParameterBoolean",
-                    "nodeId": "rzgmAcWKHCmKYTrX",
+                    "nodeId": "example-00000000000000000000007d",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "defaultSurfaceScope",
+                    "parameterId": "example-00000000000000000000007e",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "value": true
                   },
                   {
                     "$type": "bsedit.GBTMParameterQueryList",
-                    "nodeId": "aYzE3R83qLhF/b2v",
+                    "nodeId": "example-00000000000000000000007f",
                     "sourceParseTreeNodes": {},
                     "hasUserCode": false,
-                    "parameterId": "booleanSurfaceScope",
+                    "parameterId": "example-000000000000000000000080",
                     "libraryRelationType": 0,
                     "parameterName": "",
                     "queries": [],
@@ -1516,20 +1516,20 @@
       "sequence": 502,
       "command": {
         "$type": "ui.GBTUiSpecifyFeature",
-        "elementId": "63d552593a6632f2141ade43",
-        "messageId": "DarhNtw7WcnRqBpwdZvQV8QN",
+        "elementId": "000000000000000000000001",
+        "messageId": "example-000000000000000000000081",
         "editDescription": "Add entity : Faces and sketch regions to extrude",
         "featureChange": {
           "$type": "diff.GBTTreeEditInsertion",
           "location": {
             "$type": "tree.GBTInsertionLocation",
-            "nodeId": "KzzMeUKamLllQlaZ",
+            "nodeId": "example-000000000000000000000027",
             "before": false,
             "childFieldIndex": 606208
           },
           "newNode": {
             "$type": "bsedit.GBTMIndividualQuery",
-            "nodeId": "FEbZWAADHw4fSly",
+            "nodeId": "example-000000000000000000000082",
             "sourceParseTreeNodes": {},
             "hasUserCode": false,
             "deterministicIds": [
@@ -1539,11 +1539,11 @@
           }
         },
         "sequenceId": 0,
-        "featureNodeId": "MGrBgXzr5E5kbc4qt",
+        "featureNodeId": "example-00000000000000000000001b",
         "inContextEntitiesToAdd": null,
         "selectionMicroversion": {
           "$type": "document.GBTMicroversionId",
-          "theId": "f54270fb8b5d3b265bc509c1"
+          "theId": "000000000000000000000083"
         },
         "propagateChanges": false,
         "propagationToSkip": []
@@ -1554,21 +1554,21 @@
       "sequence": 503,
       "command": {
         "$type": "ui.GBTUiSpecifyFeature",
-        "elementId": "63d552593a6632f2141ade43",
-        "messageId": "NCCQDs3El4IRZ2aSNH9YfyFz",
+        "elementId": "000000000000000000000001",
+        "messageId": "example-000000000000000000000084",
         "editDescription": "Edit parameter : Depth",
         "featureChange": {
           "$type": "diff.GBTTreeEditChange",
           "oldNode": {
             "$type": "tree.GBTNodeReference",
-            "nodeId": "KPgllSzxDuu+R4AT"
+            "nodeId": "example-00000000000000000000003b"
           },
           "newNode": {
             "$type": "bsedit.GBTMParameterQuantity",
-            "nodeId": "KPgllSzxDuu+R4AT",
+            "nodeId": "example-00000000000000000000003b",
             "sourceParseTreeNodes": {},
             "hasUserCode": false,
-            "parameterId": "depth",
+            "parameterId": "example-00000000000000000000003c",
             "libraryRelationType": 0,
             "parameterName": "",
             "units": "centimeter",
@@ -1578,11 +1578,11 @@
           }
         },
         "sequenceId": 3,
-        "featureNodeId": "MGrBgXzr5E5kbc4qt",
+        "featureNodeId": "example-00000000000000000000001b",
         "inContextEntitiesToAdd": null,
         "selectionMicroversion": {
           "$type": "document.GBTMicroversionId",
-          "theId": "78b8067e891eb343e9780ff8"
+          "theId": "000000000000000000000085"
         },
         "propagateChanges": false,
         "propagationToSkip": []
@@ -1593,32 +1593,32 @@
       "sequence": 504,
       "command": {
         "$type": "ui.GBTUiSpecifyFeature",
-        "elementId": "63d552593a6632f2141ade43",
-        "messageId": "ryQmTNdiVcYnBr4KHVSvzG9e",
+        "elementId": "000000000000000000000001",
+        "messageId": "example-000000000000000000000086",
         "editDescription": "Edit parameter : Symmetric",
         "featureChange": {
           "$type": "diff.GBTTreeEditChange",
           "oldNode": {
             "$type": "tree.GBTNodeReference",
-            "nodeId": "5/gPLMm5gpZQrDQi"
+            "nodeId": "example-000000000000000000000057"
           },
           "newNode": {
             "$type": "bsedit.GBTMParameterBoolean",
-            "nodeId": "5/gPLMm5gpZQrDQi",
+            "nodeId": "example-000000000000000000000057",
             "sourceParseTreeNodes": {},
             "hasUserCode": false,
-            "parameterId": "symmetric",
+            "parameterId": "example-000000000000000000000058",
             "libraryRelationType": 0,
             "parameterName": "",
             "value": true
           }
         },
         "sequenceId": 3,
-        "featureNodeId": "MGrBgXzr5E5kbc4qt",
+        "featureNodeId": "example-00000000000000000000001b",
         "inContextEntitiesToAdd": null,
         "selectionMicroversion": {
           "$type": "document.GBTMicroversionId",
-          "theId": "78b8067e891eb343e9780ff8"
+          "theId": "000000000000000000000085"
         },
         "propagateChanges": false,
         "propagationToSkip": []
@@ -1629,10 +1629,10 @@
       "sequence": 508,
       "command": {
         "$type": "ui.GBTUiCommit",
-        "elementId": "63d552593a6632f2141ade43",
-        "messageId": "YBPwq6sqxDfNsv3u3MihUYmD",
+        "elementId": "000000000000000000000001",
+        "messageId": "example-000000000000000000000087",
         "editDescription": "Insert feature : Extrude 1",
-        "featureNodeId": "MGrBgXzr5E5kbc4qt",
+        "featureNodeId": "example-00000000000000000000001b",
         "propertyNodeId": ""
       }
     },
@@ -1641,7 +1641,7 @@
       "sequence": 509,
       "command": {
         "$type": "ui.GBTUiSetFeatureSettingsCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "featureKey": "::extrude",
         "featureSettings": {
@@ -1650,7 +1650,7 @@
             "none": [
               {
                 "$type": "bsedit.GBTStoredParameterEnum",
-                "parameterId": "bodyType",
+                "parameterId": "example-000000000000000000000020",
                 "value": "SOLID"
               }
             ]
@@ -1664,22 +1664,22 @@
       "sequence": 521,
       "command": {
         "$type": "ui.GBTUiBatchPartPropertyChange",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "editDescription": "Assign material : Part 1",
         "usage": 0,
         "partPropertyCalls": [
           {
             "$type": "ui.GBTUiPartProperty",
-            "elementId": "63d552593a6632f2141ade43",
+            "elementId": "000000000000000000000001",
             "messageId": "",
             "editDescription": "",
             "usage": 0,
             "partQuery": {
               "$type": "belscript.value.GBTBSTransientQuery",
-              "nodeId": "zqT46gxGP1ZaIR7a",
+              "nodeId": "example-000000000000000000000088",
               "transientId": [
-                "JHD"
+                "example-000000000000000000000089"
               ]
             },
             "name": "",
@@ -1696,7 +1696,7 @@
             },
             "material": {
               "$type": "graphics.GBTPartMaterial",
-              "id": "Aluminum - 6061",
+              "id": "example-00000000000000000000008a",
               "libraryName": "Onshape Material Library",
               "properties": {
                 "COMPRESSIVE_YIELD_STRENGTH": {
@@ -1773,25 +1773,25 @@
               "name": "Aluminum - 6061",
               "libraryReference": {
                 "$type": "document.GBTExternalReference",
-                "nodeId": "VvUMX30hcyWCRjP2",
+                "nodeId": "example-00000000000000000000008b",
                 "fullElementId": {
                   "$type": "document.GBTFullElementIdWithDocument",
-                  "elementId": "6bbab304a1f64e7d640a2d7d",
+                  "elementId": "00000000000000000000008c",
                   "microversionId": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "b722224aa714b6346c7e8278"
+                    "theId": "00000000000000000000008d"
                   },
                   "microversionIdAndConfiguration": {
                     "$type": "document.GBTMicroversionIdAndConfiguration",
                     "microversion": {
                       "$type": "document.GBTMicroversionId",
-                      "theId": "b722224aa714b6346c7e8278"
+                      "theId": "00000000000000000000008d"
                     },
                     "configurationParameterIdToValue": {}
                   },
-                  "documentId": "2718281828459eacfeeda11f"
+                  "documentId": "00000000000000000000008e"
                 },
-                "documentVersionId": "7e0317fdf97739c9457998f0"
+                "documentVersionId": "00000000000000000000008f"
               },
               "version": 1
             },
@@ -1810,12 +1810,12 @@
       "sequence": 526,
       "command": {
         "$type": "ui.GBTUiGetQueryDataCall",
-        "elementId": "63d552593a6632f2141ade43",
+        "elementId": "000000000000000000000001",
         "messageId": "",
         "queries": [
           {
             "$type": "bsedit.GBTMIndividualQuery",
-            "nodeId": "FlpCLgzd5v6Y6sD",
+            "nodeId": "example-000000000000000000000090",
             "sourceParseTreeNodes": {},
             "hasUserCode": false,
             "deterministicIds": [
@@ -1834,8 +1834,8 @@
       "sequence": 527,
       "command": {
         "$type": "ui.GBTUiMassPropCall",
-        "elementId": "63d552593a6632f2141ade43",
-        "messageId": "bwwDVUP6ZhubPI0raSd9VMSy",
+        "elementId": "000000000000000000000001",
+        "messageId": "example-000000000000000000000091",
         "entityIds": [
           "JHD"
         ],
@@ -1867,8 +1867,8 @@
       "sequence": 539,
       "command": {
         "$type": "ui.GBTUiMassPropCall",
-        "elementId": "63d552593a6632f2141ade43",
-        "messageId": "c07213bc-f886-4496-94b3-ce3350f12832",
+        "elementId": "000000000000000000000001",
+        "messageId": "example-000000000000000000000092",
         "entityIds": [
           "JHD"
         ],
@@ -1901,7 +1901,7 @@
       "command": {
         "$type": "ui.document.GBTUiElementChangeRegistration",
         "elementIds": [
-          "818974e8193c545bee3ef6d6"
+          "000000000000000000000093"
         ],
         "clientCache": {
           "$type": "ui.document.GBTUiDocumentClientCacheState",
@@ -1911,7 +1911,7 @@
               "FEATURE_DATA": [
                 {
                   "$type": "document.GBTMicroversionId",
-                  "theId": "8eaae09a8808d833230d9732"
+                  "theId": "000000000000000000000094"
                 }
               ]
             }
@@ -1924,7 +1924,7 @@
                   "$type": "document.GBTMicroversionIdAndConfiguration",
                   "microversion": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "8eaae09a8808d833230d9732"
+                    "theId": "000000000000000000000094"
                   },
                   "configurationParameterIdToValue": {}
                 }
@@ -1934,7 +1934,7 @@
                   "$type": "document.GBTMicroversionIdAndConfiguration",
                   "microversion": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "8eaae09a8808d833230d9732"
+                    "theId": "000000000000000000000094"
                   },
                   "configurationParameterIdToValue": {}
                 }
@@ -1952,7 +1952,7 @@
                   "$type": "document.GBTMicroversionIdAndConfiguration",
                   "microversion": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "cb979e21c1dc5a4784563250"
+                    "theId": "000000000000000000000095"
                   },
                   "configurationParameterIdToValue": {}
                 },
@@ -1960,7 +1960,7 @@
                   "$type": "document.GBTMicroversionIdAndConfiguration",
                   "microversion": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "3932a729ee342056e2b7722c"
+                    "theId": "000000000000000000000096"
                   },
                   "configurationParameterIdToValue": {}
                 },
@@ -1968,7 +1968,7 @@
                   "$type": "document.GBTMicroversionIdAndConfiguration",
                   "microversion": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "c38218012ced8f0f996d7659"
+                    "theId": "000000000000000000000097"
                   },
                   "configurationParameterIdToValue": {}
                 },
@@ -1976,7 +1976,7 @@
                   "$type": "document.GBTMicroversionIdAndConfiguration",
                   "microversion": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "749e9f758fb250a5b43a2a2c"
+                    "theId": "000000000000000000000098"
                   },
                   "configurationParameterIdToValue": {}
                 },
@@ -1984,7 +1984,7 @@
                   "$type": "document.GBTMicroversionIdAndConfiguration",
                   "microversion": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "ce0c9c78b51e52d70955ba10"
+                    "theId": "000000000000000000000099"
                   },
                   "configurationParameterIdToValue": {}
                 },
@@ -1992,7 +1992,7 @@
                   "$type": "document.GBTMicroversionIdAndConfiguration",
                   "microversion": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "434a52105eaea327d27777f7"
+                    "theId": "00000000000000000000009a"
                   },
                   "configurationParameterIdToValue": {}
                 },
@@ -2000,7 +2000,7 @@
                   "$type": "document.GBTMicroversionIdAndConfiguration",
                   "microversion": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "04cf77b827559dd8d84cb000"
+                    "theId": "00000000000000000000009b"
                   },
                   "configurationParameterIdToValue": {}
                 },
@@ -2008,7 +2008,7 @@
                   "$type": "document.GBTMicroversionIdAndConfiguration",
                   "microversion": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "bec21234586c23b58ffd3ee0"
+                    "theId": "00000000000000000000009c"
                   },
                   "configurationParameterIdToValue": {}
                 },
@@ -2016,7 +2016,7 @@
                   "$type": "document.GBTMicroversionIdAndConfiguration",
                   "microversion": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "1dfe4b83385792c94545cc2d"
+                    "theId": "00000000000000000000009d"
                   },
                   "configurationParameterIdToValue": {}
                 },
@@ -2024,7 +2024,7 @@
                   "$type": "document.GBTMicroversionIdAndConfiguration",
                   "microversion": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "59644de8e6e4f39fbf5e537b"
+                    "theId": "00000000000000000000009e"
                   },
                   "configurationParameterIdToValue": {}
                 },
@@ -2032,7 +2032,7 @@
                   "$type": "document.GBTMicroversionIdAndConfiguration",
                   "microversion": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "1c4692d2b1f856373175452b"
+                    "theId": "00000000000000000000009f"
                   },
                   "configurationParameterIdToValue": {}
                 },
@@ -2040,7 +2040,7 @@
                   "$type": "document.GBTMicroversionIdAndConfiguration",
                   "microversion": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "a2e99ffa50212cd5572169a0"
+                    "theId": "0000000000000000000000a0"
                   },
                   "configurationParameterIdToValue": {}
                 },
@@ -2048,7 +2048,7 @@
                   "$type": "document.GBTMicroversionIdAndConfiguration",
                   "microversion": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "8800366842a69c7d09269f63"
+                    "theId": "0000000000000000000000a1"
                   },
                   "configurationParameterIdToValue": {}
                 }
@@ -2063,7 +2063,7 @@
                   "$type": "document.GBTMicroversionIdAndConfiguration",
                   "microversion": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "8eaae09a8808d833230d9732"
+                    "theId": "000000000000000000000094"
                   },
                   "configurationParameterIdToValue": {}
                 },
@@ -2095,16 +2095,16 @@
               "$type": "ui.document.GBTFullElementIdToReferencedSketchFeatures",
               "fullElementId": {
                 "$type": "document.GBTFullElementId",
-                "elementId": "63d552593a6632f2141ade43",
+                "elementId": "000000000000000000000001",
                 "microversionId": {
                   "$type": "document.GBTMicroversionId",
-                  "theId": "8eaae09a8808d833230d9732"
+                  "theId": "000000000000000000000094"
                 },
                 "microversionIdAndConfiguration": {
                   "$type": "document.GBTMicroversionIdAndConfiguration",
                   "microversion": {
                     "$type": "document.GBTMicroversionId",
-                    "theId": "8eaae09a8808d833230d9732"
+                    "theId": "000000000000000000000094"
                   },
                   "configurationParameterIdToValue": {}
                 }
@@ -2133,10 +2133,10 @@
       "sequence": 542,
       "command": {
         "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "",
-        "requestId": "RL3JTGah+/1rw53z",
+        "requestId": "example-0000000000000000000000a2",
         "itemType": 5,
         "parentOccurrence": null,
         "nodeId": ""
@@ -2147,7 +2147,7 @@
       "sequence": 544,
       "command": {
         "$type": "ui.display.GBTUiGetGLDisplayDataCall",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "documentId": "",
         "workspaceId": ""
@@ -2158,7 +2158,7 @@
       "sequence": 546,
       "command": {
         "$type": "ui.assembly.GBTUiUpdateSimulationState",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "isModal": false,
         "isLive": false,
@@ -2170,10 +2170,10 @@
       "sequence": 550,
       "command": {
         "$type": "ui.assembly.GBTUiBeginOperation",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "operationName": "Insert Instances",
-        "operationId": "0e6Ck+Dey6zV5ycf",
+        "operationId": "example-0000000000000000000000a3",
         "operationType": 0
       }
     },
@@ -2182,7 +2182,7 @@
       "sequence": 551,
       "command": {
         "$type": "ui.document.GBTUiQueryInsertables",
-        "targetElementId": "818974e8193c545bee3ef6d6",
+        "targetElementId": "000000000000000000000093",
         "filter": {
           "$type": "bsedit.GBTInsertablesFilter",
           "includeParts": true,
@@ -2221,7 +2221,7 @@
       "sequence": 552,
       "command": {
         "$type": "ui.document.GBTUiQueryInsertables",
-        "targetElementId": "818974e8193c545bee3ef6d6",
+        "targetElementId": "000000000000000000000093",
         "filter": {
           "$type": "bsedit.GBTInsertablesFilter",
           "includeParts": false,
@@ -2260,20 +2260,20 @@
       "sequence": 555,
       "command": {
         "$type": "ui.assembly.GBTUiAssemblyInsertOccurrence",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "Insert : Part 1",
         "insertables": [
           {
             "$type": "ui.document.GBTUiInsertablePart",
-            "documentId": "8d348afffdb8032e15ba2ac8",
+            "documentId": "0000000000000000000000a4",
             "element": {
               "$type": "document.GBTDocumentElement",
-              "nodeId": "pp09WdnIIQsoUfeX",
-              "elementId": "63d552593a6632f2141ade43",
+              "nodeId": "example-0000000000000000000000a5",
+              "elementId": "000000000000000000000001",
               "microversion": {
                 "$type": "document.GBTMicroversionId",
-                "theId": "8eaae09a8808d833230d9732"
+                "theId": "000000000000000000000094"
               },
               "type": 0,
               "name": "Part Studio 1",
@@ -2292,7 +2292,7 @@
             "insertableQuery": "query=qCompressed(1.0,\"&1bb$eJx9UE1zgjAQ/TPbYx2CYPEIISijgiZ0Wk9MYqJkqgQhjvXfF2Sml870uPt239dL5MPuptrHxmfIBak7fhH6dONWmzrmlodo4/5FikejGJpCTtNFmoXrMiZbksUkw3s2B9Pqk675uQs97PTEHFRttX0MXxEH8jswD0i8IExApTtr2nEZAKYkLNI86wHTqPYpmcrIhVSGiCE0mUFyvL/jzyZZsSUrnKx07rpVedOrX4c4TyIJbEUKvCxJVqTFninovpQ9VKOBVLJDT3SJeLDdndoGOVwYa81l8Ew96tMZfaMB5VTQA5XsFbmTKVjT/IN7cFZH+8+BD303laUenvXhozzej0dYjMHmkNRHhhfrSiTXeho4pWMa8m3bm1RU9E2yD7ItyuHxB6cKjmI=\",id);",
             "partName": "Part 1",
             "partQuery": "query=qCompressed(1.0,\"&1bb$eJx9UE1zgjAQ/TPbYx2CYPEIISijgiZ0Wk9MYqJkqgQhjvXfF2Sml870uPt239dL5MPuptrHxmfIBak7fhH6dONWmzrmlodo4/5FikejGJpCTtNFmoXrMiZbksUkw3s2B9Pqk675uQs97PTEHFRttX0MXxEH8jswD0i8IExApTtr2nEZAKYkLNI86wHTqPYpmcrIhVSGiCE0mUFyvL/jzyZZsSUrnKx07rpVedOrX4c4TyIJbEUKvCxJVqTFninovpQ9VKOBVLJDT3SJeLDdndoGOVwYa81l8Ew96tMZfaMB5VTQA5XsFbmTKVjT/IN7cFZH+8+BD303laUenvXhozzej0dYjMHmkNRHhhfrSiTXeho4pWMa8m3bm1RU9E2yD7ItyuHxB6cKjmI=\",id);",
-            "deterministicId": "JHD",
+            "deterministicId": "example-000000000000000000000089",
             "bodyType": 0,
             "isMesh": false,
             "isFlattenedBody": false,
@@ -2342,10 +2342,10 @@
       "sequence": 558,
       "command": {
         "$type": "ui.GBTUiCommit",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "Insert : Part 1 <1>",
-        "featureNodeId": "0e6Ck+Dey6zV5ycf",
+        "featureNodeId": "example-0000000000000000000000a3",
         "propertyNodeId": ""
       }
     },
@@ -2354,7 +2354,7 @@
       "sequence": 561,
       "command": {
         "$type": "ui.assembly.GBTUiChangeOccurrenceFixedStatus",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "Fix : Part 1 <1>",
         "occurrences": [
@@ -2373,10 +2373,10 @@
       "sequence": 564,
       "command": {
         "$type": "ui.assembly.GBTUiBeginOperation",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "operationName": "Insert Instances",
-        "operationId": "gCXWDaCETRJ4FhZs",
+        "operationId": "example-0000000000000000000000a6",
         "operationType": 0
       }
     },
@@ -2385,7 +2385,7 @@
       "sequence": 565,
       "command": {
         "$type": "ui.document.GBTUiQueryInsertables",
-        "targetElementId": "818974e8193c545bee3ef6d6",
+        "targetElementId": "000000000000000000000093",
         "filter": {
           "$type": "bsedit.GBTInsertablesFilter",
           "includeParts": true,
@@ -2424,7 +2424,7 @@
       "sequence": 566,
       "command": {
         "$type": "ui.document.GBTUiQueryInsertables",
-        "targetElementId": "818974e8193c545bee3ef6d6",
+        "targetElementId": "000000000000000000000093",
         "filter": {
           "$type": "bsedit.GBTInsertablesFilter",
           "includeParts": false,
@@ -2463,20 +2463,20 @@
       "sequence": 569,
       "command": {
         "$type": "ui.assembly.GBTUiAssemblyInsertOccurrence",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "Insert : Part 1",
         "insertables": [
           {
             "$type": "ui.document.GBTUiInsertablePart",
-            "documentId": "8d348afffdb8032e15ba2ac8",
+            "documentId": "0000000000000000000000a4",
             "element": {
               "$type": "document.GBTDocumentElement",
-              "nodeId": "pp09WdnIIQsoUfeX",
-              "elementId": "63d552593a6632f2141ade43",
+              "nodeId": "example-0000000000000000000000a5",
+              "elementId": "000000000000000000000001",
               "microversion": {
                 "$type": "document.GBTMicroversionId",
-                "theId": "8eaae09a8808d833230d9732"
+                "theId": "000000000000000000000094"
               },
               "type": 0,
               "name": "Part Studio 1",
@@ -2495,7 +2495,7 @@
             "insertableQuery": "query=qCompressed(1.0,\"&1bb$eJx9UE1zgjAQ/TPbYx2CYPEIISijgiZ0Wk9MYqJkqgQhjvXfF2Sml870uPt239dL5MPuptrHxmfIBak7fhH6dONWmzrmlodo4/5FikejGJpCTtNFmoXrMiZbksUkw3s2B9Pqk675uQs97PTEHFRttX0MXxEH8jswD0i8IExApTtr2nEZAKYkLNI86wHTqPYpmcrIhVSGiCE0mUFyvL/jzyZZsSUrnKx07rpVedOrX4c4TyIJbEUKvCxJVqTFninovpQ9VKOBVLJDT3SJeLDdndoGOVwYa81l8Ew96tMZfaMB5VTQA5XsFbmTKVjT/IN7cFZH+8+BD303laUenvXhozzej0dYjMHmkNRHhhfrSiTXeho4pWMa8m3bm1RU9E2yD7ItyuHxB6cKjmI=\",id);",
             "partName": "Part 1",
             "partQuery": "query=qCompressed(1.0,\"&1bb$eJx9UE1zgjAQ/TPbYx2CYPEIISijgiZ0Wk9MYqJkqgQhjvXfF2Sml870uPt239dL5MPuptrHxmfIBak7fhH6dONWmzrmlodo4/5FikejGJpCTtNFmoXrMiZbksUkw3s2B9Pqk675uQs97PTEHFRttX0MXxEH8jswD0i8IExApTtr2nEZAKYkLNI86wHTqPYpmcrIhVSGiCE0mUFyvL/jzyZZsSUrnKx07rpVedOrX4c4TyIJbEUKvCxJVqTFninovpQ9VKOBVLJDT3SJeLDdndoGOVwYa81l8Ew96tMZfaMB5VTQA5XsFbmTKVjT/IN7cFZH+8+BD303laUenvXhozzej0dYjMHmkNRHhhfrSiTXeho4pWMa8m3bm1RU9E2yD7ItyuHxB6cKjmI=\",id);",
-            "deterministicId": "JHD",
+            "deterministicId": "example-000000000000000000000089",
             "bodyType": 0,
             "isMesh": false,
             "isFlattenedBody": false,
@@ -2545,10 +2545,10 @@
       "sequence": 572,
       "command": {
         "$type": "ui.GBTUiCommit",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "Insert : Part 1 <2>",
-        "featureNodeId": "gCXWDaCETRJ4FhZs",
+        "featureNodeId": "example-0000000000000000000000a6",
         "propertyNodeId": ""
       }
     },
@@ -2557,7 +2557,7 @@
       "sequence": 576,
       "command": {
         "$type": "ui.assembly.GBTUiCreateMateConnectorAtInstanceOrigin",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "Create mate connector at part/subassembly origin",
         "occurrence": {
@@ -2574,24 +2574,24 @@
       "sequence": 577,
       "command": {
         "$type": "ui.assembly.GBTUiAssemblyAddNode",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "Insert mate : Mate connector",
         "node": {
           "$type": "assembly.GBTMMateConnector",
-          "nodeId": "M7EPk79qhfvOrTyQq",
+          "nodeId": "example-0000000000000000000000a7",
           "sourceParseTreeNodes": {},
           "hasUserCode": false,
           "featureType": "mateConnector",
-          "featureId": "M7EPk79qhfvOrTyQq",
+          "featureId": "example-0000000000000000000000a7",
           "name": "Mate connector",
           "parameters": [
             {
               "$type": "bsedit.GBTMParameterEnum",
-              "nodeId": "zC/AXYgvSeqgNTqhT3xDduqz",
+              "nodeId": "example-0000000000000000000000a8",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "originType",
+              "parameterId": "example-0000000000000000000000a9",
               "libraryRelationType": 0,
               "parameterName": "",
               "enumName": "Origin type",
@@ -2600,16 +2600,16 @@
             },
             {
               "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
-              "nodeId": "ui/tkkeTbd1unsEg0i0xPZnd",
+              "nodeId": "example-0000000000000000000000aa",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "originQuery",
+              "parameterId": "example-0000000000000000000000ab",
               "libraryRelationType": 0,
               "parameterName": "",
               "queries": [
                 {
                   "$type": "assembly.GBTMInferenceQueryWithOccurrence",
-                  "nodeId": "MCuMserPZoHBX9v7I",
+                  "nodeId": "example-0000000000000000000000ac",
                   "sourceParseTreeNodes": {},
                   "hasUserCode": false,
                   "path": [
@@ -2625,60 +2625,60 @@
             },
             {
               "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
-              "nodeId": "+Irf2uDct+A6jkrc1evcwT20",
+              "nodeId": "example-0000000000000000000000ad",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "originAdditionalQuery",
+              "parameterId": "example-0000000000000000000000ae",
               "libraryRelationType": 0,
               "parameterName": "",
               "queries": []
             },
             {
               "$type": "bsedit.GBTMParameterBoolean",
-              "nodeId": "PJlQBwyjPXlVpvarvdrQbtfL",
+              "nodeId": "example-0000000000000000000000af",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "realign",
+              "parameterId": "example-0000000000000000000000b0",
               "libraryRelationType": 0,
               "parameterName": "",
               "value": false
             },
             {
               "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
-              "nodeId": "9frePMuRgDithz1qxsXPI4R4",
+              "nodeId": "example-0000000000000000000000b1",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "primaryAxisQuery",
+              "parameterId": "example-0000000000000000000000b2",
               "libraryRelationType": 0,
               "parameterName": "",
               "queries": []
             },
             {
               "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
-              "nodeId": "jC6Ufa0H4hLwmkPrzHUl1mlT",
+              "nodeId": "example-0000000000000000000000b3",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "secondaryAxisQuery",
+              "parameterId": "example-0000000000000000000000b4",
               "libraryRelationType": 0,
               "parameterName": "",
               "queries": []
             },
             {
               "$type": "bsedit.GBTMParameterBoolean",
-              "nodeId": "uFXLtm1ZLjKE60mTnQgHGcQ8",
+              "nodeId": "example-0000000000000000000000b5",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "transform",
+              "parameterId": "example-0000000000000000000000b6",
               "libraryRelationType": 0,
               "parameterName": "",
               "value": false
             },
             {
               "$type": "bsedit.GBTMParameterQuantity",
-              "nodeId": "nskY/wAlYtbMZPDlerKjOm/e",
+              "nodeId": "example-0000000000000000000000b7",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "translationX",
+              "parameterId": "example-0000000000000000000000b8",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "centimeter",
@@ -2688,10 +2688,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterQuantity",
-              "nodeId": "J2iAlGAGA1xM4R97Gc/2TrKC",
+              "nodeId": "example-0000000000000000000000b9",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "translationY",
+              "parameterId": "example-0000000000000000000000ba",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "centimeter",
@@ -2701,10 +2701,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterQuantity",
-              "nodeId": "ZbFfx8LdTBGL6/tkTY5qjPRK",
+              "nodeId": "example-0000000000000000000000bb",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "translationZ",
+              "parameterId": "example-0000000000000000000000bc",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "centimeter",
@@ -2714,10 +2714,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterEnum",
-              "nodeId": "i0164kbtkr2/cHJZ+L9rtRGm",
+              "nodeId": "example-0000000000000000000000bd",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "rotationType",
+              "parameterId": "example-0000000000000000000000be",
               "libraryRelationType": 0,
               "parameterName": "",
               "enumName": "Rotation axis",
@@ -2726,10 +2726,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterQuantity",
-              "nodeId": "36n9S7NVLhpfA6JrvjyXzM0V",
+              "nodeId": "example-0000000000000000000000bf",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "rotation",
+              "parameterId": "example-0000000000000000000000c0",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "degree",
@@ -2739,20 +2739,20 @@
             },
             {
               "$type": "bsedit.GBTMParameterBoolean",
-              "nodeId": "gVr5MGKbpeZQZY9VlcEYUNZe",
+              "nodeId": "example-0000000000000000000000c1",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "flipPrimary",
+              "parameterId": "example-0000000000000000000000c2",
               "libraryRelationType": 0,
               "parameterName": "",
               "value": false
             },
             {
               "$type": "bsedit.GBTMParameterEnum",
-              "nodeId": "JRk7gcjfN7w9Td41JC9wYtFt",
+              "nodeId": "example-0000000000000000000000c3",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "secondaryAxisType",
+              "parameterId": "example-0000000000000000000000c4",
               "libraryRelationType": 0,
               "parameterName": "",
               "enumName": "Reorient secondary axis",
@@ -2786,16 +2786,16 @@
       "sequence": 578,
       "command": {
         "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "",
-        "requestId": "44x+CQncZ/5l1XsT",
+        "requestId": "example-0000000000000000000000c5",
         "itemType": 0,
         "parentOccurrence": {
           "$type": "assembly.GBTOccurrence",
           "path": []
         },
-        "nodeId": "M7EPk79qhfvOrTyQq"
+        "nodeId": "example-0000000000000000000000a7"
       }
     },
     {
@@ -2803,7 +2803,7 @@
       "sequence": 579,
       "command": {
         "$type": "ui.GBTUiUpdateEditRollbackState",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editRollbackState": 1
       }
@@ -2813,10 +2813,10 @@
       "sequence": 581,
       "command": {
         "$type": "ui.GBTUiCommit",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "Insert feature : Mate connector 1",
-        "featureNodeId": "M7EPk79qhfvOrTyQq",
+        "featureNodeId": "example-0000000000000000000000a7",
         "propertyNodeId": ""
       }
     },
@@ -2825,10 +2825,10 @@
       "sequence": 582,
       "command": {
         "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "",
-        "requestId": "44x+CQncZ/5l1XsT",
+        "requestId": "example-0000000000000000000000c5",
         "itemType": 0,
         "parentOccurrence": {
           "$type": "assembly.GBTOccurrence",
@@ -2842,7 +2842,7 @@
       "sequence": 586,
       "command": {
         "$type": "ui.assembly.GBTUiCreateMateConnectorAtInstanceOrigin",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "Create mate connector at part/subassembly origin",
         "occurrence": {
@@ -2859,24 +2859,24 @@
       "sequence": 587,
       "command": {
         "$type": "ui.assembly.GBTUiAssemblyAddNode",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "Insert mate : Mate connector",
         "node": {
           "$type": "assembly.GBTMMateConnector",
-          "nodeId": "MrZwqhQle7ZgRhxIJ",
+          "nodeId": "example-0000000000000000000000c6",
           "sourceParseTreeNodes": {},
           "hasUserCode": false,
           "featureType": "mateConnector",
-          "featureId": "MrZwqhQle7ZgRhxIJ",
+          "featureId": "example-0000000000000000000000c6",
           "name": "Mate connector",
           "parameters": [
             {
               "$type": "bsedit.GBTMParameterEnum",
-              "nodeId": "/8OAOq/bCLsFwrVkPDbyMbFD",
+              "nodeId": "example-0000000000000000000000c7",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "originType",
+              "parameterId": "example-0000000000000000000000a9",
               "libraryRelationType": 0,
               "parameterName": "",
               "enumName": "Origin type",
@@ -2885,16 +2885,16 @@
             },
             {
               "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
-              "nodeId": "wKh+9EDH3voAtvQLrLGkNO/v",
+              "nodeId": "example-0000000000000000000000c8",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "originQuery",
+              "parameterId": "example-0000000000000000000000ab",
               "libraryRelationType": 0,
               "parameterName": "",
               "queries": [
                 {
                   "$type": "assembly.GBTMInferenceQueryWithOccurrence",
-                  "nodeId": "M99809spNBOfREXls",
+                  "nodeId": "example-0000000000000000000000c9",
                   "sourceParseTreeNodes": {},
                   "hasUserCode": false,
                   "path": [
@@ -2910,60 +2910,60 @@
             },
             {
               "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
-              "nodeId": "GQGgR76BLZkyIppHiIdds4mJ",
+              "nodeId": "example-0000000000000000000000ca",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "originAdditionalQuery",
+              "parameterId": "example-0000000000000000000000ae",
               "libraryRelationType": 0,
               "parameterName": "",
               "queries": []
             },
             {
               "$type": "bsedit.GBTMParameterBoolean",
-              "nodeId": "OUeusEuJ7/WgKCjTnQBCHAqR",
+              "nodeId": "example-0000000000000000000000cb",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "realign",
+              "parameterId": "example-0000000000000000000000b0",
               "libraryRelationType": 0,
               "parameterName": "",
               "value": false
             },
             {
               "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
-              "nodeId": "ezrA4RCuz8jtYR4PXoKEKIi6",
+              "nodeId": "example-0000000000000000000000cc",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "primaryAxisQuery",
+              "parameterId": "example-0000000000000000000000b2",
               "libraryRelationType": 0,
               "parameterName": "",
               "queries": []
             },
             {
               "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
-              "nodeId": "3Vs8C0jvXCVbLqvbjwLHU6da",
+              "nodeId": "example-0000000000000000000000cd",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "secondaryAxisQuery",
+              "parameterId": "example-0000000000000000000000b4",
               "libraryRelationType": 0,
               "parameterName": "",
               "queries": []
             },
             {
               "$type": "bsedit.GBTMParameterBoolean",
-              "nodeId": "0nyPcTNycYQcGgMvSU1kf5U3",
+              "nodeId": "example-0000000000000000000000ce",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "transform",
+              "parameterId": "example-0000000000000000000000b6",
               "libraryRelationType": 0,
               "parameterName": "",
               "value": false
             },
             {
               "$type": "bsedit.GBTMParameterQuantity",
-              "nodeId": "U53RxCJj3slcX7vn6END0yER",
+              "nodeId": "example-0000000000000000000000cf",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "translationX",
+              "parameterId": "example-0000000000000000000000b8",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "centimeter",
@@ -2973,10 +2973,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterQuantity",
-              "nodeId": "5yBhM6o4APs3t4M+hEgXcm2V",
+              "nodeId": "example-0000000000000000000000d0",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "translationY",
+              "parameterId": "example-0000000000000000000000ba",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "centimeter",
@@ -2986,10 +2986,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterQuantity",
-              "nodeId": "q+9i1b+Po03S5Lb2NgidXq1j",
+              "nodeId": "example-0000000000000000000000d1",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "translationZ",
+              "parameterId": "example-0000000000000000000000bc",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "centimeter",
@@ -2999,10 +2999,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterEnum",
-              "nodeId": "THYEPV9OMUlYo1W8Yy+l22CY",
+              "nodeId": "example-0000000000000000000000d2",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "rotationType",
+              "parameterId": "example-0000000000000000000000be",
               "libraryRelationType": 0,
               "parameterName": "",
               "enumName": "Rotation axis",
@@ -3011,10 +3011,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterQuantity",
-              "nodeId": "tYhPxepNbTJXM9DvTACN35e5",
+              "nodeId": "example-0000000000000000000000d3",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "rotation",
+              "parameterId": "example-0000000000000000000000c0",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "degree",
@@ -3024,20 +3024,20 @@
             },
             {
               "$type": "bsedit.GBTMParameterBoolean",
-              "nodeId": "H8T4bceLh2+GiCLbwNjdjnOw",
+              "nodeId": "example-0000000000000000000000d4",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "flipPrimary",
+              "parameterId": "example-0000000000000000000000c2",
               "libraryRelationType": 0,
               "parameterName": "",
               "value": false
             },
             {
               "$type": "bsedit.GBTMParameterEnum",
-              "nodeId": "A79tbB1YBC5ub8A+Wi49w0TI",
+              "nodeId": "example-0000000000000000000000d5",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "secondaryAxisType",
+              "parameterId": "example-0000000000000000000000c4",
               "libraryRelationType": 0,
               "parameterName": "",
               "enumName": "Reorient secondary axis",
@@ -3071,16 +3071,16 @@
       "sequence": 588,
       "command": {
         "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "",
-        "requestId": "5Y+RdHMna8AAnGZj",
+        "requestId": "example-0000000000000000000000d6",
         "itemType": 0,
         "parentOccurrence": {
           "$type": "assembly.GBTOccurrence",
           "path": []
         },
-        "nodeId": "MrZwqhQle7ZgRhxIJ"
+        "nodeId": "example-0000000000000000000000c6"
       }
     },
     {
@@ -3088,7 +3088,7 @@
       "sequence": 589,
       "command": {
         "$type": "ui.GBTUiUpdateEditRollbackState",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editRollbackState": 1
       }
@@ -3098,10 +3098,10 @@
       "sequence": 592,
       "command": {
         "$type": "ui.GBTUiCommit",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "Insert feature : Mate connector 2",
-        "featureNodeId": "MrZwqhQle7ZgRhxIJ",
+        "featureNodeId": "example-0000000000000000000000c6",
         "propertyNodeId": ""
       }
     },
@@ -3110,10 +3110,10 @@
       "sequence": 593,
       "command": {
         "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "",
-        "requestId": "5Y+RdHMna8AAnGZj",
+        "requestId": "example-0000000000000000000000d6",
         "itemType": 0,
         "parentOccurrence": {
           "$type": "assembly.GBTOccurrence",
@@ -3127,24 +3127,24 @@
       "sequence": 595,
       "command": {
         "$type": "ui.assembly.GBTUiAssemblyAddNode",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "Insert mate : Fastened",
         "node": {
           "$type": "assembly.GBTMMate",
-          "nodeId": "Mad3qf4k9f+N7xnau",
+          "nodeId": "example-0000000000000000000000d7",
           "sourceParseTreeNodes": {},
           "hasUserCode": false,
           "featureType": "mate",
-          "featureId": "Mad3qf4k9f+N7xnau",
+          "featureId": "example-0000000000000000000000d7",
           "name": "Fastened",
           "parameters": [
             {
               "$type": "bsedit.GBTMParameterEnum",
-              "nodeId": "Cz9smq88NsW+GUm/",
+              "nodeId": "example-0000000000000000000000d8",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "mateType",
+              "parameterId": "example-0000000000000000000000d9",
               "libraryRelationType": 0,
               "parameterName": "",
               "enumName": "Mate type",
@@ -3153,30 +3153,30 @@
             },
             {
               "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
-              "nodeId": "C2kYmdpljscM94zn",
+              "nodeId": "example-0000000000000000000000da",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "mateConnectorsQuery",
+              "parameterId": "example-0000000000000000000000db",
               "libraryRelationType": 0,
               "parameterName": "",
               "queries": []
             },
             {
               "$type": "bsedit.GBTMParameterBoolean",
-              "nodeId": "zUlbkBj42LEOXtZR",
+              "nodeId": "example-0000000000000000000000dc",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "mateOffsetEnabled",
+              "parameterId": "example-0000000000000000000000dd",
               "libraryRelationType": 0,
               "parameterName": "",
               "value": false
             },
             {
               "$type": "bsedit.GBTMParameterQuantity",
-              "nodeId": "66oOU20NYBEaau0K",
+              "nodeId": "example-0000000000000000000000de",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "mateOffsetDistanceX",
+              "parameterId": "example-0000000000000000000000df",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "centimeter",
@@ -3186,10 +3186,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterQuantity",
-              "nodeId": "sQN4eefwcPnbSTEq",
+              "nodeId": "example-0000000000000000000000e0",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "mateOffsetDistanceY",
+              "parameterId": "example-0000000000000000000000e1",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "centimeter",
@@ -3199,10 +3199,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterQuantity",
-              "nodeId": "hReq68P2T50sxuSJ",
+              "nodeId": "example-0000000000000000000000e2",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "mateOffsetDistanceZ",
+              "parameterId": "example-0000000000000000000000e3",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "centimeter",
@@ -3212,10 +3212,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterEnum",
-              "nodeId": "+XtfvMnH/IwbLUI9",
+              "nodeId": "example-0000000000000000000000e4",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "rotationType",
+              "parameterId": "example-0000000000000000000000be",
               "libraryRelationType": 0,
               "parameterName": "",
               "enumName": "Rotation axis",
@@ -3224,10 +3224,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterQuantity",
-              "nodeId": "XTnDIdBM/9BPMjJb",
+              "nodeId": "example-0000000000000000000000e5",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "rotation",
+              "parameterId": "example-0000000000000000000000c0",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "degree",
@@ -3237,20 +3237,20 @@
             },
             {
               "$type": "bsedit.GBTMParameterBoolean",
-              "nodeId": "oTamn6MLxkR+7ugH",
+              "nodeId": "example-0000000000000000000000e6",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "limitsEnabled",
+              "parameterId": "example-0000000000000000000000e7",
               "libraryRelationType": 0,
               "parameterName": "",
               "value": false
             },
             {
               "$type": "bsedit.GBTMParameterNullableQuantity",
-              "nodeId": "RcE07+3EUFqnVfzb",
+              "nodeId": "example-0000000000000000000000e8",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "limitXMin",
+              "parameterId": "example-0000000000000000000000e9",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "centimeter",
@@ -3262,10 +3262,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterNullableQuantity",
-              "nodeId": "fnUIzcGMq/CxJyoR",
+              "nodeId": "example-0000000000000000000000ea",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "limitXMax",
+              "parameterId": "example-0000000000000000000000eb",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "centimeter",
@@ -3277,10 +3277,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterNullableQuantity",
-              "nodeId": "vpeJLJhb0t14Jsa+",
+              "nodeId": "example-0000000000000000000000ec",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "limitYMin",
+              "parameterId": "example-0000000000000000000000ed",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "centimeter",
@@ -3292,10 +3292,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterNullableQuantity",
-              "nodeId": "OfeyR47jnkEDD8Qr",
+              "nodeId": "example-0000000000000000000000ee",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "limitYMax",
+              "parameterId": "example-0000000000000000000000ef",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "centimeter",
@@ -3307,10 +3307,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterNullableQuantity",
-              "nodeId": "a+Jbk1zP775fVRKZ",
+              "nodeId": "example-0000000000000000000000f0",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "limitZMin",
+              "parameterId": "example-0000000000000000000000f1",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "centimeter",
@@ -3322,10 +3322,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterNullableQuantity",
-              "nodeId": "FuNx9jfELfMICYe4",
+              "nodeId": "example-0000000000000000000000f2",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "limitZMax",
+              "parameterId": "example-0000000000000000000000f3",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "centimeter",
@@ -3337,10 +3337,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterNullableQuantity",
-              "nodeId": "PQEjpPaaAKOkhkG3",
+              "nodeId": "example-0000000000000000000000f4",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "limitAxialXMin",
+              "parameterId": "example-0000000000000000000000f5",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "degree",
@@ -3352,10 +3352,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterNullableQuantity",
-              "nodeId": "OKxc2Dtgr744HwOb",
+              "nodeId": "example-0000000000000000000000f6",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "limitAxialXMax",
+              "parameterId": "example-0000000000000000000000f7",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "degree",
@@ -3367,10 +3367,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterNullableQuantity",
-              "nodeId": "iEte4WZsPEKQy/kI",
+              "nodeId": "example-0000000000000000000000f8",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "limitAxialYMin",
+              "parameterId": "example-0000000000000000000000f9",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "degree",
@@ -3382,10 +3382,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterNullableQuantity",
-              "nodeId": "oeDNBbUqbCSs2Opv",
+              "nodeId": "example-0000000000000000000000fa",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "limitAxialYMax",
+              "parameterId": "example-0000000000000000000000fb",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "degree",
@@ -3397,10 +3397,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterNullableQuantity",
-              "nodeId": "tfpA8M1MlHSEPXDT",
+              "nodeId": "example-0000000000000000000000fc",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "limitAxialZMin",
+              "parameterId": "example-0000000000000000000000fd",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "degree",
@@ -3412,10 +3412,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterNullableQuantity",
-              "nodeId": "gGJnUKEZdv03Tg1Q",
+              "nodeId": "example-0000000000000000000000fe",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "limitAxialZMax",
+              "parameterId": "example-0000000000000000000000ff",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "degree",
@@ -3427,10 +3427,10 @@
             },
             {
               "$type": "bsedit.GBTMParameterNullableQuantity",
-              "nodeId": "VImCNDJgQKE/b9BA",
+              "nodeId": "example-000000000000000000000100",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "limitEulerConeAngleMax",
+              "parameterId": "example-000000000000000000000101",
               "libraryRelationType": 0,
               "parameterName": "",
               "units": "degree",
@@ -3442,40 +3442,40 @@
             },
             {
               "$type": "bsedit.GBTMParameterBoolean",
-              "nodeId": "c7I/JADsMO33hMUT",
+              "nodeId": "example-000000000000000000000102",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "functionalconnection",
+              "parameterId": "example-000000000000000000000103",
               "libraryRelationType": 0,
               "parameterName": "",
               "value": false
             },
             {
               "$type": "assembly.GBTMParameterQueryWithOccurrenceList",
-              "nodeId": "KCmTSwy9fUdaDd5D",
+              "nodeId": "example-000000000000000000000104",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "facestoconnect",
+              "parameterId": "example-000000000000000000000105",
               "libraryRelationType": 0,
               "parameterName": "",
               "queries": []
             },
             {
               "$type": "bsedit.GBTMParameterBoolean",
-              "nodeId": "vHmZCwNP5TRdC4Ps",
+              "nodeId": "example-000000000000000000000106",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "primaryAxisAlignment",
+              "parameterId": "example-000000000000000000000107",
               "libraryRelationType": 0,
               "parameterName": "",
               "value": true
             },
             {
               "$type": "bsedit.GBTMParameterEnum",
-              "nodeId": "L3+BzmSJvu7A2/MG",
+              "nodeId": "example-000000000000000000000108",
               "sourceParseTreeNodes": {},
               "hasUserCode": false,
-              "parameterId": "secondaryAxisAlignment",
+              "parameterId": "example-000000000000000000000109",
               "libraryRelationType": 0,
               "parameterName": "",
               "enumName": "Reorient secondary axis",
@@ -3507,16 +3507,16 @@
       "sequence": 596,
       "command": {
         "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "",
-        "requestId": "0AcY3n85BShJzGYS",
+        "requestId": "example-00000000000000000000010a",
         "itemType": 0,
         "parentOccurrence": {
           "$type": "assembly.GBTOccurrence",
           "path": []
         },
-        "nodeId": "Mad3qf4k9f+N7xnau"
+        "nodeId": "example-0000000000000000000000d7"
       }
     },
     {
@@ -3524,7 +3524,7 @@
       "sequence": 597,
       "command": {
         "$type": "ui.GBTUiUpdateEditRollbackState",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editRollbackState": 1
       }
@@ -3534,16 +3534,16 @@
       "sequence": 598,
       "command": {
         "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "",
-        "requestId": "AHjlKCvhSiYMW+Kz",
+        "requestId": "example-00000000000000000000010b",
         "itemType": 0,
         "parentOccurrence": {
           "$type": "assembly.GBTOccurrence",
           "path": []
         },
-        "nodeId": "Mad3qf4k9f+N7xnau"
+        "nodeId": "example-0000000000000000000000d7"
       }
     },
     {
@@ -3551,14 +3551,14 @@
       "sequence": 600,
       "command": {
         "$type": "ui.assembly.GBTUiAssemblyTreeItemDefinitionRequest",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "",
         "parentOccurrence": {
           "$type": "assembly.GBTOccurrence",
           "path": []
         },
-        "nodeId": "M7EPk79qhfvOrTyQq"
+        "nodeId": "example-0000000000000000000000a7"
       }
     },
     {
@@ -3566,14 +3566,14 @@
       "sequence": 601,
       "command": {
         "$type": "ui.assembly.GBTUiAssemblyTreeItemDefinitionRequest",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "",
         "parentOccurrence": {
           "$type": "assembly.GBTOccurrence",
           "path": []
         },
-        "nodeId": "MrZwqhQle7ZgRhxIJ"
+        "nodeId": "example-0000000000000000000000c6"
       }
     },
     {
@@ -3581,28 +3581,28 @@
       "sequence": 602,
       "command": {
         "$type": "ui.GBTUiSpecifyFeature",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "Edit parameter : Offset",
         "featureChange": {
           "$type": "diff.GBTTreeEditChange",
           "oldNode": {
             "$type": "tree.GBTNodeReference",
-            "nodeId": "zUlbkBj42LEOXtZR"
+            "nodeId": "example-0000000000000000000000dc"
           },
           "newNode": {
             "$type": "bsedit.GBTMParameterBoolean",
-            "nodeId": "zUlbkBj42LEOXtZR",
+            "nodeId": "example-0000000000000000000000dc",
             "sourceParseTreeNodes": {},
             "hasUserCode": false,
-            "parameterId": "mateOffsetEnabled",
+            "parameterId": "example-0000000000000000000000dd",
             "libraryRelationType": 0,
             "parameterName": "",
             "value": true
           }
         },
         "sequenceId": 6,
-        "featureNodeId": "Mad3qf4k9f+N7xnau",
+        "featureNodeId": "example-0000000000000000000000d7",
         "inContextEntitiesToAdd": null,
         "selectionMicroversion": null,
         "propagateChanges": false,
@@ -3614,29 +3614,29 @@
       "sequence": 603,
       "command": {
         "$type": "ui.GBTUiSpecifyFeature",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "Add entity : Mate connectors",
         "featureChange": {
           "$type": "diff.GBTTreeEditInsertion",
           "location": {
             "$type": "tree.GBTInsertionLocation",
-            "nodeId": "C2kYmdpljscM94zn",
+            "nodeId": "example-0000000000000000000000da",
             "before": false,
             "childFieldIndex": 274432
           },
           "newNode": {
             "$type": "assembly.GBTMFeatureQueryWithOccurrence",
-            "nodeId": "FQEQLsMVPAEbyyn",
+            "nodeId": "example-00000000000000000000010c",
             "sourceParseTreeNodes": {},
             "hasUserCode": false,
             "path": [],
-            "featureId": "M7EPk79qhfvOrTyQq",
+            "featureId": "example-0000000000000000000000a7",
             "queryData": ""
           }
         },
         "sequenceId": 0,
-        "featureNodeId": "Mad3qf4k9f+N7xnau",
+        "featureNodeId": "example-0000000000000000000000d7",
         "inContextEntitiesToAdd": null,
         "selectionMicroversion": null,
         "propagateChanges": false,
@@ -3648,29 +3648,29 @@
       "sequence": 604,
       "command": {
         "$type": "ui.GBTUiSpecifyFeature",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "Add entity : Mate connectors",
         "featureChange": {
           "$type": "diff.GBTTreeEditInsertion",
           "location": {
             "$type": "tree.GBTInsertionLocation",
-            "nodeId": "C2kYmdpljscM94zn",
+            "nodeId": "example-0000000000000000000000da",
             "before": false,
             "childFieldIndex": 274432
           },
           "newNode": {
             "$type": "assembly.GBTMFeatureQueryWithOccurrence",
-            "nodeId": "FbfmWXTIdSVJz18",
+            "nodeId": "example-00000000000000000000010d",
             "sourceParseTreeNodes": {},
             "hasUserCode": false,
             "path": [],
-            "featureId": "MrZwqhQle7ZgRhxIJ",
+            "featureId": "example-0000000000000000000000c6",
             "queryData": ""
           }
         },
         "sequenceId": 0,
-        "featureNodeId": "Mad3qf4k9f+N7xnau",
+        "featureNodeId": "example-0000000000000000000000d7",
         "inContextEntitiesToAdd": null,
         "selectionMicroversion": null,
         "propagateChanges": false,
@@ -3682,21 +3682,21 @@
       "sequence": 607,
       "command": {
         "$type": "ui.GBTUiSpecifyFeature",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "Edit parameter : Offset Z distance",
         "featureChange": {
           "$type": "diff.GBTTreeEditChange",
           "oldNode": {
             "$type": "tree.GBTNodeReference",
-            "nodeId": "hReq68P2T50sxuSJ"
+            "nodeId": "example-0000000000000000000000e2"
           },
           "newNode": {
             "$type": "bsedit.GBTMParameterQuantity",
-            "nodeId": "hReq68P2T50sxuSJ",
+            "nodeId": "example-0000000000000000000000e2",
             "sourceParseTreeNodes": {},
             "hasUserCode": false,
-            "parameterId": "mateOffsetDistanceZ",
+            "parameterId": "example-0000000000000000000000e3",
             "libraryRelationType": 0,
             "parameterName": "",
             "units": "centimeter",
@@ -3706,7 +3706,7 @@
           }
         },
         "sequenceId": 6,
-        "featureNodeId": "Mad3qf4k9f+N7xnau",
+        "featureNodeId": "example-0000000000000000000000d7",
         "inContextEntitiesToAdd": null,
         "selectionMicroversion": null,
         "propagateChanges": false,
@@ -3718,10 +3718,10 @@
       "sequence": 608,
       "command": {
         "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "",
-        "requestId": "AHjlKCvhSiYMW+Kz",
+        "requestId": "example-00000000000000000000010b",
         "itemType": 0,
         "parentOccurrence": {
           "$type": "assembly.GBTOccurrence",
@@ -3735,10 +3735,10 @@
       "sequence": 609,
       "command": {
         "$type": "ui.GBTUiCommit",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "Insert feature : Fastened 1",
-        "featureNodeId": "Mad3qf4k9f+N7xnau",
+        "featureNodeId": "example-0000000000000000000000d7",
         "propertyNodeId": ""
       }
     },
@@ -3747,10 +3747,10 @@
       "sequence": 610,
       "command": {
         "$type": "ui.assembly.GBTUiAssemblyItemSubscriptionRequest",
-        "elementId": "818974e8193c545bee3ef6d6",
+        "elementId": "000000000000000000000093",
         "messageId": "",
         "editDescription": "",
-        "requestId": "0AcY3n85BShJzGYS",
+        "requestId": "example-00000000000000000000010a",
         "itemType": 0,
         "parentOccurrence": {
           "$type": "assembly.GBTOccurrence",
@@ -3759,5 +3759,6 @@
         "nodeId": ""
       }
     }
-  ]
+  ],
+  "identifier_policy": "Document, element, revision and instance identifiers are anonymized examples; resolve real targets before calling commands."
 }

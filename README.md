@@ -1,291 +1,40 @@
-# Onshape Native — an Onshape API replacement for AI-assisted CAD
+# Onshape Native — a reverse-engineered Onshape API with a browser extension
 
-**An Onshape API replacement built for AI agents to create, edit and verify CAD
-models directly in Onshape—without Onshape API keys.**
+An MCP server for AI-assisted CAD in Onshape. It exposes Onshape's native editor commands and browser-authenticated REST calls through a local API, using a small extension connected to your signed-in browser. No Onshape API keys required.
 
-Give your agent an Onshape link and describe what you want to build or change.
-Onshape Native replaces the API-key-based integration with a local MCP server
-and HTTP API, using your signed-in browser session to execute Onshape REST calls
-and native editor commands. It preserves familiar REST methods, paths and payload
-formats while exposing editor workflows such as document and feature folders.
+Use it with **Codex, Claude Code, or another client supporting local stdio MCP servers**. Give your agent an Onshape URL or ask it to use the current Onshape tab.
 
-**[Install on a device](docs/installation.md)** ·
-**[Claude Code](docs/claude-code.md)** · **[Codex](docs/codex-plugin.md)** ·
-**[Agent guide](docs/agent-guide.md)**
+## Install
 
-An agent can:
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and your AI client first. Then run this command in Terminal or PowerShell:
 
-- Start from a document URL or the current Onshape tab and resolve the intended
-  Part Studio or assembly.
-- Discover relevant commands through local vector search and exact schema lookup.
-- Create and modify editable sketches, extrusions, revolves and other features;
-  inspect advanced feature parameters, materials, mass and assembly relationships.
-- Traverse, create, duplicate, rename, move and delete document tabs and folders,
-  and explore or edit feature/sidebar organization.
-- Batch show/hide mates and inherited connectors, inspect actual visibility, preview
-  revolute motion, control the camera and capture the current viewport.
-- Verify regeneration, dimensions, volume, contact and hierarchy after changes.
+```sh
+uv run --python 3.12 https://raw.githubusercontent.com/godbrigero/onshape-native/main/install.py --client codex
+```
 
-Use backend commands for modeling and UI actions only when an operation requires
-them. The browser stays open and signed in, while commands can run in background
-tabs. In Claude Code and Codex, the MCP launcher automatically starts or reuses the local bridge.
-The extension popup stays minimal: connection status and one Connect/Disconnect
-button.
+Replace `codex` with `claude`, `both`, or `generic`. Add `--directory "PATH"` to choose where the source and extension live. For a local checkout, run `uv run --python 3.12 install.py --client codex` instead.
 
-Example request:
+The installer downloads the server, creates its Python environment, generates private pairing data on your device, and registers the selected client. `generic` generates a `.mcp.json` entry to import into your client's MCP settings.
 
-> Use Onshape Native on this URL. Create a cube with a torus on top, duplicate the
-> Part Studio as a larger variant, put the original in a document folder, and
-> verify the geometry and folder placement.
+**Finish in your browser:** open its extensions page, enable Developer mode, choose **Load unpacked**, and select the extension folder printed by the installer. Sign in to Onshape, then restart your AI client. Browser approval cannot be automated by this installer.
 
-This workflow has been completed headlessly with editable native features.
-See the [modeling skill](skills/onshape-native-modeling/SKILL.md),
-[agent guide](docs/agent-guide.md), [Claude Code installation](docs/claude-code.md)
-and [Codex installation](docs/codex-plugin.md).
-Coverage is documented per operation and workflow in
-[coverage and limits](docs/coverage.md); this is not a claim that every Onshape
-operation or native command has been live-tested. Normal account permissions
-and plan capabilities apply.
+The AI client, server and Chromium browser must run on the same computer. The installer handles macOS, Linux and Windows paths; full browser setup has been tested on macOS only. See [installation and updates](docs/installation.md).
 
-## Setup
+## What it does
 
-Requirements: Python 3.11+, `uv`, Comet or another Chromium browser (Chrome 120+),
-and an Onshape account signed in at `https://cad.onshape.com`. Install the client
-and browser extension on the same computer. Follow the
-[device installation guide](docs/installation.md) for macOS/Linux/Windows steps,
-prerequisites, transfer ZIPs and troubleshooting.
+- Discover commands, inspect geometry, and edit sketches, features and assemblies.
+- Traverse and edit tabs, folders and feature trees; inspect mass and materials.
+- Control visibility, camera views and mate motion; capture the viewport.
+- Return compact summaries, with complete saved details available through one tool: `artifact_page`.
 
-From this directory:
+It prefers backend commands and provides UI fallbacks where needed. This is an **unofficial, reverse-engineered integration**: complete Onshape API/UI parity is not guaranteed, and native commands can change with Onshape releases.
+
+## Development
 
 ```sh
 uv sync --frozen
-uv run --frozen python scripts/configure.py
+uv run pytest
+uv run python scripts/package.py
 ```
 
-Then install for your client:
-
-| Client | Command |
-|---|---|
-| Claude Code | `uv run --frozen python scripts/install_claude.py` |
-| Codex | `uv run --frozen python scripts/install_local.py` |
-
-1. In Comet, open `chrome://extensions`, enable Developer mode and use **Load
-   unpacked** to select this directory's `extension` folder. Review its Onshape
-   and loopback access. `webRequest` is used only to obtain the Location header of
-   export redirects initiated by the extension; cookies are never exported.
-2. The installer registers `onshape-native@onshape-native-local` in Claude Code,
-   or `onshape-native@personal` in Codex, with the `onshape_native` MCP server and
-   modeling skill. Restart the client to load them. In Claude Code, start in
-   your normal project directory, outside this source folder. For another MCP
-   client, use the generated `.mcp.json`.
-   The launcher starts the local HTTP server automatically, or reuses one with
-   the same token. No separate server terminal is needed for ordinary MCP use.
-3. In the extension popup, press **Connect**. Open the exact workspace element
-   before using native editor commands; `open_document` can do this without clicks.
-4. Run `bridge_status`, then `resolve_target(url="ONSHAPE_LINK")` or
-   `resolve_target()` for the current Onshape tab. Use the resolved URL for the
-   task; the skill handles command discovery and verification. Use `tab_id` if
-   the same element is open in multiple tabs.
-
-For HTTP without MCP, run this in a terminal:
-
-```sh
-uv run --frozen python scripts/bridge.py
-```
-
-The API listens on `http://127.0.0.1:8766`. It is unavailable when the companion
-process is stopped. A normal Chromium extension cannot itself bind an HTTP server
-socket; the companion is part of this package. The browser must stay running and
-signed in, but commands can operate in background tabs.
-
-Pairing material is generated in `.runtime/bridge.json` and
-`extension/local-config.js`. Keep both local, exclude them from distribution, and
-rerun configuration and installation after moving this directory. Keep
-`ONSHAPE_NATIVE_RUNTIME` pointed at the existing pairing when moving it.
-Independent runtimes must not compete for the same port; the installed plugin
-and source checkout intentionally reuse the same paired companion.
-
-## HTTP API
-
-The REST route retains Onshape methods, paths, query parameters, JSON request and
-response shapes, and HTTP status codes. Replace the Onshape origin with the local
-origin; authenticate locally with `Authorization: Bearer <local bridge token>`.
-The token is read from `.runtime/bridge.json`; it is never an Onshape credential.
-Requests with a browser Origin header or a different Host are refused.
-
-```text
-GET    /health
-GET    /api/v17/partstudios/d/{did}/w/{wid}/e/{eid}/features
-POST   /api/v17/partstudios/d/{did}/w/{wid}/e/{eid}/features
-POST   /api/v17/blobelements/d/{did}/w/{wid}       (multipart/form-data)
-POST   /command                                  (native/editor control)
-POST   /local/resolve_target                     (link or current Onshape tab)
-POST   /local/search_commands                    (local vector discovery)
-POST   /local/document_tree                      (tabs/folders)
-POST   /local/element_tree                       (features/assemblies)
-POST   /local/document_edit                      (verified structure edits)
-```
-
-The CLI reads the local token without printing it:
-
-```sh
-.venv/bin/python scripts/request.py GET /health
-.venv/bin/python scripts/request.py POST /command --body request.json
-```
-
-Example `request.json` (replace all IDs):
-
-```json
-{
-  "kind": "state",
-  "target": {
-    "did": "DOCUMENT_ID_24_HEX_CHARS",
-    "wid": "WORKSPACE_ID_24_HEX_CHARS",
-    "eid": "ELEMENT_ID_24_HEX_CHARS"
-  }
-}
-```
-
-A native write uses `kind: "native"`, `command`, `body`, the same `target`, and
-`expected_microversion` from a fresh state. Nested native objects carry `$type`.
-Use `native_catalog` for observed examples and `native_schema` for current shapes;
-research document IDs in examples must be replaced with IDs from your model.
-
-Raw HTTP uploads preserve multipart boundaries. Responses preserve JSON, binary
-bytes, ETag, content disposition/range, Retry-After and rate-limit headers. Only
-If-None-Match and Range are accepted as custom upstream request headers. Redirected
-exports are downloaded by the companion without cookies, API keys or the bridge
-token; their signed storage URLs are not exposed to callers.
-
-## MCP tools
-
-The 35 tools use progressive discovery and private, paginated artifacts rather
-than registering hundreds of large endpoint schemas.
-
-| Purpose | Tools |
-|---|---|
-| Local vector/manual discovery | `search_commands`, `browse_commands` |
-| Tabs, folders, features, assemblies and history | `document_tree`, `element_tree`, `document_history` |
-| Verified structure edits | `document_edit`, `sidebar_edit` |
-| REST discovery and execution | `api_catalog`, `api_read`, `api_write`, `api_request`, `api_upload` |
-| Exact modeling | `inspect_model`, `evaluate`, `feature_template`, `feature`, `render_views` |
-| Display and motion | `display_state`, `set_visibility`, `mate_animation`, `view_control`, `capture_viewport` |
-| Native editor messages | `native_catalog`, `native_schema`, `native_state`, `native_read`, `native_write` |
-| Connection, task target and navigation | `resolve_target`, `bridge_status`, `open_document` |
-| Local artifact paging | `artifact_page` |
-| Sidebar baselines | `sidebar_prepare`, `sidebar_verify` |
-| Explicit UI fallback | `ui_inspect`, `ui_action` |
-
-`feature_template` reads live parameter specifications, including extrusion end
-conditions, second directions, draft, offsets, boolean scopes, pattern options
-and other advanced feature settings. This avoids restricting a feature to a
-handwritten subset of its parameters. Discover the desired type, resolve geometry
-queries, update its defaults and call `feature(action="add")`. Editing an existing
-feature preserves unspecified parameters. Arbitrary full definitions remain
-available through `api_write` and `api_request`.
-
-Read [display controls](docs/display-controls.md) for exact batch visibility,
-preview/restore, camera and screenshot examples. These tools are also available
-through authenticated `POST /local/TOOL_NAME` routes. The extension reports its
-loaded version and capabilities; editor connectivity is checked separately.
-
-For other API operations, discover their exact operation ID and schema first.
-Use `api_upload` for the six multipart operations (imports, blobs, attachments and
-material libraries). `api_request` accepts newer or DevTools-observed `/api/`
-endpoints not in the bundled catalog. `api_read` saves binary exports to a local
-artifact rather than including binary data in model context.
-
-Start with `search_commands(task)` for ten ranked matches from the complete
-bundled REST/native/tool inventory. Search uses offline TF-IDF vectors, cosine
-similarity and CAD aliases; it needs no model download, remote service or API
-key. `browse_commands` provides exhaustive filtered pagination when ranking misses.
-
-Use `document_tree` for tabs and document folders, `element_tree` for Part Studio
-feature folders and assembly occurrence/sidebar trees, and `document_history`
-for revision history with exact element filtering. `document_edit` and
-`sidebar_edit` accept fresh tree snapshots, preserve stable identities and verify
-the resulting hierarchy. Document-folder and Part Studio folder operations have
-live validation. New assembly-sidebar helpers require the updated extension's
-Map reader and still await live validation after reload. Occurrence traversal
-uses the separately verified REST definition. See the full
-[agent guide](docs/agent-guide.md) for arguments, JSON formats and HTTP examples.
-
-The eight target/discovery/tree/edit helpers also accept the same JSON arguments at `POST /local/<name>`.
-They retain the existing bearer authentication. These convenience routes are
-separate from the upstream-compatible `/api/` paths. The inherited
-`sidebar_prepare`/`sidebar_verify` helpers remain optional baseline utilities.
-UI actions require fresh control
-handles, a revision and an explanation of why backend commands cannot do the
-job. Supported actions are click, double-click, context-menu, fill and select.
-Synthetic events are not guaranteed to be accepted by every Onshape control.
-
-## Modeling and verification
-
-Read [agent instructions](docs/agent-guide.md), [workflow recipes](docs/workflows.md),
-[structure protocol evidence](docs/structure-research.md), and [coverage](docs/coverage.md).
-
-- Resolve a model snapshot and fresh geometry IDs before an edit. Queries describe
-  selection intent; transient entity IDs are tied to a microversion/configuration.
-- Prefer REST/native commands. Extrusions, materials and mates do not need dialog
-  clicks. Sketch interaction uses native commands or complete sketch definitions.
-- Native commands use a revision preflight, which is **not atomic** against other
-  collaborators. REST feature writes use server-enforced revision checks.
-- Multi-command editor sessions and feature batches are not atomic transactions.
-  Keep begin/edit/commit sequences together; inspect if interrupted. Requests are
-  never automatically retried after an ambiguous mutation outcome.
-- A server acknowledgement is not geometric success. Check regeneration and exact
-  dimensions, volume, mass or assembly occurrence transforms after editing.
-- An `observed` payload is not a reusable universal template. Optional native
-  fields sometimes require explicit `null`; constructor defaults can be invalid.
-- Normal Onshape permissions, account capabilities and service limits still apply.
-  Native commands are build-dependent; incompatible runtime shapes fail with a
-  diagnostic rather than replaying recorded bytes.
-
-## Context and token audit
-
-[Open the interactive audit](docs/token-audit/index.html) for per-tool token
-measurements, seven charts, sortable results, and an editable workflow cost
-calculator. The [full analysis](docs/token-audit/README.md) explains the corpus,
-coverage gaps and proposed optimizations. Counts use named text tokenizers;
-they are not provider billing figures and exclude image tokens.
-
-The [frequency-weighted study](docs/token-audit/usage/index.html) adds actual
-command counts from two modeling threads, per-thread comparisons, operation-level
-usage, and priorities for making advanced detail opt-in while retaining every
-capability. Official API calls and cache artifacts are kept separate from Native
-call frequencies. [Read the recommendations](docs/token-audit/usage/README.md).
-
-Reproduce the read-only audit without changing MCP responses:
-
-```sh
-uv run --project . --with-requirements scripts/audit-requirements.txt \
-  python scripts/token_audit.py
-```
-
-## Checks
-
-```sh
-uv sync --frozen --group dev
-.venv/bin/python -m pytest tests -q
-node --test tests/*.test.mjs
-.venv/bin/python scripts/smoke.py
-.venv/bin/python scripts/smoke.py --url 'https://cad.onshape.com/documents/DID/w/WID/e/EID'
-```
-
-The smoke script performs a real stdio MCP handshake and optional read-only
-geometry verification. It never creates or edits documents. Live writes used a
-separately approved public research document; no test suite silently publishes a
-new document.
-
-## Icon assets
-
-The extension, Codex plugin and skill share an original cube-and-ring icon.
-Its editable source is [assets/onshape-native.svg](assets/onshape-native.svg).
-`scripts/build_icons.py` regenerates the bundled PNG sizes with `rsvg-convert`
-(librsvg); the renderer is not needed to run or install the integration.
-
-## Compact results, complete details on demand
-
-Common API, discovery, hierarchy and display tools return compact summaries by default. The full original response remains saved locally. Use the existing **`artifact_page`** tool with the returned artifact/snapshot to retrieve any omitted details—one universal retrieval tool, no replay of CAD writes. `detail="full"` requests full fields upfront; large responses remain paginated. See the [response format and agent examples](docs/response-compression.md).
-
-Updated measurement: the [implemented-compression report](docs/token-audit/compression/README.md) replays the two supplied traces through production formatting, with per-tool token changes and extra-detail-call sensitivity. [Open the charts](docs/token-audit/compression/index.html).
+Generated launchers, pairing tokens, caches and environments stay local and are excluded from source control and release ZIPs. [Response formats](docs/response-compression.md) · [Measured token savings](docs/token-audit/compression/README.md) · [Modeling skill](skills/onshape-native-modeling/SKILL.md)

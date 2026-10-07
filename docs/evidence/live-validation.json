@@ -1,6 +1,6 @@
 {
   "date": "2026-10-03",
-  "research_document": "https://cad.onshape.com/documents/8d348afffdb8032e15ba2ac8/w/4cc851c68d331cdfaf236eeb/e/63d552593a6632f2141ade43",
+  "research_document": "redacted: public test document",
   "privacy": "public; explicitly authorized sample data",
   "frontend_build": "1.221.89963.13d10d36cb23",
   "full_parity_verified": false,
@@ -116,7 +116,7 @@
         ],
         "fixed": false,
         "path": [
-          "M23bvYh7qrmgVdc+x"
+          "example-instance-1"
         ]
       },
       {
@@ -140,7 +140,7 @@
         ],
         "fixed": true,
         "path": [
-          "M9V9XPkmgQAT7G+0y"
+          "example-instance-2"
         ]
       },
       {
@@ -164,7 +164,7 @@
         ],
         "fixed": false,
         "path": [
-          "MOGxWy5ZQOQ/eBNbO"
+          "example-instance-3"
         ]
       }
     ],
@@ -175,8 +175,7 @@
   "import": {
     "source": "generated 5 mm cube, binary STL, 12 triangles",
     "transport": "multipart uploadFileCreateElement",
-    "translation_state": "DONE",
-    "result_element_id": "89128228ff076c9d6b957f4f"
+    "translation_state": "DONE"
   },
   "mcp": {
     "stdio_handshake": true,

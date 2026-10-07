@@ -1,8 +1,15 @@
 {
   "name": "onshape-native",
-  "version": "0.4.0",
-  "description": "An Onshape API replacement for AI-assisted CAD through your signed-in browser. Includes the local MCP server and modeling skill.",
-  "author": {"name": "Local developer"},
-  "keywords": ["onshape", "cad", "mcp", "modeling"],
+  "version": "0.5.0",
+  "description": "A reverse-engineered native Onshape API and MCP server with a browser extension.",
+  "author": {
+    "name": "Local developer"
+  },
+  "keywords": [
+    "onshape",
+    "cad",
+    "mcp",
+    "modeling"
+  ],
   "skills": "./skills/"
 }

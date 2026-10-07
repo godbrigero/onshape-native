@@ -51,3 +51,15 @@ def test_first_marketplace_install_is_additive():
     updated = installer.merge_marketplace(previous, "./plugins/onshape-native")
     assert len(updated["plugins"]) == 2 and len(previous["plugins"]) == 1
     assert updated["plugins"][1]["name"] == "onshape-native"
+
+
+def test_public_package_has_no_device_paths_or_real_document_links(tmp_path):
+    import re
+    dest=tmp_path/'package'
+    installer.stage_package(ROOT,dest)
+    forbidden=re.compile(r'/Users/|/home/[^/\s]+/|[A-Z]:\\\\Users\\\\|cad\.onshape\.com/documents/[a-f0-9]{24}')
+    for path in dest.rglob('*'):
+        if path.is_file() and path.suffix in ('.py','.json','.md','.js','.toml','.html','.csv','.svg'):
+            assert not forbidden.search(path.read_text()), str(path.relative_to(dest))
+    assert (dest/'install.py').is_file()
+    assert not (dest/'.mcp.json').exists()

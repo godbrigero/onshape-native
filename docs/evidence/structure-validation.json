@@ -17,23 +17,23 @@
       "action": "move",
       "verified": true,
       "expected": {
-        "id": "element:58606264bfdd3ba138037627",
-        "parent_id": "folder:CrW8h0dLgjvNTiOV"
+        "id": "element:00000000000000000000010f",
+        "parent_id": "folder:000000000000000000000110"
       },
-      "microversion": "1f3fd3f8057082f0a223f6b6"
+      "microversion": "000000000000000000000111"
     },
     {
       "action": "rename",
       "verified": true,
       "expected": {
-        "id": "element:68c4065a3089c58a5fd1cd65",
+        "id": "element:000000000000000000000113",
         "name": "Native traversal model copy"
       },
-      "microversion": "0a97ee12aeab1c029a55db98",
+      "microversion": "000000000000000000000114",
       "completed": [
         {
           "action": "duplicate_element",
-          "element_id": "68c4065a3089c58a5fd1cd65"
+          "element_id": "000000000000000000000112"
         }
       ]
     },
@@ -41,23 +41,23 @@
       "action": "move",
       "verified": true,
       "expected": {
-        "id": "element:68c4065a3089c58a5fd1cd65",
-        "parent_id": "folder:CrW8h0dLgjvNTiOV"
+        "id": "element:000000000000000000000113",
+        "parent_id": "folder:000000000000000000000110"
       },
-      "microversion": "4b63f0a524ff424833d65e58"
+      "microversion": "000000000000000000000115"
     },
     {
       "action": "move",
       "verified": true,
       "expected": {
-        "id": "element:312ab047b77a77322da367aa",
-        "parent_id": "folder:CrW8h0dLgjvNTiOV"
+        "id": "element:000000000000000000000117",
+        "parent_id": "folder:000000000000000000000110"
       },
-      "microversion": "0c248a5f79ce86bfb266eebd",
+      "microversion": "000000000000000000000118",
       "completed": [
         {
           "action": "create_element",
-          "id": "element:312ab047b77a77322da367aa"
+          "id": "element:000000000000000000000117"
         }
       ]
     },
@@ -65,33 +65,33 @@
       "action": "rename",
       "verified": true,
       "expected": {
-        "id": "folder:CrW8h0dLgjvNTiOV",
+        "id": "folder:000000000000000000000110",
         "name": "Native traversal validation renamed"
       },
-      "microversion": "663c79352fb108b6b76b9205"
+      "microversion": "000000000000000000000119"
     },
     {
       "action": "create_folder",
       "structure_verified": true,
       "expected": {
         "new_folder_name": "Native feature group",
-        "parent_id": "root",
+        "parent_id": "example-00000000000000000000011a",
         "children": [
           "feature:FlPAbDHgh3kxI3c_1"
         ],
-        "created_id": "feature_folder:FGAftFdzwHEOdA3"
+        "created_id": "feature_folder:00000000000000000000011b"
       },
-      "microversion": "24450846bb202026f70fbbb5",
+      "microversion": "00000000000000000000011c",
       "regeneration_errors": []
     },
     {
       "action": "rename",
       "structure_verified": true,
       "expected": {
-        "id": "feature_folder:FGAftFdzwHEOdA3",
+        "id": "feature_folder:00000000000000000000011b",
         "name": "Native feature group renamed"
       },
-      "microversion": "85f411b1d4418c9c08488910",
+      "microversion": "00000000000000000000011d",
       "regeneration_errors": []
     },
     {
@@ -99,11 +99,11 @@
       "structure_verified": true,
       "expected": {
         "new_folder_name": "Nested verified folder",
-        "parent_id": "feature_folder:FrwGWxNYtCjJ7Kx",
+        "parent_id": "feature_folder:00000000000000000000011e",
         "children": [],
-        "created_id": "feature_folder:FWdaqRNogDvImWS"
+        "created_id": "feature_folder:00000000000000000000011f"
       },
-      "microversion": "121c74a72151aea084efcf3f",
+      "microversion": "000000000000000000000120",
       "regeneration_errors": []
     },
     {
@@ -113,9 +113,9 @@
         "moved_ids": [
           "feature:FlPAbDHgh3kxI3c_1"
         ],
-        "parent_id": "feature_folder:FWdaqRNogDvImWS"
+        "parent_id": "feature_folder:00000000000000000000011f"
       },
-      "microversion": "d426c281794d381622566574",
+      "microversion": "000000000000000000000121",
       "regeneration_errors": []
     },
     {
@@ -124,7 +124,7 @@
       "expected": {
         "absent": "feature_folder:FWdaqRNogDvImWS"
       },
-      "microversion": "df59daa7669cb8e2a1aabbf1",
+      "microversion": "000000000000000000000122",
       "regeneration_errors": []
     },
     {
@@ -134,9 +134,9 @@
         "moved_ids": [
           "feature:FlPAbDHgh3kxI3c_1"
         ],
-        "parent_id": "root"
+        "parent_id": "example-00000000000000000000011a"
       },
-      "microversion": "c97deca5abb46f99a8e4a563",
+      "microversion": "000000000000000000000123",
       "regeneration_errors": []
     },
     {
@@ -145,75 +145,75 @@
       "expected": {
         "absent": "feature_folder:FrwGWxNYtCjJ7Kx"
       },
-      "microversion": "0229610c1bf3b63d1440ef09",
+      "microversion": "000000000000000000000124",
       "regeneration_errors": []
     },
     {
       "action": "rename",
       "structure_verified": true,
       "expected": {
-        "id": "feature:FlPAbDHgh3kxI3c_1",
+        "id": "feature:000000000000000000000125",
         "name": "Traversal pattern renamed"
       },
-      "microversion": "956033d3595497bf9f9adc49",
+      "microversion": "000000000000000000000126",
       "regeneration_errors": []
     },
     {
       "action": "suppress",
       "structure_verified": true,
       "expected": {
-        "id": "feature:FlPAbDHgh3kxI3c_1",
+        "id": "feature:000000000000000000000125",
         "suppressed": true
       },
-      "microversion": "e2377c18bdc252a52b5cf4dd",
+      "microversion": "000000000000000000000127",
       "regeneration_errors": []
     },
     {
       "action": "unsuppress",
       "structure_verified": true,
       "expected": {
-        "id": "feature:FlPAbDHgh3kxI3c_1",
+        "id": "feature:000000000000000000000125",
         "suppressed": false
       },
-      "microversion": "06582006bdf1e96f06625194",
+      "microversion": "000000000000000000000128",
       "regeneration_errors": []
     },
     {
       "action": "edit_feature",
       "structure_verified": true,
       "expected": {
-        "id": "feature:FlPAbDHgh3kxI3c_1"
+        "id": "feature:000000000000000000000125"
       },
-      "microversion": "a6706df0b190e1f5ce06961f",
+      "microversion": "000000000000000000000129",
       "regeneration_errors": []
     },
     {
       "action": "edit_feature",
       "structure_verified": true,
       "expected": {
-        "id": "feature:FlPAbDHgh3kxI3c_1"
+        "id": "feature:000000000000000000000125"
       },
-      "microversion": "b88f2b795fcfa27415630a6b",
+      "microversion": "00000000000000000000012a",
       "regeneration_errors": []
     },
     {
       "action": "create_folder",
       "verified": true,
       "expected": {
-        "id": "folder:C/AT59XlYhAm6QKn",
+        "id": "folder:00000000000000000000012b",
         "name": "Nested document folder",
-        "parent_id": "folder:CrW8h0dLgjvNTiOV"
+        "parent_id": "folder:000000000000000000000110"
       },
-      "microversion": "c884cc06d87f84797bd317ce"
+      "microversion": "00000000000000000000012c"
     },
     {
       "action": "move",
       "verified": true,
       "expected": {
-        "id": "element:58606264bfdd3ba138037627",
-        "parent_id": "folder:C/AT59XlYhAm6QKn"
+        "id": "element:00000000000000000000010f",
+        "parent_id": "folder:00000000000000000000012b"
       },
-      "microversion": "19b3e4e10d62021253ea47bb"
+      "microversion": "00000000000000000000012d"
     },
     {
       "action": "unpack_folder",
@@ -221,29 +221,29 @@
       "expected": {
         "absent": "folder:C/AT59XlYhAm6QKn"
       },
-      "microversion": "4b9c41a6ec8937b0b144bd20"
+      "microversion": "00000000000000000000012e"
     },
     {
       "action": "duplicate_element",
       "verified": true,
       "expected": {
-        "id": "element:f8f42ebaa87fe7b6da9967a2",
-        "parent_id": "folder:CrW8h0dLgjvNTiOV",
+        "id": "element:000000000000000000000130",
+        "parent_id": "folder:000000000000000000000110",
         "name": "Assembly sidebar validation"
       },
-      "microversion": "cea70080d54ed5cb9cf16949",
+      "microversion": "000000000000000000000131",
       "completed": [
         {
           "action": "duplicate_element",
-          "id": "element:f8f42ebaa87fe7b6da9967a2"
+          "id": "element:000000000000000000000130"
         },
         {
           "action": "rename",
-          "id": "element:f8f42ebaa87fe7b6da9967a2"
+          "id": "element:000000000000000000000130"
         },
         {
           "action": "move",
-          "id": "element:f8f42ebaa87fe7b6da9967a2"
+          "id": "element:000000000000000000000130"
         }
       ]
     },
@@ -251,39 +251,39 @@
       "action": "create_folder",
       "verified": true,
       "expected": {
-        "id": "folder:Z7vTI3bCE7Q2t3ei",
+        "id": "folder:000000000000000000000132",
         "name": "Cascade deletion fixture",
-        "parent_id": "root"
+        "parent_id": "example-00000000000000000000011a"
       },
-      "microversion": "49f87b145024dd23bc6cb852"
+      "microversion": "000000000000000000000133"
     },
     {
       "action": "create_folder",
       "verified": true,
       "expected": {
-        "id": "folder:FOGWP6s8l6ldjcqt",
+        "id": "folder:000000000000000000000134",
         "name": "Cascade inner",
-        "parent_id": "folder:Z7vTI3bCE7Q2t3ei"
+        "parent_id": "folder:000000000000000000000132"
       },
-      "microversion": "bc106c344ddc3d4ab254c9b3"
+      "microversion": "000000000000000000000135"
     },
     {
       "action": "create_element",
       "verified": true,
       "expected": {
-        "id": "element:62465fe6c93b4ef5d4de1040",
-        "parent_id": "folder:FOGWP6s8l6ldjcqt",
+        "id": "element:000000000000000000000137",
+        "parent_id": "folder:000000000000000000000134",
         "name": "Temporary Feature Studio"
       },
-      "microversion": "3ecf0dc07e4cd0aabe24c7a1",
+      "microversion": "000000000000000000000138",
       "completed": [
         {
           "action": "create_element",
-          "id": "element:62465fe6c93b4ef5d4de1040"
+          "id": "element:000000000000000000000137"
         },
         {
           "action": "move",
-          "id": "element:62465fe6c93b4ef5d4de1040"
+          "id": "element:000000000000000000000137"
         }
       ]
     },
@@ -291,19 +291,19 @@
       "action": "create_element",
       "verified": true,
       "expected": {
-        "id": "element:019cd7138821b5c6b73cef0c",
-        "parent_id": "folder:Z7vTI3bCE7Q2t3ei",
+        "id": "element:00000000000000000000013a",
+        "parent_id": "folder:000000000000000000000132",
         "name": "Temporary Variable Studio"
       },
-      "microversion": "53d2be7f1150a1bd6c98fb9c",
+      "microversion": "00000000000000000000013b",
       "completed": [
         {
           "action": "create_element",
-          "id": "element:019cd7138821b5c6b73cef0c"
+          "id": "element:00000000000000000000013a"
         },
         {
           "action": "move",
-          "id": "element:019cd7138821b5c6b73cef0c"
+          "id": "element:00000000000000000000013a"
         }
       ]
     },
@@ -313,29 +313,29 @@
       "expected": {
         "absent": "folder:Z7vTI3bCE7Q2t3ei",
         "deleted_ids": [
-          "element:62465fe6c93b4ef5d4de1040",
-          "element:019cd7138821b5c6b73cef0c",
+          "element:000000000000000000000136",
+          "element:000000000000000000000139",
           "folder:FOGWP6s8l6ldjcqt",
           "folder:Z7vTI3bCE7Q2t3ei"
         ]
       },
-      "microversion": "7b270bfbae355001ac53d3e3",
+      "microversion": "00000000000000000000013c",
       "completed": [
         {
           "action": "delete_element",
-          "id": "element:62465fe6c93b4ef5d4de1040"
+          "id": "element:000000000000000000000137"
         },
         {
           "action": "delete_element",
-          "id": "element:019cd7138821b5c6b73cef0c"
+          "id": "element:00000000000000000000013a"
         },
         {
           "action": "delete_folder",
-          "id": "folder:FOGWP6s8l6ldjcqt"
+          "id": "folder:000000000000000000000134"
         },
         {
           "action": "delete_folder",
-          "id": "folder:Z7vTI3bCE7Q2t3ei"
+          "id": "folder:000000000000000000000132"
         }
       ]
     },
@@ -347,7 +347,7 @@
           "F07dMd0dJl7b7Qt_1"
         ]
       },
-      "microversion": "018096c30bae154d126ef44e",
+      "microversion": "00000000000000000000013d",
       "regeneration_errors": []
     },
     {
@@ -356,7 +356,7 @@
       "expected": {
         "absent": "feature:F07dMd0dJl7b7Qt_1"
       },
-      "microversion": "d811c14205f4922d1afe1cd3",
+      "microversion": "00000000000000000000013e",
       "regeneration_errors": []
     },
     {
@@ -364,13 +364,13 @@
       "structure_verified": true,
       "expected": {
         "new_folder_name": "Disposable pattern group",
-        "parent_id": "root",
+        "parent_id": "example-00000000000000000000011a",
         "children": [
           "feature:FlPAbDHgh3kxI3c_1"
         ],
-        "created_id": "feature_folder:FMTSTZw12k18SzO"
+        "created_id": "feature_folder:00000000000000000000013f"
       },
-      "microversion": "e028213bed8559a9dc654f0b",
+      "microversion": "000000000000000000000140",
       "regeneration_errors": []
     },
     {
@@ -379,7 +379,7 @@
       "expected": {
         "absent": "feature_folder:FMTSTZw12k18SzO"
       },
-      "microversion": "b779428651000f0986187062",
+      "microversion": "000000000000000000000141",
       "regeneration_errors": []
     }
   ],
@@ -427,11 +427,12 @@
       "complete": null,
       "matches": 0,
       "index_size": null,
-      "next_cursor": "fd68d05f82d2cec9e40a72e7"
+      "next_cursor": "000000000000000000000142"
     }
   ],
   "mcp": {
     "tool_count": 29,
     "handshake_search_geometry_passed": true
-  }
+  },
+  "identifier_policy": "Document, element, revision and instance identifiers are anonymized examples; resolve real targets before calling commands."
 }

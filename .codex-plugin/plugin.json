@@ -1,8 +1,10 @@
 {
   "name": "onshape-native",
-  "version": "0.4.0",
-  "description": "Onshape browser-session REST and native editor commands through an authenticated local bridge.",
-  "author": {"name": "Local developer"},
+  "version": "0.5.0",
+  "description": "A reverse-engineered native Onshape API and MCP server with a browser extension.",
+  "author": {
+    "name": "Local developer"
+  },
   "mcpServers": "./.mcp.json",
   "skills": "./skills/",
   "interface": {
@@ -14,7 +16,12 @@
     "longDescription": "Discover current REST operations, query exact geometry, edit native features and assemblies, and use bounded UI fallback only when a backend command is unavailable. Requires the local extension and a signed-in Onshape session.",
     "developerName": "Local developer",
     "category": "Productivity",
-    "capabilities": ["Read", "Write"],
-    "defaultPrompt": ["Use Onshape Native to inspect and edit the model at this Onshape link or in my current Onshape tab."]
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use Onshape Native to inspect and edit the model at this Onshape link or in my current Onshape tab."
+    ]
   }
 }
