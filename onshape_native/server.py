@@ -327,12 +327,12 @@ async def native_read(url: str, command: str, body: dict | None = None, tab_id: 
 
 
 @mcp.tool(structured_output=False, annotations=WRITE)
-async def native_write(url: str, command: str, body: dict, expected_microversion: str, tab_id: int | None = None) -> str:
-    """Send a schema-discovered native modeling command using the editor's serializer and connection. Some commands are untested: inspect native_catalog and native_schema first. Revision preflight is NOT atomic against collaborators. No retry/rollback; inspect state and regeneration afterward."""
+async def native_write(url: str, command: str, body: dict, expected_microversion: str = "", tab_id: int | None = None, expected_element_microversion: str = "") -> str:
+    """Send a schema-discovered native modeling command using the editor's serializer and connection. Some commands are untested: inspect native_catalog and native_schema first. Prefer expected_element_microversion from native_state to tolerate unrelated tab edits; expected_microversion retains the legacy document-wide guard. Revision preflight is NOT atomic against collaborators. No retry/rollback; inspect state and regeneration afterward."""
     if command in READS:
         raise OnshapeError("Use native_read for read commands.")
     data = await svc().client.command({"kind": "native", "target": native_target(url), "command": command,
-                                       "body": body, "expected_microversion": expected_microversion, "tab_id": tab_id})
+                                       "body": body, "expected_microversion": expected_microversion, "expected_element_microversion": expected_element_microversion, "tab_id": tab_id})
     return compact(svc().store.response(data))
 
 
@@ -365,10 +365,21 @@ async def api_upload(operation: str, files: list[dict], path: dict[str, str] | N
     return compact(s.store.response(response))
 
 
-@mcp.tool(structured_output=False, annotations=WRITE)
-async def open_document(url: str) -> str:
-    """Open an exact Onshape workspace element in a background browser tab, or reuse it. Required for native editing after REST creation. No model mutation; no clicks. Then wait for native_state to succeed."""
-    return compact(await svc().client.command({"kind": "open", "target": native_target(url)}))
+@mcp.tool(structured_output=False, annotations=DISPLAY_WRITE)
+async def open_document(url: str, mode: Literal["default", "background", "shadow", "minimal"] = "default",
+                        close_after_work: bool | None = None, reuse: bool = True, tab_id: int | None = None,
+                        refresh: Literal["never", "if_stale", "always"] = "never", wait_seconds: int = 15) -> str:
+    """Open/reuse an exact workspace editor without focusing it. default uses extension preferences (initially shadow); shadow creates a minimized popup, minimal a compact popup, background an inactive normal tab. Shadow/minimal reuse only managed editors unless tab_id is explicit. Requires a running signed-in browser, not headless. Keep returned tab_id; ready means connected, not successful modeling. close_after_work is honored by editor_tab(action=finish) after verifying saved work; it is not a timer. Existing user tabs are never closed. Optional stale recovery reloads only managed tabs, never replays a write. wait_seconds is 0–30."""
+    return compact(await svc().client.command({"kind": "open", "target": native_target(url), "mode": mode,
+        "close_after_work": close_after_work, "reuse": reuse, "tab_id": tab_id, "refresh": refresh, "wait_seconds": wait_seconds}))
+
+
+@mcp.tool(structured_output=False, annotations=DISPLAY_WRITE)
+async def editor_tab(url: str, tab_id: int, action: Literal["status", "refresh", "finish", "close"] = "status",
+                     refresh: Literal["if_stale", "always"] = "if_stale", wait_seconds: int = 15) -> str:
+    """Manage the exact browser editor opened for a task. status waits up to 0–30 seconds for connection. refresh reloads a discarded/disconnected editor once; refresh=always explicitly recovers other stale/loading failures. No write retry. Finish after verifying saved changes and restoring previews: closes only extension-created tabs with close_after_work enabled. close explicitly closes an owned tab regardless of that preference. User-owned or navigated tabs are never closed. Reload/close invalidate editor snapshots, camera and preview handles; reacquire state. Active edits/known pending RPCs block cleanup. Never refresh an uncertain write before inspecting persisted state."""
+    return compact(await svc().client.command({"kind": "editor_tab", "target": native_target(url), "tab_id": tab_id,
+        "action": action, "refresh": refresh, "wait_seconds": wait_seconds}))
 
 
 @mcp.tool(structured_output=False, annotations=READ)
@@ -451,7 +462,7 @@ async def view_control(url: str, action: Literal['read','save','restore','standa
                        view: Literal['front','back','left','right','top','bottom','isometric'] = 'isometric',
                        frame: list[float] | None = None, fit: bool = True,
                        occurrence_paths: list[list[str]] | None = None, camera_id: str = '', extents: list[float] | None = None, detail: Literal['summary','full'] = 'summary') -> str:
-    """Read/control the actual editor camera, fit the model, or zoom to exact assembly occurrence paths. save returns a camera_id for restore in the same tab, including zoom. Writes require a fresh microversion and return observed camera state. orientation takes a right-handed orthonormal 4x4 column-major camera frame (right/up/back columns, eye in meters), not a world-to-camera view matrix. fit=true also fits standard/orientation views. With fit=false, optional orthographic extents from readback restore scale after reload, adjusted to viewport aspect ratio. Works on Part Studios and assemblies. Compact acknowledgements save full camera state for artifact_page; read or detail=full includes matrices. No button clicks."""
+    """Read/control the actual editor camera, fit the model, or zoom to exact assembly occurrence paths. save returns a camera_id for restore in the same tab, including zoom. Camera changes do not require a model microversion; expected_microversion is accepted for backward compatibility and ignored. Returns observed camera state. orientation takes a right-handed orthonormal 4x4 column-major camera frame (right/up/back columns, eye in meters), not a world-to-camera view matrix. fit=true also fits standard/orientation views. With fit=false, optional orthographic extents from readback restore scale after reload, adjusted to viewport aspect ratio. Works on Part Studios and assemblies. Compact acknowledgements save full camera state for artifact_page; read or detail=full includes matrices. No button clicks."""
     from .display import Display
     args={'action':action}
     if action=='standard': args.update(view=view,fit=fit)
@@ -471,5 +482,60 @@ async def capture_viewport(url: str, tab_id: int | None = None, max_size: int = 
     return [TextContent(type='text',text=compact(metadata)),ImageContent(type='image',data=base64.b64encode(raw).decode(),mimeType='image/png')]
 
 
-if __name__ == "__main__":
-    mcp.run(transport="stdio")
+
+
+@mcp.tool(structured_output=False, annotations=WRITE)
+async def assembly_transform(url: str, action: Literal['translate','rotate'], occurrence_paths: list[list[str]],
+                             expected_microversion: str, tab_id: int | None = None,
+                             translation_m: list[float] | None = None, origin_m: list[float] | None = None,
+                             axis: list[float] | None = None, angle_degrees: float = 0,
+                             edit_description: str = 'Transform assembly occurrences') -> str:
+    """Move assembly parts using native solver drag start/change/end. Use exact occurrence paths and the element microversion from display_state. Translation is a world-space displacement in meters; rotation uses a world-space origin in meters, unit axis, and right-hand degrees. Mates/groups remain active and may constrain motion or move related parts. Returns saved/rendered transform checks; verified=false means the requested motion was not achieved. No automatic retry or rollback after partial failure."""
+    from .display import Display
+    args={'action':action,'occurrence_paths':occurrence_paths,'edit_description':edit_description}
+    if action=='translate': args['translation_m']=translation_m
+    else: args.update(origin_m=origin_m,axis=axis,angle_degrees=angle_degrees)
+    return compact(svc().store.response(await Display(svc()).operation(url,'transform',args,tab_id,expected_microversion)))
+
+
+@mcp.tool(structured_output=False, annotations=READ)
+async def native_measure(url: str, tab_id: int | None = None, use_selection: bool = False,
+                         entities: list[dict] | None = None, points_m: list[list[float]] | None = None) -> str:
+    """Measure through Onshape's native editor measurement RPC, without REST or screenshot estimation. Use current editor selection, or entities with deterministic_id and (for assembly geometry) occurrence_path from the current native editor, or explicit 3D points in meters. Never reuse IDs from another revision or estimate IDs from pixels. Returns native measurement quantities and metadata with measured=true only for nonempty successful responses. Part Studio and assembly face measurements are live verified. Assembly faces require occurrence_path. Whole-body and free-point assembly queries may return measured=false; use measurable geometry instead."""
+    from .display import Display
+    return compact(svc().store.response(await Display(svc()).operation(url,'measure',
+        {'use_selection':use_selection,'entities':entities or [],'points_m':points_m or []},tab_id)))
+
+
+@mcp.tool(structured_output=False, annotations=WRITE)
+async def assembly_feature(url: str, action: Literal['read','edit'] = 'read', node_id: str = '',
+                           parent_occurrence_path: list[str] | None = None, tab_id: int | None = None,
+                           snapshot: str = '', patches: list[dict] | None = None,
+                           edit_description: str = 'Edit assembly feature') -> str:
+    """Read or edit native mate/group definitions without REST. Read takes a native feature node_id and returns a snapshot with typed definition nodes. Edit takes that snapshot and patches [{node_id,fields:{field:value}}], preserving native IDs and unspecified fields. Use native typed nodes for query/group-membership arrays; do not fabricate entity references. Runs BeginEdit/SpecifyFeature/Commit with definition and element-revision guards, then reads back fields. Inherited features must be edited in their owning assembly. Partial failures are not rolled back or replayed."""
+    from .display import Display
+    d=Display(svc())
+    if action=='read':
+        result=await d.operation(url,'feature',{'action':'read','node_id':node_id,'parent_occurrence_path':parent_occurrence_path or []},tab_id)
+    else:
+        saved=svc().store.read(snapshot)
+        if saved.get('kind')!='native-assembly-feature' or saved.get('url')!=url or (tab_id is not None and saved.get('tab_id')!=tab_id):
+            raise OnshapeError('Use an assembly_feature snapshot for this exact target and tab.')
+        result=await d.operation(url,'feature',{'action':'edit','node_id':saved['node_id'],
+            'parent_occurrence_path':saved['parent_occurrence_path'],'expected_definition':saved['definition'],
+            'patches':patches or [],'edit_description':edit_description},saved['tab_id'],saved['microversion'])
+    artifact=svc().store.put({'kind':'native-assembly-feature','url':url,**result})['artifact']
+    return compact({'snapshot':artifact,**svc().store.response(result)})
+
+
+@mcp.tool(structured_output=False, annotations=WRITE)
+async def feature_studio(url: str, action: Literal['read','edit','check'] = 'read', snapshot: str = '',
+                         patches: list[dict] | None = None, source: str | None = None,
+                         source_path: str | None = None, preview: bool = False) -> str:
+    """Edit FeatureScript without full-source copy/paste. read returns a snapshot, source preview, and a private local .fs working copy. edit requires the snapshot and exactly one of patches [{old,new}] (each old must match once), full source, or an explicitly chosen absolute UTF-8 .fs source_path. preview=true returns a diff without writing. Checks current source, rejects concurrent changes, saves once through browser-session REST, reads it back, and checks exported feature specifications. check inspects saved specifications without writing. Complete compiler diagnostics and downstream Part Studio regeneration are not verified by this endpoint. Changes to files are uploaded only by an explicit edit call, never watched automatically."""
+    from .feature_studio import FeatureStudio
+    return compact(await FeatureStudio(svc()).run(url, action, snapshot, patches, source, source_path, preview))
+
+
+if __name__ == '__main__':
+    mcp.run(transport='stdio')

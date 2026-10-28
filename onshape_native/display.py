@@ -41,12 +41,57 @@ def validate_display_job(job):
     op, args = job.get('operation'), job.get('args', {})
     if not isinstance(args, dict): raise ValueError('Display args must be an object.')
     fields = {
-        'inspect': set(), 'visibility': {'changes','expected_state'},
+        'inspect': set(),
+        'feature': {'action','node_id','parent_occurrence_path','expected_definition','patches','edit_description'},
+        'transform': {'action','occurrence_paths','translation_m','origin_m','axis','angle_degrees','edit_description'},
+        'measure': {'use_selection','entities','points_m'}, 'visibility': {'changes','expected_state'},
         'camera': {'action','view','frame','fit','occurrence_paths','camera_id','extents'},
         'capture': {'max_size'},
         'motion': {'action','mate','frames','start_degrees','end_degrees','session_id','frame','fps'},
     }
     if op not in fields or set(args)-fields[op]: raise ValueError('Unknown display operation/argument.')
+    def vector(value):
+        return isinstance(value,list) and len(value)==3 and all(type(v) in (int,float) and math.isfinite(v) for v in value)
+    if op == 'feature':
+        if args.get('action') not in {'read','edit'}: raise ValueError('Use read or edit.')
+        if not isinstance(args.get('node_id'),str) or not 1<=len(args['node_id'])<=1024: raise ValueError('Provide a native feature node_id.')
+        path=args.get('parent_occurrence_path',[])
+        Reference(kind='feature',feature_id=args['node_id'],occurrence_path=path)
+        if args['action']=='edit':
+            patches=args.get('patches')
+            if not isinstance(args.get('expected_definition'),dict) or not isinstance(patches,list) or not 1<=len(patches)<=100: raise ValueError('Use a feature snapshot and 1–100 patches.')
+            if not isinstance(args.get('edit_description'),str) or not 1<=len(args['edit_description'])<=200: raise ValueError('Provide an edit description.')
+            ids=[]
+            for patch in patches:
+                if not isinstance(patch,dict) or set(patch)!={'node_id','fields'} or not isinstance(patch['node_id'],str) or not patch['node_id'] or not isinstance(patch['fields'],dict) or not patch['fields']: raise ValueError('Each patch needs node_id and nonempty fields.')
+                ids.append(patch['node_id'])
+            if len(set(ids))!=len(ids): raise ValueError('Combine patches for the same node.')
+    if op == 'transform':
+        paths=args.get('occurrence_paths')
+        if not isinstance(paths,list) or not 1<=len(paths)<=100: raise ValueError('Provide 1–100 occurrence paths.')
+        for path in paths: Reference(kind='occurrence',occurrence_path=path)
+        if len({tuple(p) for p in paths})!=len(paths): raise ValueError('Duplicate occurrence paths.')
+        if any(a!=b and len(a)<len(b) and b[:len(a)]==a for a in paths for b in paths): raise ValueError('Do not transform both an ancestor and its descendant.')
+        if not isinstance(args.get('edit_description'),str) or not 1<=len(args['edit_description'])<=200: raise ValueError('Provide an edit description of 1–200 characters.')
+        if args.get('action')=='translate':
+            if not vector(args.get('translation_m')) or any(k in args for k in ('axis','origin_m','angle_degrees')): raise ValueError('Translation needs a finite translation_m vector only.')
+        elif args.get('action')=='rotate':
+            if not vector(args.get('origin_m')) or not vector(args.get('axis')) or abs(sum(v*v for v in args['axis'])-1)>1e-6: raise ValueError('Rotation needs origin_m and a unit axis.')
+            angle=args.get('angle_degrees')
+            if type(angle) not in (int,float) or not math.isfinite(angle) or abs(angle)>36000 or 'translation_m' in args: raise ValueError('Invalid rotation angle.')
+        else: raise ValueError('Use rotate or translate.')
+    if op == 'measure':
+        if type(args.get('use_selection',False)) is not bool: raise ValueError('use_selection must be boolean.')
+        entities,points=args.get('entities',[]),args.get('points_m',[])
+        if not isinstance(entities,list) or not isinstance(points,list) or len(entities)+len(points)>100: raise ValueError('Provide up to 100 entities/points.')
+        if args.get('use_selection'):
+            if entities or points: raise ValueError('Use current selection or explicit entities/points, not both.')
+        elif not entities and not points: raise ValueError('Supply measurable entities/points or use_selection=true.')
+        for entity in entities:
+            if not isinstance(entity,dict) or set(entity)-{'deterministic_id','occurrence_path'}: raise ValueError('Invalid entity reference.')
+            if not isinstance(entity.get('deterministic_id'),str) or not 1<=len(entity['deterministic_id'])<=1024: raise ValueError('Use a current native deterministic entity ID.')
+            if 'occurrence_path' in entity: Reference(kind='occurrence',occurrence_path=entity['occurrence_path'])
+        if any(not vector(p) for p in points): raise ValueError('Points must contain three finite meter coordinates.')
     if op == 'visibility':
         changes=args.get('changes')
         if not isinstance(changes,list) or not 1<=len(changes)<=100: raise ValueError('Provide 1–100 visibility changes.')
@@ -134,7 +179,10 @@ class Display:
             limit=max(1,limit//2);page=self.s.store.page(data['rows'],offset=offset,limit=limit)
         return {'snapshot':snapshot,'microversion':data['microversion'],'tab_id':data['tab_id'],
                 'connected':data.get('connected',False),'complete':data['complete'],'issues':data['issues'],'camera':data['camera'],
-                'motion':data.get('motion'),'rpc_pending':data.get('rpc_pending'),**page}
+                'motion':data.get('motion'),'rpc_pending':data.get('rpc_pending'),
+                'document_microversion':data.get('document_microversion'),
+                'incomplete_transform':data.get('incomplete_transform'),
+                'incomplete_feature_edit':data.get('incomplete_feature_edit'),**page}
 
     async def state(self,url,tab_id=None,snapshot='',offset=0,limit=20):
         if snapshot:

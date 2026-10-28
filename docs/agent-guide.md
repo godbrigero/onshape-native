@@ -2,7 +2,9 @@
 
 Use the `onshape_native` MCP server or its authenticated loopback HTTP API. The
 companion runs on `http://127.0.0.1:8766`; the browser stays signed into Onshape.
-Ordinary commands work in background tabs. The popup only connects/disconnects.
+Ordinary commands work in background editors. The popup controls connection,
+default editor view (shadow/minimal/background), and close-after-work preference.
+See [managed editor tabs](editor-tabs.md) for open, readiness, refresh and cleanup.
 
 ## Start and connect
 

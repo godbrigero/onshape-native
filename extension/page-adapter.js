@@ -94,6 +94,21 @@ export async function pageCommand(job) {
     const value = documentModel?.get("microversionId");
     return typeof value === "string" ? value : value?.theId || "";
   };
+  const getElementMicroversion = () => {
+    const value = elementModel?.getMicroversionId?.() ?? elementModel?.get?.("microversionId");
+    return typeof value === "string" ? value : value?.theId || "";
+  };
+  if (job.kind === "editor_health") {
+    if (!elementModel || !getMicroversion()) throw new Error("Target editor is not ready.");
+    const motion = controller.__onshapeNativeMotionV1;
+    const closed = controller.connection?.isClosed?.();
+    return {connected: typeof closed === 'boolean' ? !closed : null,
+      microversion: getMicroversion(), element_microversion: getElementMicroversion(),
+      editingFeatureId: elementModel?.get("idEditingFeature") || null,
+      rpc_pending: !!controller.__onshapeNativePendingDisplayRpc?.pending,
+      incomplete_edit: !!(controller.__onshapeNativeIncompleteFeatureEdit || controller.__onshapeNativeIncompleteTransform || elementModel?.get("isInMiddleOfDrag")),
+      motion_active: !!(motion && !['restored', 'invalidated'].includes(motion.state))};
+  }
   // The serializer registry includes nested types absent from the public barrel,
   // e.g. partstudio.GBTPSOIdentity in material and assembly insertion payloads.
   const registry = require(profile.registry)?.E15;
@@ -149,7 +164,7 @@ export async function pageCommand(job) {
     const definition = elementModel?.definition;
     const root = definition?.assembly || cache?.getModelTreeState(target.eid)?.diffableModelTree?.getRoot();
     if (!root) throw new Error("Native model tree unavailable.");
-    return bounded({target, microversion: getMicroversion(), connected:controller.connection?.isClosed?.() === false,
+    return bounded({target, microversion: getMicroversion(), element_microversion:getElementMicroversion(), connected:controller.connection?.isClosed?.() === false,
       editingFeatureId: elementModel?.get("idEditingFeature") || null,
       tree: plain(root),
       ...(definition?.assembly ? {assemblyTree: plain(definition.assemblyTree), computedData: plain(definition.computedData),
@@ -215,7 +230,10 @@ export async function pageCommand(job) {
   if (!allowed.has(job.command) && (!job.command.includes("GBTUi") || !constructors.has(job.command) || /Response|Notification|DisplayData|ComputedData/.test(job.command))) {
     throw new Error("Native command is absent from the runtime schema.");
   }
-  if (!reads.has(job.command) && (!job.expected_microversion || getMicroversion() !== job.expected_microversion)) {
+  const revisionMatches = job.expected_element_microversion
+    ? !!getElementMicroversion() && getElementMicroversion() === job.expected_element_microversion
+    : !!job.expected_microversion && getMicroversion() === job.expected_microversion;
+  if (!reads.has(job.command) && !revisionMatches) {
     throw new Error("Native revision changed or unavailable. Read native_state before editing.");
   }
   if (job.body?.elementId && job.body.elementId !== target.eid) throw new Error("Body elementId differs from target.");

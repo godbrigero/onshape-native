@@ -213,3 +213,62 @@ async def test_raw_http_preserves_encoded_entity_ids_and_explicit_json_null():
         assert seen[-1]['path'].endswith('MOGxWy5ZQOQ%2FeBNbO')
         await c.post('/api/v17/documents',content='null',headers={'Content-Type':'application/json'})
         assert seen[-1]['body'] is None and seen[-1]['body_present'] is True
+
+
+@pytest.mark.parametrize('extra', [
+    {'mode': []}, {'refresh': {}}, {'mode': 'hidden'}, {'wait_seconds': -1}, {'wait_seconds': 31},
+    {'wait_seconds': True}, {'tab_id': True}, {'tab_id': -1},
+    {'reuse': 'false'}, {'close_after_work': 'false'}, {'refresh': 'sometimes'},
+])
+def test_editor_open_rejects_invalid_controls(extra):
+    with pytest.raises(BridgeError):
+        validate_job({'kind': 'open', 'target': TARGET, **extra})
+
+
+def test_editor_lifecycle_requires_exact_tab_and_target():
+    for action in ('status', 'refresh', 'finish', 'close'):
+        job = {'kind': 'editor_tab', 'target': TARGET, 'action': action, 'tab_id': 7}
+        assert validate_job(job)
+        with pytest.raises(BridgeError):
+            validate_job({**job, 'tab_id': None})
+        with pytest.raises(BridgeError):
+            validate_job({**job, 'target': {}})
+    with pytest.raises(BridgeError):
+        validate_job({'kind': 'editor_tab', 'target': TARGET, 'action': 'delete_window', 'tab_id': 7})
+
+
+async def test_old_worker_cannot_silently_ignore_lifecycle_options():
+    broker = Broker(CONFIG)
+    class Extension:
+        async def send_json(self, data):
+            broker.pending[data['id']].set_result({'tab_id': 7})
+    broker.extension = Extension()
+    for job in ({'kind': 'open', 'target': TARGET, 'mode': 'shadow'},
+                {'kind': 'editor_tab', 'target': TARGET, 'tab_id': 7, 'action': 'finish'}):
+        with pytest.raises(BridgeError, match='editor_tabs_v1'):
+            await broker.dispatch(job)
+    broker.extension_info = {'capabilities': ['editor_tabs_v1']}
+    assert await broker.dispatch({'kind': 'open', 'target': TARGET, 'mode': 'shadow'}) == {'tab_id': 7}
+
+
+async def test_local_editor_tools_forward_controls_with_strict_types(monkeypatch):
+    from onshape_native import server
+    from types import SimpleNamespace
+    seen = []
+    class Client:
+        async def command(self, job):
+            validate_job(job); seen.append(job); return {'tab_id': 7, 'ready': True}
+    from onshape_native.service import Service
+    from onshape_native.client import Settings
+    target_service = SimpleNamespace(settings=Settings())
+    monkeypatch.setattr(server, 'svc', lambda: SimpleNamespace(client=Client(), target=lambda url: Service.target(target_service, url)))
+    app = create_app(CONFIG)
+    url = f"https://cad.onshape.com/documents/{TARGET['did']}/w/{TARGET['wid']}/e/{TARGET['eid']}"
+    async with httpx.AsyncClient(transport=httpx.ASGITransport(app), base_url='http://127.0.0.1:8766', headers=AUTH) as c:
+        result = await c.post('/local/open_document', json={'url': url, 'mode': 'shadow', 'close_after_work': True})
+        assert result.status_code == 200 and result.json()['ready']
+        assert seen[-1]['mode'] == 'shadow' and seen[-1]['close_after_work'] is True
+        result = await c.post('/local/editor_tab', json={'url': url, 'tab_id': 7, 'action': 'refresh'})
+        assert result.status_code == 200 and seen[-1]['refresh'] == 'if_stale'
+        for args in ({'url': url, 'tab_id': True}, {'url': url, 'tab_id': 7, 'wait_seconds': 31}):
+            assert (await c.post('/local/editor_tab', json=args)).status_code == 400

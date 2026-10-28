@@ -25,3 +25,16 @@ test('window closing race returns unknown context, never an invented current tab
     windows: {getLastFocused: async () => {throw new Error('Window closed');}}});
   assert.equal(result.last_focused_window_id, null);
 });
+
+test('tab inventory exposes owned editor cleanup policy but not stale ownership', async () => {
+  const url = `https://cad.onshape.com/documents/${'a'.repeat(24)}/w/${'b'.repeat(24)}/e/${'c'.repeat(24)}`;
+  const record = {url, window_id: 10, mode: 'shadow', close_after_work: true};
+  const context = await tabContext({
+    tabs: {query: async () => [{id: 1, windowId: 10, url, discarded: true}, {id: 2, windowId: 20, url}]},
+    storage: {session: {get: async () => ({managedEditors: {1: record, 2: record}})}},
+    windows: {getLastFocused: async () => ({id: 20})},
+  });
+  assert.equal(context.tabs[0].managed, true); assert.equal(context.tabs[0].mode, 'shadow');
+  assert.equal(context.tabs[0].discarded, true); assert.equal(context.tabs[0].close_after_work, true);
+  assert.equal(context.tabs[1].managed, false); assert.equal(context.tabs[1].close_after_work, false);
+});

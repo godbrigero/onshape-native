@@ -31,10 +31,28 @@ reference types. Versions and microversions are read-only; never silently edit a
 different workspace. Native editor commands require an unconfigured workspace
 element; the resolver's eligibility flag does not grant edit permission.
 
-For native editor calls, `open_document(url=ELEMENT_URL)` opens/reuses a background
-tab; then wait for `native_state` to succeed. Supply `tab_id` to native tools when
-the same element is open in multiple tabs. Opening a tab is not proof the editor
-is ready. Tree helpers manage their own editor anchors.
+For native editor calls, `open_document(url=ELEMENT_URL)` opens/reuses an editor
+using the extension preference (initially `shadow`, a minimized popup). `minimal`
+opens a compact window; `background` opens an inactive normal tab. The browser
+must remain running and signed in. This is a real editor, not a headless session.
+Always keep its `tab_id` and supply it to native/display tools, especially when
+the same element is open in multiple tabs. Wait for `ready:true`, then read fresh
+`native_state`; opening a tab is not proof that the editor is ready.
+
+Use `editor_tab(url,tab_id,action="status")` to wait/check readiness. For a discarded
+or disconnected editor, `action="refresh"` reloads once if stale. For another
+confirmed stale/loading failure, use `refresh="always"` explicitly. Never replay
+an uncertain write: inspect persisted state first. Reload invalidates editor
+snapshots and preview/camera handles; obtain fresh state afterward.
+
+After verifying saved work and restoring previews, call
+`editor_tab(url,tab_id,action="finish")`. It honors `close_after_work` from the
+open call or popup preference and closes only managed tabs. Use
+`close_after_work=false` to keep an editor open; explicit `action="close"` later
+closes a managed editor. User-owned/navigated tabs are never closed. Cleanup is
+explicit at task completion, never on a timer or transport disconnect. Tree
+helpers manage their own editor anchors; `bridge_status` lists managed tabs and
+their cleanup preferences so task-created anchors can also be finished.
 
 ## Discover only the commands needed
 
@@ -44,6 +62,7 @@ indicate similarity, not successful live execution.
 
 | Work | Normal tool sequence |
 |---|---|
+| Edit FeatureScript source | `feature_studio` read → edit with exact patches or a local `.fs` file → verify readback/specifications |
 | Change an extrusion, fillet, sketch or other feature | `inspect_model` → `evaluate` → `feature_template` → `feature` → fresh inspection |
 | Browse/copy/create/rename/move/delete tabs or document folders | `document_tree` → `document_edit` → verify returned tree |
 | Feature or assembly sidebar folders/order/suppression | `element_tree` → `sidebar_edit` → verify structure and model |
@@ -60,6 +79,14 @@ every entry. For REST inspect `api_catalog(schema="OPERATION_ID")` and follow
 named `$ref` components. Use exact returned path/query/body fields. For features,
 `feature_template` retrieves live parameter specifications, including advanced
 options; do not constrain an extrusion to a hardcoded depth-only wrapper.
+
+For FeatureScript code changes, prefer `feature_studio` over constructing full-source
+REST updates. `read` returns an editable local `.fs` file and a source snapshot.
+Use small exact `{old,new}` patches, or edit that file and pass its `source_path`
+with the snapshot to `edit`. `preview=true` produces a diff without uploading.
+Do not ask the user to copy/paste the whole script when the linked Feature Studio
+is accessible. Saving and exported-spec checks do not prove compilation or
+regeneration of dependent Part Studios; verify relevant model behavior separately.
 
 Use `api_request` for a documented or DevTools-observed `/api/` endpoint absent
 from the bundled catalog. If an operation remains unknown, inspect the actual

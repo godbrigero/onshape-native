@@ -38,7 +38,11 @@ export async function displayCommand(job) {
     const types = classes, controller = controllerType.getOpenDocumentController();
     if (controller?.getActiveElementTabId() !== target.eid) throw new Error('Active editor differs from target.');
     const model = controller.documentModel.get('activeElement');
-    const micro = () => {const v = controller.documentModel.get('microversionId'); return typeof v === 'string' ? v : v?.theId;};
+    const documentMicro = () => {const v = controller.documentModel.get('microversionId'); return typeof v === 'string' ? v : v?.theId;};
+    const micro = () => {
+      const v = model?.getMicroversionId?.() ?? model?.get?.('microversionId');
+      return (typeof v === 'string' ? v : v?.theId) || documentMicro();
+    };
     const viewer = controller.getViewer();
     const manager = viewer?.getModelViewManagers()?.getManager();
     const before = micro();
@@ -46,11 +50,12 @@ export async function displayCommand(job) {
     const assertRevision = () => {
       if (!connected()) throw new Error('Onshape editor is disconnected. Reconnect that tab before writing; no command was sent.');
       if (controller.__onshapeNativePendingDisplayRpc?.pending) throw new Error('A previous display RPC is still pending. Inspect state or reload the saved element; do not replay it.');
+      if(controller.__onshapeNativeIncompleteFeatureEdit||controller.__onshapeNativeIncompleteTransform) throw new Error('A native edit is incomplete. Inspect and reload the saved element before writing.');
       if (job.expected_microversion !== micro()) throw new Error('Display revision changed. Read fresh display_state.');
       if (model.get('idEditingFeature')) throw new Error('Finish the open feature edit before changing display or previewing motion.');
     };
     const constructors = new Map();
-    for (const Type of Object.values(types)) if (typeof Type === 'function') {
+    for (const Type of [...Object.values(types),...Object.values(require(profile.registry)?.E15||{})]) if (typeof Type === 'function') {
       try {const name = Type.prototype?.getMessageName?.(); if (name) constructors.set(name, Type);} catch {}
     }
     const make = (name, values = {}) => {
@@ -58,16 +63,21 @@ export async function displayCommand(job) {
       return Object.assign(new Type(), values);
     };
     const occurrence = path => make('assembly.GBTOccurrence', {path: [...path]});
-    const call = async message => {
+    const call = async (message,connection=controller.elementConnection) => {
+      if(controller.__onshapeNativePendingDisplayRpc?.pending) throw new Error('A native RPC is still pending. Inspect state before continuing.');
       const pending={pending:true,command:message.getMessageName(),started_at:new Date().toISOString()};
       controller.__onshapeNativePendingDisplayRpc=pending;
-      const response=Promise.resolve(controller.elementConnection.callAndPromise(message)).finally(()=>{pending.pending=false;});
+      const response=Promise.resolve(connection.callAndPromise(message)).finally(()=>{pending.pending=false;});
       let timer;
       try {
         return await Promise.race([response,new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('Native RPC timed out; outcome unknown. Read display_state. Do not replay while rpc_pending is present.')),20000);})]);
       } finally {clearTimeout(timer);}
     };
-    const equal = (a,b) => JSON.stringify(a) === JSON.stringify(b);
+    const equal = (a,b) => {
+      if(a===b) return true;
+      if(a==null||b==null||typeof a!=="object"||typeof b!=="object"||Array.isArray(a)!==Array.isArray(b)) return false;
+      const keys=Object.keys(a);return keys.length===Object.keys(b).length&&keys.every(k=>Object.hasOwn(b,k)&&equal(a[k],b[k]));
+    };
     const nodeMap = () => {
       const registry = require(profile.sidebar)?.V;
       if (!(registry?.itemsByPath instanceof Map)) throw new Error(`Unsupported Onshape frontend build [sidebar-registry-missing:${profile.sidebar}].`);
@@ -119,9 +129,11 @@ export async function displayCommand(job) {
         viewport:Array.from(camera.getViewport()), perspective:!camera.isOrthographic(),
         extents:camera.isOrthographic()?Array.from(camera.getExtents()):null};
     };
-    const displayState = () => ({...getRows(), microversion:micro(), target, connected:connected(),
+    const displayState = () => ({...getRows(), microversion:micro(), document_microversion:documentMicro(), target, connected:connected(),
       motion:session && session.path===path ? {session_id:session.id,state:session.state,microversion:session.microversion} : null,
       rpc_pending:controller.__onshapeNativePendingDisplayRpc?.pending ? {...controller.__onshapeNativePendingDisplayRpc} : null,
+      incomplete_transform:controller.__onshapeNativeIncompleteTransform || null,
+      incomplete_feature_edit:controller.__onshapeNativeIncompleteFeatureEdit || null,
       camera:cameraState(), captured_at:new Date().toISOString(), scope:'This exact browser tab; display state is mutable independently of geometry revision.'});
     // A session holds native frame objects and baseline transforms only in this
     // document controller, so navigation/reload cannot replay them into another model.
@@ -208,9 +220,149 @@ export async function displayCommand(job) {
       }
       return {verified:checks.every(c=>c.verified),checks,microversion_before:before,...after};
     }
+    if (operation === 'feature') {
+      if(!connected()) throw new Error('Onshape editor is disconnected.');
+      if(!model.definition?.assemblyTree) throw new Error('Select an assembly editor.');
+      const plain = (value,depth=0) => {
+        if(depth>40) throw new Error('Native definition nesting exceeds limit.');
+        if(typeof value==='number'&&!Number.isFinite(value)) return null;
+        if(value==null||typeof value!=='object') return value;
+        if(Array.isArray(value)) return value.map(v=>plain(v,depth+1));
+        const out={};if(typeof value.getMessageName==='function') out.$type=value.getMessageName();
+        for(const [k,v] of Object.entries(value)) if(!k.startsWith('_')&&v!=null&&typeof v!=='function') out[k]=plain(v,depth+1);
+        return out;
+      };
+      const hydrate = (value,depth=0) => {
+        if(depth>40) throw new Error('Native definition nesting exceeds limit.');
+        if(value==null||typeof value!=='object') return value;
+        if(Array.isArray(value)) return value.map(v=>hydrate(v,depth+1));
+        const out=value.$type?make(value.$type):Object.create(null);
+        for(const [k,v] of Object.entries(value)) {
+          if(k==='$type') continue;
+          if(['__proto__','prototype','constructor'].includes(k)||k.startsWith('_')||(value.$type&&!Object.hasOwn(out,k))) throw new Error('Invalid native definition field.');
+          out[k]=hydrate(v,depth+1);
+        }
+        return out;
+      };
+      const read = async()=>{
+        const result=await call(make('ui.assembly.GBTUiAssemblyTreeItemDefinitionRequest',
+          {elementId:target.eid,nodeId:args.node_id,parentOccurrence:occurrence(args.parent_occurrence_path)}));
+        if(!result?.node||result.error) throw new Error('Native feature definition unavailable.');
+        return plain(result.node);
+      };
+      const definition=await read();
+      if(args.action==='read') return {definition,microversion:micro(),node_id:args.node_id,parent_occurrence_path:args.parent_occurrence_path};
+      assertRevision();
+      if(controller.__onshapeNativeIncompleteFeatureEdit) throw new Error('A previous native feature edit is incomplete. Inspect the editor before continuing.');
+      if(!equal(definition,plain(args.expected_definition))) throw new Error('Feature definition changed. Read a fresh feature snapshot.');
+      // Only edit definitions owned by this assembly; inherited features are read-only here.
+      if(args.parent_occurrence_path.length) throw new Error('Edit the owning assembly for an inherited feature.');
+      const nodes=new Map();
+      const visit=value=>{
+        if(!value||typeof value!=='object') return;
+        if(value.nodeId) {if(nodes.has(value.nodeId)&&value.$type!=='tree.GBTNodeReference') throw new Error('Ambiguous definition node ID.');if(value.$type!=='tree.GBTNodeReference') nodes.set(value.nodeId,value);}
+        for(const v of Object.values(value)) visit(v);
+      };visit(definition);
+      const selected=new Set(args.patches.map(p=>p.node_id));
+      const containsSelected=value=>value&&typeof value==='object'&&(selected.has(value.nodeId)||Object.values(value).some(containsSelected));
+      for(const id of selected) if(Object.values(nodes.get(id)||{}).some(containsSelected)) throw new Error('Do not patch both an ancestor node and its descendant.');
+      const changes=args.patches.map(patch=>{
+        const node=nodes.get(patch.node_id);if(!node) throw new Error('Patch node is absent from this feature definition.');
+        const updated={...node};
+        for(const [key,value] of Object.entries(patch.fields)) {
+          if(['nodeId','featureId','$type','parameterId','sourceParseTreeNodes'].includes(key)||!Object.hasOwn(node,key)) throw new Error('Patch must preserve native identity and known fields.');
+          updated[key]=value;
+        }
+        return make('diff.GBTTreeEditChange',{oldNode:make('tree.GBTNodeReference',{nodeId:node.nodeId}),newNode:hydrate(updated)});
+      });
+      const begin=make('ui.GBTUiBeginEdit',{elementId:target.eid,nodeId:args.node_id,rollbackState:1});
+      const specify=changes.map((featureChange,i)=>make('ui.GBTUiSpecifyFeature',{elementId:target.eid,featureNodeId:args.node_id,featureChange,sequenceId:i+1,selectionMicroversion:null,inContextEntitiesToAdd:null,editDescription:args.edit_description}));
+      const commit=make('ui.GBTUiCommit',{elementId:target.eid,featureNodeId:args.node_id,editDescription:args.edit_description});
+      controller.__onshapeNativeIncompleteFeatureEdit={node_id:args.node_id,stage:'begin'};
+      for(const [i,message] of [begin,...specify,commit].entries()) {
+        if(!connected()||controller.getActiveElementTabId()!==target.eid||location.pathname!==path) throw new Error('Editor target or connection changed during feature edit.');
+        controller.__onshapeNativeIncompleteFeatureEdit.stage=i;
+        const result=await call(message);
+        if(result?.error||result?.errorCode||result?.errorEnum) throw new Error('Native feature edit rejected; inspect before continuing.');
+      }
+      delete controller.__onshapeNativeIncompleteFeatureEdit;
+      const after=await read();nodes.clear();visit(after);
+      const checks=args.patches.map(p=>({node_id:p.node_id,verified:Object.entries(p.fields).every(([k,v])=>equal(nodes.get(p.node_id)?.[k],v))}));
+      return {definition:after,microversion:micro(),checks,verified:checks.every(c=>c.verified),node_id:args.node_id,parent_occurrence_path:args.parent_occurrence_path};
+    }
+    if (operation === 'measure') {
+      let message;
+      if (args.use_selection) {
+        message=controller.getMeasurementAreaController()?.getMeasureCallForSelections();
+        if (!message) throw new Error('Select measurable geometry in this exact editor tab first.');
+      } else {
+        message=make('ui.GBTUiMeasureCall');
+        message.viewerId=viewer.getViewerId();
+        message.measurementReference=null;message.customOriginCoordinateSystem=null;
+        message.entityQueries=(args.entities||[]).map(entity=>make(
+          entity.occurrence_path ? 'assembly.GBTMIndividualQueryWithOccurrence' : 'bsedit.GBTMIndividualQuery',
+          {nodeId:crypto.randomUUID().replaceAll('-','').slice(0,16),deterministicIds:[entity.deterministic_id],...(entity.occurrence_path?{path:entity.occurrence_path}:{})}));
+        message.pointPositions=(args.points_m||[]).map(v=>make('math.GBTVector3d',{x:v[0],y:v[1],z:v[2]}));
+      }
+      if (!connected()) throw new Error('Onshape editor is disconnected.');
+      message.elementId=target.eid;
+      const result=await call(message,controller.connection);
+      return {result,measured:!result?.error&&Array.isArray(result?.measurements)&&result.measurements.length>0,microversion:micro(),source:'native-editor',units:'Native measurement response; preserve quantity/unit metadata. Input points are meters.'};
+    }
+    if (operation === 'transform') {
+      assertRevision();
+      if (session && !['restored','invalidated'].includes(session.state)) throw new Error('Restore the motion preview before moving parts.');
+      if (model.get('isInMiddleOfDrag') || controller.__onshapeNativeIncompleteTransform) throw new Error('A drag is active or incomplete. Inspect and reload the saved element before another transform.');
+      const rows=getRows();if(!rows.complete) throw new Error('Assembly tree is incomplete.');
+      const paths=args.occurrence_paths;
+      for (const p of paths) match(rows.rows,{kind:'occurrence',occurrence_path:p});
+      const baseline=paths.map(p=>({path:p,transform:Array.from(manager.getOccurrenceTransform(occurrence(p)))}));
+      if(baseline.some(b=>b.transform.length!==16||b.transform.some(v=>!Number.isFinite(v)))) throw new Error('Saved occurrence transforms unavailable.');
+      const rotate=args.action==='rotate';
+      const prefix='ui.assembly.drag.GBTUiAssembly';
+      const vector=v=>make('math.GBTVector3d',{x:v[0],y:v[1],z:v[2]});
+      // Construct the complete sequence before the first mutation.
+      const start=make(prefix+(rotate?'RotationStart':'TranslationStart'),{elementId:target.eid,occurrences:paths.map(occurrence),measureDuringDragCall:null});
+      if(rotate) {start.dragPoint=vector(args.origin_m);start.dragAxis=vector(args.axis);}
+      const change=make(prefix+(rotate?'RotationChange':'TranslationChange'),{elementId:target.eid,sequenceId:1});
+      if(rotate) change.angle=-args.angle_degrees*Math.PI/180;else change.translation=vector(args.translation_m);
+      const end=make(prefix+'DragEnd',{elementId:target.eid,editDescription:args.edit_description});
+      const expected=baseline.map(b=>{
+        const t=b.transform.slice();
+        if(rotate) {
+          const [x,y,z]=args.axis,c=Math.cos(-change.angle),s=Math.sin(-change.angle),d=1-c;
+          const r=[[c+x*x*d,x*y*d-z*s,x*z*d+y*s],[y*x*d+z*s,c+y*y*d,y*z*d-x*s],[z*x*d-y*s,z*y*d+x*s,c+z*z*d]];
+          for(let col=0;col<4;col++) for(let row=0;row<3;row++)
+            t[col*4+row]=r[row].reduce((sum,v,k)=>sum+v*(b.transform[col*4+k]-(col===3?args.origin_m[k]:0)),0)+(col===3?args.origin_m[row]:0);
+        } else for(let k=0;k<3;k++) t[12+k]+=args.translation_m[k];
+        return {path:b.path,transform:t};
+      });
+      controller.__onshapeNativeIncompleteTransform={stage:'start',baseline};
+      for(const [stage,message] of [['start',start],['change',change],['end',end]]) {
+        if(!connected()||controller.getActiveElementTabId()!==target.eid||location.pathname!==path) throw new Error('Editor target or connection changed during transform; outcome requires inspection.');
+        controller.__onshapeNativeIncompleteTransform.stage=stage;
+        const response=await call(message);
+        if(response?.error||response?.errorCode||response?.errorEnum) throw new Error(`Native transform rejected at ${stage}; inspect the editor before continuing.`);
+      }
+      delete controller.__onshapeNativeIncompleteTransform;
+      let checks;
+      for(let attempt=0;attempt<20;attempt++) {
+      checks=expected.map(e=>{
+        const actual=Array.from(manager.getOccurrenceTransform(occurrence(e.path)));
+        const saved_matches=actual.length===16&&actual.every((v,i)=>Math.abs(v-e.transform[i])<1e-6);
+        return {occurrence_path:e.path,expected_transform:e.transform,actual_transform:actual,saved_matches,rendered_matches:verifyTransforms([{pathId:occurrence(e.path).getPathAsString(),transform:actual}])};
+      });
+      if(checks.every(c=>c.saved_matches&&c.rendered_matches)) break;
+      await new Promise(resolve=>setTimeout(resolve,100));
+      }
+      return {microversion:micro(),baseline,checks,verified:checks.every(c=>c.saved_matches&&c.rendered_matches),
+        scope:'Selected occurrences; mates and rigid groups may move additional parts or constrain the requested transform. No groups were suppressed.'};
+    }
     if (operation === 'camera') {
       if(args.action==='read') return {camera:cameraState(),microversion:micro()};
-      assertRevision();
+      // Camera state belongs to this tab, not to the document's modeling revision.
+      // Exact URL/element guards above still apply, including saved-camera ownership.
+      if (!connected()) throw new Error('Onshape editor is disconnected. Reconnect before changing the camera.');
       const view=viewer.getPrimaryViewController();
       if(args.action==='save') {
         const saved={id:crypto.randomUUID(),path,camera:viewer.getCamera().clone()};

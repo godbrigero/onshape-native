@@ -77,7 +77,7 @@ Read `display_state`, select an unsuppressed `mate_type: "REVOLUTE"` row, then
 call `mate_animation`:
 
 ```json
-{"url":"ASSEMBLY_URL","tab_id":123,"action":"prepare","expected_microversion":"CURRENT_MICROVERSION","mate":{"kind":"feature","occurrence_path":[],"feature_id":"MATE_ID"},"start_degrees":0,"end_degrees":90,"frames":5}
+{"url":"ASSEMBLY_URL","tab_id":123,"action":"prepare","mate":{"kind":"feature","occurrence_path":[],"feature_id":"MATE_ID"},"start_degrees":0,"end_degrees":90,"frames":5}
 ```
 
 Keep the returned `session_id` and exact tab ID. The solver produces five frames
@@ -112,12 +112,13 @@ wrapper supports revolute mates, not every possible mate DOF.
 ## Camera and viewport
 
 `view_control` supports `read`, `save`, `restore`, `standard`, `orientation`,
-`fit`, and `zoom`. Except `read`, supply a fresh `expected_microversion`.
+`fit`, and `zoom`. Camera operations are tab-local and need no model revision.
+The legacy `expected_microversion` argument is accepted but ignored for camera operations.
 `save` returns `camera_id`; `restore` uses it in the same exact tab and restores
 orientation, position and zoom. Saving again replaces the previous handle.
 
 ```json
-{"url":"ELEMENT_URL","tab_id":123,"action":"standard","view":"isometric","fit":true,"expected_microversion":"CURRENT_MICROVERSION"}
+{"url":"ELEMENT_URL","tab_id":123,"action":"standard","view":"isometric","fit":true}
 ```
 
 Standard views: `front`, `back`, `left`, `right`, `top`, `bottom`, `isometric`.
@@ -169,3 +170,48 @@ high-level `/local` routes handle snapshots and artifact storage for agents.
 See [installation](installation.md) to update both client packages and reload the
 extension, and [research evidence](display-research.md) for native formats and
 live-validation scope.
+
+
+## Native modeling and measurement
+
+`display_state.microversion` is the active **element** revision (with document
+revision fallback on older clients). `document_microversion` is separately exposed.
+Changes in another element no longer invalidate display/modeling guards. These
+are client preflight checks, not atomic locks against simultaneous collaborators.
+For raw `native_write`, prefer `expected_element_microversion` from `native_state`;
+legacy `expected_microversion` still checks the whole document for compatibility.
+
+`assembly_transform` translates or rotates exact occurrence paths from
+`display_state`. Pass its current `microversion` as `expected_microversion`.
+Translation is a world displacement `translation_m: [x,y,z]`. Rotation uses
+`origin_m`, a unit `axis`, and right-hand `angle_degrees`. Native drag angles use
+the opposite sign; the wrapper converts them. Mates and groups remain active.
+The result checks saved and rendered transforms against the request. A constraint
+may prevent the requested motion; always inspect `verified` and `checks`.
+
+`assembly_feature(action="read", node_id=..., parent_occurrence_path=[])` reads a
+native mate/group definition and returns a snapshot. Edit with that snapshot and
+`patches: [{node_id: PARAMETER_NODE_ID, fields: {FIELD: VALUE}}]`. Unspecified
+fields and native identities are preserved. For group membership, patch the
+`queries` field of its `occurrencesQuery` parameter using typed references from
+the read definition. Do not invent occurrence paths or IDs. Editing inherited
+features requires their owning assembly. Readback verification establishes that
+requested fields persisted; inspect the feature's regeneration/solver status as
+well. It does not prove every possible mate configuration is valid.
+
+`native_measure` uses the native measurement RPC. Supply `use_selection: true`
+or `entities: [{deterministic_id: FACE_ID}]` or `points_m: [[x,y,z], ...]`.
+It returns native measurement types/values and `measured`; empty or error results
+are never a successful measurement. Part Studio and assembly face distance are live verified, as are Part Studio
+explicit points. Assembly faces require their exact `occurrence_path`. Whole-body
+assembly queries and free points can return empty/error responses; select faces,
+edges, or vertices instead, and always inspect `measured`. Do not estimate geometry from screenshots or silently
+fall back to REST when the task requires native operations. Measurement types
+carry dimensional meaning; do not treat areas or angles as lengths.
+
+Transactions are never replayed after timeout. `display_state.rpc_pending`,
+`incomplete_transform`, and `incomplete_feature_edit` expose interrupted work.
+Inspect the editor and its persisted state before recovering; no automatic
+rollback overwrites newer collaborator edits.
+
+Live regression evidence: [native-modeling-regression.md](native-modeling-regression.md).

@@ -2,22 +2,27 @@ import {pageCommand} from "./page-adapter.js";
 import {restGet} from "./rest-get.js";
 import {tabContext} from "./tab-context.js";
 import {displayCommand} from "./display-adapter.js";
+import {createEditorTabs, matchesEditor, editorUrl} from "./editor-tabs.js";
 import {BRIDGE_TOKEN} from "./local-config.js";
 
 let socket = null;
 let heartbeat = null;
 let inFlight = false;
 const BASE = "ws://127.0.0.1:8766/extension";
+const editors = createEditorTabs(chrome, async (tabId, target) => {
+  const results = await chrome.scripting.executeScript({target: {tabId}, world: "MAIN",
+    func: pageCommand, args: [{kind: "editor_health", target}]});
+  return results[0]?.result;
+});
+chrome.tabs.onRemoved.addListener(id => { editors.forget(id).catch(() => {}); });
 
 async function settings() { return chrome.storage.local.get(["enabled"]); }
 
 async function resolveTab(job) {
   const tabs = await chrome.tabs.query({url: "https://cad.onshape.com/*"});
   if (job.target) {
-    const {did, wid, eid} = job.target;
-    const pathname = `/documents/${did}/w/${wid}/e/${eid}`;
-    const matches = tabs.filter(t => new URL(t.url).pathname === pathname);
-    if (job.tab_id === undefined && matches.length === 1) return matches[0];
+    const matches = tabs.filter(t => matchesEditor(t, editorUrl(job.target)));
+    if (job.tab_id == null && matches.length === 1) return matches[0];
     const selected = matches.find(t => t.id === job.tab_id);
     if (selected) return selected;
     throw new Error(matches.length ? "Multiple matching tabs; provide tab_id from bridge_status." : "Open the exact target workspace/element in Comet.");
@@ -29,14 +34,8 @@ async function resolveTab(job) {
 
 async function execute(job) {
   if (job.kind === "rest" && job.method === "GET") return restGet(job);
-  if (job.kind === "open") {
-    const {did,wid,eid} = job.target;
-    const url = `https://cad.onshape.com/documents/${did}/w/${wid}/e/${eid}`;
-    const matches = (await chrome.tabs.query({url: url + "*"})).filter(t=>new URL(t.url).pathname === new URL(url).pathname);
-    if(matches.length>1) throw new Error("Multiple matching editor tabs; supply an exact tab_id to the display/native tool.");
-    const tab = matches[0] || await chrome.tabs.create({url, active:false});
-    return {tab_id:tab.id, url, status:tab.status, next:"Wait for native_state to succeed; opening a tab does not mean the editor is ready."};
-  }
+  if (job.kind === "open") return editors.open(job);
+  if (job.kind === "editor_tab") return editors.control(job);
   if (job.kind === "tabs") {
     return tabContext(chrome);
   }
@@ -54,7 +53,7 @@ async function connect() {
   socket = current;
   current.onopen = () => current.send(JSON.stringify({type: "hello", token: BRIDGE_TOKEN,
     version:chrome.runtime.getManifest().version,
-    capabilities:["tab_context_v1", "assembly_sidebar_map_v1", "display_v1"]}));
+    capabilities:["tab_context_v1", "assembly_sidebar_map_v1", "display_v1", "native_modeling_v1", "element_revision_v1", "editor_tabs_v1"]}));
   current.onmessage = async event => {
     let message;
     try { message = JSON.parse(event.data); } catch { return; }

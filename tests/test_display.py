@@ -71,3 +71,30 @@ def test_snapshot_paging_keeps_exact_display_tab_and_fingerprint(tmp_path):
     assert saved['tab_id']==77
     assert saved['expected_state']==[['instance.mate',1,False,False,False]]
     assert d.page(saved,snapshot,0,10)['data']==rows
+
+
+def test_camera_is_tab_local_and_needs_no_model_revision():
+    request=job('camera',{'action':'standard','view':'front','fit':False})
+    request.pop('expected_microversion')
+    assert validate_job(request)==request
+    request.pop('tab_id')
+    with pytest.raises(BridgeError): validate_job(request)
+
+@pytest.mark.parametrize('op,args',[
+ ('transform',{'action':'rotate','occurrence_paths':[['p']],'origin_m':[0,0,0],'axis':[0,0,0],'angle_degrees':90,'edit_description':'test'}),
+ ('transform',{'action':'translate','occurrence_paths':[['p'],['p','q']],'translation_m':[0,0,1],'edit_description':'test'}),
+ ('transform',{'action':'translate','occurrence_paths':[['p']],'translation_m':[0,float('nan'),1],'edit_description':'test'}),
+ ('measure',{'use_selection':True,'points_m':[[0,0,0]]}),
+ ('measure',{'entities':[{'deterministic_id':'face','occurrence_path':[]}]}),
+ ('measure',{'points_m':[[0,True,0]]}),
+ ('feature',{'action':'edit','node_id':'f','expected_definition':{},'patches':[{'node_id':'p','fields':{}}],'edit_description':'test'}),
+])
+def test_invalid_modeling_arguments(op,args):
+    with pytest.raises(BridgeError): validate_job(job(op,args))
+
+
+def test_native_element_guard_is_validated():
+    request=dict(kind='native',target=TARGET,command='partstudiofolders.GBTUiCreateFolder',body={},expected_element_microversion=MICRO)
+    assert validate_job(request)==request
+    request['expected_element_microversion']='invalid'
+    with pytest.raises(BridgeError):validate_job(request)

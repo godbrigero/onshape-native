@@ -35,6 +35,12 @@ ALIASES = {
     "height": "extrude depth length", "taller": "extrude depth length", "change": "edit modify",
 }
 HINTS = {
+    "open_document": "shadowopen shadow open hidden minimized minimal compact background browser editor window tab lifecycle",
+    "editor_tab": "refresh reload stale discarded disconnected browser tab close finish cleanup shadow editor status ready",
+    "feature_studio": "FeatureScript code edit source local fs file patch update Feature Studio script specifications",
+    "assembly_transform": "native move translate rotate assembly parts occurrences world axis position",
+    "assembly_feature": "native edit mate group settings parameters membership definition snapshot",
+    "native_measure": "native geometry measure thickness face distance area edge length current selection",
     "display_state": "assembly complete sidebar actual effective visibility hidden shown inherited Part Studio mate connectors motors joints display markers",
     "set_visibility": "batch show hide individual mates joints inherited Part Studio connectors assembly occurrences markers",
     "mate_animation": "animate revolute mate lidar rotor motion preview play stop step angle restore pose",

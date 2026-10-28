@@ -32,7 +32,7 @@ def validate_job(job):
     if not isinstance(job, dict):
         raise BridgeError("Expected a JSON object.")
     kind = job.get("kind")
-    if not isinstance(kind, str) or kind not in {"rest", "native", "state", "schema", "tabs", "open", "ui_inspect", "ui_action", "display"}:
+    if not isinstance(kind, str) or kind not in {"rest", "native", "state", "schema", "tabs", "open", "editor_tab", "ui_inspect", "ui_action", "display"}:
         raise BridgeError("Unknown command kind.")
     if kind == "rest":
         path = job.get("path", "")
@@ -55,10 +55,25 @@ def validate_job(job):
             raise BridgeError("Only If-None-Match and Range request headers are accepted.")
         if not isinstance(job.get("query", {}), dict):
             raise BridgeError("Query must be an object.")
-    if kind in {"native", "state", "schema", "open", "ui_inspect", "ui_action", "display"}:
+    if kind in {"native", "state", "schema", "open", "editor_tab", "ui_inspect", "ui_action", "display"}:
         target = job.get("target", {})
         if not isinstance(target, dict) or set(target) != {"did", "wid", "eid"} or any(not isinstance(x, str) or not re.fullmatch(r"[a-f0-9]{24}", x) for x in target.values()):
             raise BridgeError("Native commands require exact did, wid, eid target IDs.")
+    if kind in {"open", "editor_tab"}:
+        tab_id = job.get("tab_id")
+        if (kind == "editor_tab" or tab_id is not None) and (type(tab_id) is not int or tab_id < 0):
+            raise BridgeError("Editor controls require an exact nonnegative tab_id.")
+        if type(job.get("wait_seconds", 0)) is not int or not 0 <= job.get("wait_seconds", 0) <= 30:
+            raise BridgeError("wait_seconds must be an integer from 0 to 30.")
+        if not isinstance(job.get("refresh", "never"), str) or job.get("refresh", "never") not in {"never", "if_stale", "always"}:
+            raise BridgeError("Unknown refresh policy.")
+        if kind == "open":
+            if not isinstance(job.get("mode", "default"), str) or job.get("mode", "default") not in {"default", "background", "shadow", "minimal"}:
+                raise BridgeError("Unknown editor mode.")
+            if type(job.get("reuse", True)) is not bool or (job.get("close_after_work") is not None and type(job["close_after_work"]) is not bool):
+                raise BridgeError("reuse and close_after_work must be booleans.")
+        elif not isinstance(job.get("action"), str) or job.get("action") not in {"status", "refresh", "finish", "close"}:
+            raise BridgeError("Unknown editor tab action.")
     if kind == "display":
         from .display import validate_display_job
         try:
@@ -68,7 +83,7 @@ def validate_job(job):
         if type(job.get("tab_id")) is not int or job["tab_id"] < 0:
             raise BridgeError("Display commands require an exact tab_id.")
         args = job.get("args", {})
-        writes = job["operation"] == "visibility" or (job["operation"] == "camera" and args.get("action") != "read") or (job["operation"] == "motion" and args.get("action") == "prepare")
+        writes = job["operation"] in {"visibility", "transform"} or (job["operation"] == "feature" and args.get("action") == "edit") or (job["operation"] == "motion" and args.get("action") == "prepare")
         if writes and not re.fullmatch(r"[a-f0-9]{24}", str(job.get("expected_microversion", ""))):
             raise BridgeError("Display writes require expected_microversion from fresh state.")
     if kind == "ui_action":
@@ -86,7 +101,9 @@ def validate_job(job):
             raise BridgeError("Command is absent from the captured client schema; use native_catalog.")
         if not isinstance(job.get("body", {}), dict):
             raise BridgeError("Command body must be an object.")
-        if name not in READS and not re.fullmatch(r"[a-f0-9]{24}", str(job.get("expected_microversion", ""))):
+        if job.get("expected_element_microversion") and not re.fullmatch(r"[a-f0-9]{24}", str(job["expected_element_microversion"])):
+            raise BridgeError("Invalid expected_element_microversion.")
+        if name not in READS and not re.fullmatch(r"[a-f0-9]{24}", str(job.get("expected_element_microversion") or job.get("expected_microversion", ""))):
             raise BridgeError("Native writes require expected_microversion from native_state (preflight check, not an atomic lock).")
     return job
 
@@ -109,6 +126,14 @@ class Broker:
                 raise BridgeError("Extension disconnected. Connect Onshape Native in Comet.")
             if job.get("kind") == "display" and "display_v1" not in (self.extension_info or {}).get("capabilities", []):
                 raise BridgeError("Loaded extension lacks display_v1. Update/reload version 0.4.0; check bridge_status.")
+            capabilities = (self.extension_info or {}).get("capabilities", [])
+            if (job.get("kind") == "editor_tab" or (job.get("kind") == "open" and any(
+                    key in job for key in ("mode", "close_after_work", "reuse", "refresh", "wait_seconds", "tab_id")))) and "editor_tabs_v1" not in capabilities:
+                raise BridgeError("Reload the updated Onshape Native extension: editor_tabs_v1 is required for shadow opening and tab lifecycle controls.")
+            if job.get("kind") == "display" and job.get("operation") in {"feature", "transform", "measure"} and "native_modeling_v1" not in capabilities:
+                raise BridgeError("Reload the updated extension: native_modeling_v1 is required.")
+            if job.get("expected_element_microversion") and "element_revision_v1" not in capabilities:
+                raise BridgeError("Reload the updated extension: element_revision_v1 is required.")
             command_id = secrets.token_hex(16)
             future = asyncio.get_running_loop().create_future()
             self.pending[command_id] = future
@@ -241,7 +266,7 @@ def create_app(config=None):
         import inspect
         from pydantic import validate_call
         names = {"artifact_page", "resolve_target", "search_commands", "browse_commands", "document_tree", "element_tree", "document_history", "document_edit", "sidebar_edit",
-                 "display_state", "set_visibility", "mate_animation", "view_control", "capture_viewport"}
+                 "display_state", "set_visibility", "mate_animation", "view_control", "capture_viewport", "assembly_transform", "native_measure", "assembly_feature", "feature_studio", "open_document", "editor_tab"}
         name = request.path_params["tool"]
         if name not in names:
             return JSONResponse({"error": "Unknown local tool.", "tools": sorted(names)}, 404)

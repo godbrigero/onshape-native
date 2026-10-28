@@ -25,6 +25,7 @@ The AI client, server and Chromium browser must run on the same computer. The in
 - Discover commands, inspect geometry, and edit sketches, features and assemblies.
 - Traverse and edit tabs, folders and feature trees; inspect mass and materials.
 - Control visibility, camera views and mate motion; capture the viewport.
+- Open managed shadow/minimal editors, refresh stale tabs, and close task editors after verification. See [editor tabs](docs/editor-tabs.md).
 - Return compact summaries, with complete saved details available through one tool: `artifact_page`.
 
 It prefers backend commands and provides UI fallbacks where needed. This is an **unofficial, reverse-engineered integration**: complete Onshape API/UI parity is not guaranteed, and native commands can change with Onshape releases.
@@ -38,3 +39,35 @@ uv run python scripts/package.py
 ```
 
 Generated launchers, pairing tokens, caches and environments stay local and are excluded from source control and release ZIPs. [Response formats](docs/response-compression.md) · [Measured token savings](docs/token-audit/compression/README.md) · [Modeling skill](skills/onshape-native-modeling/SKILL.md)
+
+
+Native assembly movement, mate/group parameter edits, and geometry measurement
+are available through `assembly_transform`, `assembly_feature`, and
+`native_measure`. Camera changes no longer require a model revision, and native
+modeling supports element-scoped revision guards. See
+[the native modeling workflow](docs/display-controls.md#native-modeling-and-measurement)
+and [live regression results](docs/native-modeling-regression.md).
+After updating an existing installation, reload the browser extension and start
+a new AI-client session so the new MCP tool schemas are loaded.
+
+
+### Editing FeatureScript without copy/paste
+
+Use `feature_studio(action="read", url=FEATURE_STUDIO_URL)` to get the current
+source, a snapshot, and an editable local `.fs` file. Then either:
+
+- Send `action="edit"`, the snapshot, and `patches: [{"old":"exact existing text", "new":"replacement"}]`.
+- Edit the local file and send `action="edit"`, the snapshot, and its `source_path`.
+
+Set `preview=true` on an edit to review its diff without saving. Each patch must
+match exactly once. The tool compares current source before writing, uses the
+current document revision to reject concurrent races, reads the saved source
+back, and retrieves exported feature specifications. It never silently overwrites
+another source edit or retries an uncertain write. The original source remains
+in the snapshot; a later explicit edit can restore it against a fresh snapshot.
+Local files are uploaded only when requested, with no background watcher.
+
+The API does not expose complete compiler diagnostics through this endpoint;
+`check` reports the available feature specifications, not a guarantee that all
+code compiles or dependent geometry regenerated. This convenience tool uses
+browser-session REST and requires no API keys.

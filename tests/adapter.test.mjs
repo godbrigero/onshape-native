@@ -15,12 +15,12 @@ class Location {
   getMessageName(){return 'tree.GBTInsertionLocation';}
 }
 let sent=[];
-function setup(definition, current=false){
+function setup(definition, current=false, elementMicro=null){
   globalThis.crypto ||= webcrypto;
   globalThis.location = {origin:'https://cad.onshape.com',pathname:`/documents/${target.did}/w/${target.wid}/e/${target.eid}`};
   sent=[];
   const controller = {getActiveElementTabId:()=>target.eid,
-    documentModel:{get:k=>k==='microversionId'?{theId:micro}:{get:()=>null,definition}},
+    documentModel:{get:k=>k==='microversionId'?{theId:micro}:{get:k=>k==='microversionId'?elementMicro:null,definition}},
     documentClientCache:{getModelTreeState:()=>({diffableModelTree:{getRoot:()=>({children:[]})}})},
     elementConnection:{callAndPromise:async m=>{sent.push(m);return {errorEnum:0};}}};
   const modules = {27940:{CJP:()=>{},D0n:()=>{},Folder,Location},3392:{GI:{getOpenDocumentController:()=>controller}}};
@@ -101,4 +101,30 @@ test('missing controller export and accessor fail before native RPC',async()=>{
 test('missing message classes fail before native RPC',async()=>{
   const modules=setup(undefined,true);delete modules[96402].CJP;
   assert.match((await pageCommand({kind:'state',target})).error,/96402:message-classes-missing/);assert.equal(sent.length,0);
+});
+
+test('native element guard accepts document churn but rejects stale or missing element revision',async()=>{
+ const em='e'.repeat(24);setup(undefined,false,em);
+ const base={kind:'native',target,command:'partstudiofolders.GBTUiCreateFolder',body:{folderName:'Test'},expected_element_microversion:em};
+ await pageCommand(base);assert.equal(sent.length,1);
+ assert.match((await pageCommand({...base,expected_element_microversion:'f'.repeat(24)})).error,/revision changed/);assert.equal(sent.length,1);
+ setup();assert.match((await pageCommand(base)).error,/revision changed/);assert.equal(sent.length,0);
+});
+
+test('editor health reports connection and transient work without serializing model tree', async () => {
+  const modules = setup(undefined, true);
+  const controller = modules[87539].GI.getOpenDocumentController();
+  controller.connection = {isClosed: () => false};
+  controller.documentClientCache.getModelTreeState = () => {throw new Error('Do not read the tree');};
+  let health = await pageCommand({kind: 'editor_health', target});
+  assert.equal(health.connected, true); assert.equal(health.microversion, micro);
+  assert.equal(health.rpc_pending, false); assert.equal(health.motion_active, false);
+  controller.__onshapeNativePendingDisplayRpc = {pending: true};
+  controller.__onshapeNativeMotionV1 = {state: 'playing'};
+  controller.__onshapeNativeIncompleteFeatureEdit = {stage: 'begin'};
+  health = await pageCommand({kind: 'editor_health', target});
+  assert.equal(health.rpc_pending, true); assert.equal(health.motion_active, true); assert.equal(health.incomplete_edit, true);
+  delete controller.connection;
+  assert.equal((await pageCommand({kind: 'editor_health', target})).connected, null);
+  assert.equal(sent.length, 0);
 });

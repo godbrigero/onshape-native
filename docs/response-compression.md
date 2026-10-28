@@ -1,6 +1,6 @@
 # Compact responses and on-demand details
 
-Onshape Native keeps its existing 35 MCP tools. **`artifact_page` is the single tool for expanding any saved response.** It reads local data and never repeats a CAD action.
+Onshape Native provides 40 MCP tools. **`artifact_page` is the single tool for expanding any saved response.** It reads local data and never repeats a CAD action.
 
 Common tools now default to `detail="summary"`. The complete original result is saved before projection. A response returns an `artifact` or `snapshot` handle, plus pointers to omitted details. `detail="full"` opts into full fields on the original call; large results remain paginated.
 
